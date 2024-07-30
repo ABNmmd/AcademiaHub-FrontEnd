@@ -14,7 +14,7 @@ function Header({ isDark, setIsDark }) {
           <h1>Academia<span>Hub</span></h1>
         </div>
         <div className="container">
-          <ul>
+          <ul className='nav'>
             <li><a href="/">Home</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/about">About</a></li>
@@ -31,7 +31,7 @@ function Header({ isDark, setIsDark }) {
             <Toggle
               checked={isDark}
               onChange={({ target }) => setIsDark(target.checked)}
-              icons={{ checked: "🌙", unchecked: "🔆" }}
+              icons={{ checked: "", unchecked: "" }}
               aria-label="Dark mode toggle"
             />
           </div>

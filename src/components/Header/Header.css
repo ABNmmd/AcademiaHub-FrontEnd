@@ -1,9 +1,15 @@
 header{
-    margin: 0 5rem;
+    padding: 1rem 5rem;
 }
 
 .header-container{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container .logo{
+
 }
 
 .header-container .logo h1{
@@ -16,3 +22,30 @@ header{
     font-weight: 700;
 }
 
+.header-container .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container .container .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container .container .nav a{
+    color: var(--nav);
+    font-size: 16px;
+}
+
+.header-container .container .icons-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container .container .icons-container > div{
+    font-size: 24px;
+    color: var(--nav);
+}
