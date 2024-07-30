@@ -1,0 +1,18 @@
+header{
+    margin: 0 5rem;
+}
+
+.header-container{
+    display: flex;
+}
+
+.header-container .logo h1{
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--logo);
+}
+
+.header-container .logo h1 > span{
+    font-weight: 700;
+}
+
