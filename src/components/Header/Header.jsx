@@ -22,8 +22,12 @@ function Header({ isDark, setIsDark }) {
             <li><a href="contact">Contact</a></li>
           </ul>
           <div className="icons-container">
-            <IoSearchCircleOutline />
-            <BsPersonCircle />
+            <div>
+              <a href="/search"><IoSearchCircleOutline /></a>
+            </div>
+            <div>
+              <BsPersonCircle />
+            </div>
             <Toggle
               checked={isDark}
               onChange={({ target }) => setIsDark(target.checked)}
