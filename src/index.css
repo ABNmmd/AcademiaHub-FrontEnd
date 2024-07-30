@@ -11,11 +11,16 @@
   --background: #fff;
   --border: #E8E8EA;
   --primary: #4B6BFB;
-  --h1: #181A2A;
-  --h2: #181A2A;
+  --headlines: #181A2A;
   --nav: #3B3C4A;
+  --blog-info: #97989F;
 }
 
 [data-theme="dark"] {
-
+  --background: #fff;
+  --border: #E8E8EA;
+  --primary: #4B6BFB;
+  --headlines: #181A2A;
+  --nav: #3B3C4A;
+  --blog-info: #97989F;
 }
