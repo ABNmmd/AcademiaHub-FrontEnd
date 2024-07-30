@@ -17,10 +17,10 @@
 }
 
 [data-theme="dark"] {
-  --background: #fff;
-  --border: #E8E8EA;
+  --background: #181A2A;
+  --border: #242535;
   --primary: #4B6BFB;
-  --headlines: #181A2A;
-  --nav: #3B3C4A;
+  --headlines: #fff;
+  --nav: #fff;
   --blog-info: #97989F;
 }
