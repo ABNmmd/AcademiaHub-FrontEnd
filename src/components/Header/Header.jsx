@@ -13,11 +13,11 @@ function Header({ isDark, setIsDark }) {
         </div>
         <div className="container">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Categories</a></li>
+            <li><a href="">Contact</a></li>
           </ul>
           <div className="icons-container">
             <i></i>
