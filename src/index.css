@@ -24,3 +24,7 @@
   --nav: #fff;
   --blog-info: #97989F;
 }
+
+body{
+  background-color: var(--background);
+}
