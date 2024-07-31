@@ -25,8 +25,12 @@ function Header({ isDark, setIsDark }) {
             <div>
               <a href="/search"><IoSearchSharp /></a>
             </div>
-            <div>
+            <div className='log-cont'>
               <IoPerson />
+              <ul role="menu">
+                <li role="menuitem"><a href="/register">Register</a></li>
+                <li role="menuitem"><a href="/login">Login</a></li>
+              </ul>
             </div>
             <Toggle
               checked={isDark}
