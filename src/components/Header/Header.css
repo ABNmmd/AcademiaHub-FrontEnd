@@ -64,21 +64,23 @@ header{
 
 .header-container .container .icons-container .log-cont ul{
     position: absolute;
-    top: 100%; /* Adjust vertical position */
+    top: 100%;
     right: 0;
     padding: 10px;
-    background-color: #fff; /* Adjust background color */
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: none;
+    z-index: 5;
 }
 .header-container .container .icons-container .log-cont:hover ul{
     display: block;
 }
 
 .header-container .container .icons-container .log-cont ul a{
-    padding: 5px 15px;
+    font-size: 16px;
+    padding: 5px 10px;
     display: block;
     text-decoration: none;
     color: #333;
