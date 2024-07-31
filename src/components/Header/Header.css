@@ -9,7 +9,7 @@ header{
 }
 
 .header-container .logo{
-
+    flex-grow: 1;
 }
 
 .header-container .logo h1{
@@ -23,15 +23,18 @@ header{
 }
 
 .header-container .container{
+    flex-grow: 1.5;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header-container .container .nav{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+.header-container .container .nav li:not(:last-child){
+    margin-right: 16px;
 }
 
 .header-container .container .nav a{
@@ -47,5 +50,5 @@ header{
 
 .header-container .container .icons-container > div{
     font-size: 24px;
-    color: var(--nav);
+    color: var(--logo);
 }
