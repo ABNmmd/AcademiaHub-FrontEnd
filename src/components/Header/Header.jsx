@@ -1,7 +1,7 @@
 import React from 'react'
 import Toggle from "react-toggle";
-import { BsPersonCircle } from "react-icons/bs";
-import { IoSearchCircleOutline } from "react-icons/io5";
+import { IoPerson } from "react-icons/io5";
+import { IoSearchSharp } from "react-icons/io5";
 
 import './Header.css'
 import "react-toggle/style.css"
@@ -23,10 +23,10 @@ function Header({ isDark, setIsDark }) {
           </ul>
           <div className="icons-container">
             <div>
-              <a href="/search"><IoSearchCircleOutline /></a>
+              <a href="/search"><IoSearchSharp /></a>
             </div>
             <div>
-              <BsPersonCircle />
+              <IoPerson />
             </div>
             <Toggle
               checked={isDark}
