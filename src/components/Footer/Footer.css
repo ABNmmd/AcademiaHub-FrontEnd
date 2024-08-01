@@ -30,3 +30,12 @@ footer{
 .footer-container .copywrite .txt p a:hover{
     text-decoration: underline;
 }
+
+.footer-container .links{
+    display: flex;
+}
+
+.footer-container .links li:not(:last-child){
+    margin-right: 16px;
+}
+
