@@ -1,10 +1,15 @@
 import React, {useEffect} from 'react'
 import useLocalStorage from "use-local-storage";
 import ReactDOM from 'react-dom/client'
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 import Home from './pages/Home/Home.jsx'
+import Register from './pages/Register/Register.jsx'
+import Login from './pages/Login/Login.jsx'
+
 import Header from './components/Header/Header.jsx'
 import Footer from './components/Footer/Footer.jsx'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 import './index.css'
 
 
@@ -16,6 +21,14 @@ const App = () => {
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
