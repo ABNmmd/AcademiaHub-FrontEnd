@@ -10,7 +10,7 @@ footer{
 }
 
 .footer-container .copywrite .txt h1{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--logo);
 }
@@ -20,7 +20,7 @@ footer{
 }
 
 .footer-container .copywrite .txt p{
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .footer-container .copywrite .txt p a{
@@ -39,3 +39,7 @@ footer{
     margin-right: 16px;
 }
 
+.footer-container .links a{
+    color: var(--nav);
+    font-size: 12px;
+}
