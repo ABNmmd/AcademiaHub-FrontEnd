@@ -15,6 +15,7 @@
   --headlines: #181A2A;
   --nav: #3B3C4A;
   --blog-info: #97989F;
+  --footer-bg: #F6F6F7;
 }
 
 [data-theme="dark"] {
@@ -25,6 +26,7 @@
   --headlines: #fff;
   --nav: #fff;
   --blog-info: #97989F;
+  --footer-bg: #141624;
 }
 
 body{

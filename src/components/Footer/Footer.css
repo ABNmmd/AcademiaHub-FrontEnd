@@ -1,0 +1,24 @@
+footer{
+    padding: .8rem 5rem;
+    background-color: var(--footer-bg);
+}
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+.footer-container .copywrite .txt h1{
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--logo);
+}
+
+.footer-container .copywrite .txt h1 > span{
+    font-weight: 700;
+}
