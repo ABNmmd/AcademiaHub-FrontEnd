@@ -9,10 +9,6 @@ footer{
     justify-content: space-between;
 }
 
-
-
-
-
 .footer-container .copywrite .txt h1{
     font-size: 24px;
     font-weight: 400;
@@ -21,4 +17,16 @@ footer{
 
 .footer-container .copywrite .txt h1 > span{
     font-weight: 700;
+}
+
+.footer-container .copywrite .txt p{
+    font-size: 16px;
+}
+
+.footer-container .copywrite .txt p a{
+    color: var(--primary);
+}
+
+.footer-container .copywrite .txt p a:hover{
+    text-decoration: underline;
 }
