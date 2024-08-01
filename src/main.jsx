@@ -12,6 +12,10 @@ import Footer from './components/Footer/Footer.jsx'
 
 import './index.css'
 
+useEffect(() => {
+  document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+}, [isDark]);
+
 
 const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -32,9 +36,6 @@ const App = () => {
     },
   ]);
 
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
 
   return (
     <>
