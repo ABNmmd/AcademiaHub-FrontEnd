@@ -16,6 +16,7 @@
   --nav: #3B3C4A;
   --blog-info: #97989F;
   --footer-bg: #F6F6F7;
+  --footer-p: #3B3C4A;
 }
 
 [data-theme="dark"] {
@@ -27,12 +28,14 @@
   --nav: #fff;
   --blog-info: #97989F;
   --footer-bg: #141624;
+  --footer-p: #BABABF;
 }
 
 body{
   background-color: var(--background);
   min-height: 100vh;
   width: 100%;
+  transition: background-color 0.25s ease-in-out;
 }
 
 img {
