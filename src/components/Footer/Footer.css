@@ -27,6 +27,7 @@ footer{
     color: var(--primary);
 }
 
+.footer-container .links a:hover,
 .footer-container .copywrite .txt p a:hover{
     text-decoration: underline;
 }
