@@ -12,7 +12,7 @@ function Register() {
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
-      const data = await login({ email, username, password });
+      const data = await register({ email, username, password });
       console.log('Login successful:', data);
     } catch (error) {
       setError(error.message);
