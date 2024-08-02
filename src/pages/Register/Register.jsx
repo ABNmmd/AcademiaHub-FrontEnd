@@ -39,7 +39,7 @@ function Register() {
             <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
           </div>
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          <button type="submit"></button>
+          <button type="submit">Register</button>
         </form>
       </div>
     </main>
