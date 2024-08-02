@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { register } from '../../services/api.js'
 
 import './Register.css'
 
 function Register() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
   return(
     <main>
       <div className="form-container">
         <div className="headline">
           <h2>Register</h2>
         </div>
-        <form action="" method="post">
+        <form onSubmit={}>
           <div>
             <label htmlFor="email">E-mail</label>
             <input type="email" name="email" id="email" />
