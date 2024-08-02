@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 import axios from 'axios';
 
 // Create an Axios instance
