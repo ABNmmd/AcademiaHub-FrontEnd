@@ -28,6 +28,8 @@ function Register() {
             <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" />
           </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <button type="submit"></button>
         </form>
       </div>
     </main>
