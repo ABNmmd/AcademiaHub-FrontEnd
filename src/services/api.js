@@ -28,3 +28,14 @@ const login = async (credentials) => {
         throw error;
     }
 };
+
+// API call to logout
+const logout = async () => {
+    try {
+        const response = await api.post('/auth/logout', credentials);
+        return response.data;
+    } catch (error) {
+        console.error('Error logging in:', error);
+        throw error;
+    }
+};
