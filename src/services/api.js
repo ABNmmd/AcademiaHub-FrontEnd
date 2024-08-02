@@ -7,3 +7,24 @@ const api = axios.create({
     withCredentials: true,
 });
 
+// API call to register
+const register = async (credentials) => {
+    try {
+        const response = await api.post('/auth/register', credentials);
+        return response.data;
+    } catch (error) {
+        console.error('Error registring:', error);
+        throw error;
+    }
+};
+
+// API call to login
+const login = async (credentials) => {
+    try {
+        const response = await api.post('/auth/login', credentials);
+        return response.data;
+    } catch (error) {
+        console.error('Error logging in:', error);
+        throw error;
+    }
+};
