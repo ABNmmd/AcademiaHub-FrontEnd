@@ -32,7 +32,7 @@ const login = async (credentials) => {
 // API call to logout
 const logout = async () => {
     try {
-        const response = await api.post('/auth/logout', credentials);
+        const response = await api.post('/auth/logout');
         return response.data;
     } catch (error) {
         console.error('Error logging in:', error);
