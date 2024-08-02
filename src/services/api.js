@@ -39,3 +39,9 @@ const logout = async () => {
         throw error;
     }
 };
+
+export {
+    register,
+    login,
+    logout
+}
