@@ -9,13 +9,23 @@ function Register() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  return(
+  const handleRegistration = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await login({ email, username, password });
+      console.log('Login successful:', data);
+    } catch (error) {
+      setError(error.message);
+    }
+  }
+
+  return (
     <main>
       <div className="form-container">
         <div className="headline">
           <h2>Register</h2>
         </div>
-        <form onSubmit={}>
+        <form onSubmit={handleRegistration}>
           <div>
             <label htmlFor="email">E-mail</label>
             <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
