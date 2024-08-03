@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { login } from '../../services/api.js'
 
+import { CiMail, CiRead, CiUnread } from "react-icons/ci";
+
 import './Login.css'
 
 function Login() {
@@ -17,6 +19,9 @@ function Login() {
       setError(error.message);
     }
   }
+
+  const [isSafe, setIsSafe] = useState(false);
+
   return (
     <main>
       <div className="form-container">
@@ -27,9 +32,11 @@ function Login() {
         <form onSubmit={handleLogin}>
           <div>
             <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
+            <CiMail />
           </div>
           <div>
-            <input type="password" name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+            <input type={ isSafe ? "text" : "password" } name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+            { isSafe ? <CiUnread onClick={() => setIsSafe(!isSafe)} /> : <CiRead onClick={() => setIsSafe(!isSafe)} /> }
           </div>
           {error && <p className='error' style={{ color: 'red' }}>{error}</p>}
           <button type="submit">Login</button>
