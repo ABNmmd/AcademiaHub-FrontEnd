@@ -31,7 +31,7 @@ function Login() {
           <div>
             <input type="password" name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
           </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {error && <p className='error' style={{ color: 'red' }}>{error}</p>}
           <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="/register">Register</a></p>

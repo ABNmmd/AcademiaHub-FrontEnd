@@ -90,7 +90,7 @@ form input ::placeholder {
   color: var(--info);
 }
 
-form p {
+form .error {
   font-size: 12px;
   text-align: center;
 }
