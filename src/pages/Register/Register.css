@@ -17,6 +17,9 @@ main{
     margin-bottom: 2rem;
 }
 
-.form-container .headline{
-    margin-bottom: 2rem;
+.form-container .headline h2{
+    color: var(--headlines);
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
 }
