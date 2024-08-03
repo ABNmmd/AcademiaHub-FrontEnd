@@ -14,7 +14,7 @@
   --logo: #141624;
   --headlines: #181A2A;
   --nav: #3B3C4A;
-  --blog-info: #97989F;
+  --info: #97989F;
   --footer-bg: #F6F6F7;
   --footer-p: #3B3C4A;
 }
@@ -26,7 +26,7 @@
   --logo: #fff;
   --headlines: #fff;
   --nav: #fff;
-  --blog-info: #97989F;
+  --info: #97989F;
   --footer-bg: #141624;
   --footer-p: #BABABF;
 }
