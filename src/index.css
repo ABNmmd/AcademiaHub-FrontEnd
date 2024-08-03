@@ -104,4 +104,5 @@ form button {
   width: 100%;
   padding: .4rem .6rem;
   box-shadow: 0 2px 4px var(--shadow-color);
+  margin: .5rem 0;
 }
