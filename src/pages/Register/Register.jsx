@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { register } from '../../services/api.js'
 
+import { CiMail, CiUser, CiRead, CiUnread } from "react-icons/ci";
+
 import './Register.css'
 
 function Register() {
@@ -19,6 +21,8 @@ function Register() {
     }
   }
 
+  const [isSafe, setIsSafe] = useState(false);
+
   return (
     <main>
       <div className="form-container">
@@ -28,12 +32,15 @@ function Register() {
         <form onSubmit={handleRegistration}>
           <div>
             <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
+            <CiMail />
           </div>
           <div>
             <input type="text" name="username" id="username" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
+            <CiUser />
           </div>
           <div>
-            <input type="password" name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+            <input type={ isSafe ? "text" : "password" } name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+            { isSafe ? <CiUnread onClick={() => setIsSafe(!isSafe)} /> : <CiRead onClick={() => setIsSafe(!isSafe)} /> }
           </div>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <button type="submit">Register</button>
