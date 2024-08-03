@@ -39,11 +39,11 @@ const App = () => {
   
 
   return (
-    <>
+    <div className='page-container'>
       <Header isDark={isDark} setIsDark={setIsDark} />
       <RouterProvider router={router} />
       <Footer />
-    </>
+    </div>
   );
 };
 

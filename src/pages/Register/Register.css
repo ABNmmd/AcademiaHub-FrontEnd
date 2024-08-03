@@ -1,4 +1,7 @@
-main{}
+main{
+    flex: 1;
+    padding: 1rem;
+}
 
 .form-container{
     display: flex;
