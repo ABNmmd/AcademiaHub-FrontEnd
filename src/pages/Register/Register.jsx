@@ -27,16 +27,13 @@ function Register() {
         </div>
         <form onSubmit={handleRegistration}>
           <div>
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div>
-            <label htmlFor="username">Username</label>
-            <input type="text" name="username" id="username" onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" name="username" id="username" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
           </div>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <button type="submit">Register</button>
