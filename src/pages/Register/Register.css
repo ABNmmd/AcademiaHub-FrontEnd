@@ -10,7 +10,7 @@ main{
 .form-container{
     padding: 1.5rem;
     border: 2px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .form-container .headline{
@@ -29,5 +29,12 @@ form > div{
 }
 
 form input{
-    padding: .2rem .4rem;
+    font-size: 16px;
+    padding: .4rem .6rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+}
+
+form input ::placeholder{
+    color: var(--info);
 }
