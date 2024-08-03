@@ -33,8 +33,11 @@ form input{
     padding: .4rem .6rem;
     border: 2px solid var(--border);
     border-radius: 4px;
+    background-color: var(--background);
+    color: var(--headlines);
 }
 
 form input ::placeholder{
     color: var(--info);
 }
+
