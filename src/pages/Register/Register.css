@@ -9,4 +9,14 @@ main{
 
 .form-container{
     padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+}
+
+.form-container .headline{
+    margin-bottom: 2rem;
+}
+
+.form-container .headline{
+    margin-bottom: 2rem;
 }
