@@ -72,8 +72,21 @@ button {
 
 /* form */
 
-form>div {
+form > div {
   margin-bottom: 1rem;
+  position: relative;
+}
+
+form > div > svg{
+  color: var(--info);
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+form > .pass > svg{
+  cursor: pointer;
 }
 
 form input {

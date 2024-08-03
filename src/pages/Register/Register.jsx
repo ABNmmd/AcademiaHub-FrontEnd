@@ -38,7 +38,7 @@ function Register() {
             <input type="text" name="username" id="username" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
             <CiUser />
           </div>
-          <div>
+          <div className='pass'>
             <input type={ isSafe ? "text" : "password" } name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
             { isSafe ? <CiUnread onClick={() => setIsSafe(!isSafe)} /> : <CiRead onClick={() => setIsSafe(!isSafe)} /> }
           </div>
