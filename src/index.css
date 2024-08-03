@@ -9,6 +9,7 @@
 
 :root {
   --background: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
   --border: #E8E8EA;
   --primary: #4B6BFB;
   --logo: #141624;
@@ -21,6 +22,7 @@
 
 [data-theme="dark"] {
   --background: #181A2A;
+  --shadow-color: rgba(255, 255, 255, 0.1);
   --border: #242535;
   --primary: #4B6BFB;
   --logo: #fff;

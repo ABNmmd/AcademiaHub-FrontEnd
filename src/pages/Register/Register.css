@@ -11,6 +11,7 @@ main {
     padding: 1.5rem;
     border: 2px solid var(--border);
     border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .form-container .headline {
@@ -55,4 +56,5 @@ form button {
     text-align: center;
     width: 100%;
     padding: .4rem .6rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
