@@ -1,68 +1,68 @@
-header{
+header {
     padding: 1rem 5rem;
 }
 
-.header-container{
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.header-container .logo{
+.header-container .logo {
     flex-grow: 1;
 }
 
-.header-container .logo h1{
+.header-container .logo h1 {
     font-size: 28px;
     font-weight: 400;
     color: var(--logo);
 }
 
-.header-container .logo h1 > span{
+.header-container .logo h1>span {
     font-weight: 700;
 }
 
-.header-container .container{
+.header-container .container {
     flex-grow: 1.5;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header-container .container .nav{
+.header-container .container .nav {
     display: flex;
 }
 
-.header-container .container .nav li:not(:last-child){
+.header-container .container .nav li:not(:last-child) {
     margin-right: 16px;
 }
 
-.header-container .container .nav a{
+.header-container .container .nav a {
     color: var(--nav);
     font-size: 16px;
 }
 
-.header-container .container .icons-container{
+.header-container .container .icons-container {
     display: flex;
     justify-content: space-between;
     padding-top: 2px;
 }
 
-.header-container .container .icons-container > div:not(:last-child){
+.header-container .container .icons-container>div:not(:last-child) {
     margin-right: 12px;
 }
 
-.header-container .container .icons-container > div{
+.header-container .container .icons-container>div {
     font-size: 24px;
     color: var(--logo);
     cursor: pointer;
 }
 
-.header-container .container .icons-container > .log-cont{
+.header-container .container .icons-container>.log-cont {
     position: relative;
 }
 
-.header-container .container .icons-container .log-cont ul{
+.header-container .container .icons-container .log-cont ul {
     position: absolute;
     top: 100%;
     right: 0;
@@ -74,11 +74,12 @@ header{
     display: none;
     z-index: 5;
 }
-.header-container .container .icons-container .log-cont:hover ul{
+
+.header-container .container .icons-container .log-cont:hover ul {
     display: block;
 }
 
-.header-container .container .icons-container .log-cont ul a{
+.header-container .container .icons-container .log-cont ul a {
     font-size: 16px;
     padding: 5px 10px;
     display: block;
@@ -88,4 +89,13 @@ header{
 
 .header-container .container .icons-container .log-cont ul li:hover a {
     background-color: #f0f0f0;
+}
+
+
+.header-container .container .icons-container .log-cont img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
 }

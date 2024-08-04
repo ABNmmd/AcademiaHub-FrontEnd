@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import useLocalStorage from "use-local-storage";
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { checkAuthStatus } from './services/api.js';
 
 import Home from './pages/Home/Home.jsx'
 import Register from './pages/Register/Register.jsx'
@@ -39,6 +40,18 @@ const App = () => {
     document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
   }, [isDark]);
   
+  useEffect(() => {
+    const verifyAuth = async () => {
+      try {
+        const authenticated = await checkAuthStatus();
+        console.log(authenticated, "from the main");
+        setIsAuth(authenticated);
+      } catch (error) {
+        console.error('Error checking auth status:', error);
+      }
+    };
+    verifyAuth();
+  }, []);
 
   return (
     <div className='page-container'>

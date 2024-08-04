@@ -39,8 +39,20 @@ const logout = async () => {
     }
 };
 
+// API call to check authentication status
+const checkAuthStatus = async () => {
+    try {
+        const response = await api.get('/auth/status');
+        return response.data.authenticated;
+    } catch (error) {
+        console.error('Error checking auth status:', error);
+        return false;
+    }
+};
+
 export {
     register,
     login,
-    logout
+    logout,
+    checkAuthStatus,
 }

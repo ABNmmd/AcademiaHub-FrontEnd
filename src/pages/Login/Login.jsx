@@ -22,10 +22,11 @@ function Login({ isAuth, setIsAuth }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await login({ email, password });
-      console.log('Login successful:', data);
-      if (data) {
+      const res = await login({ email, password });
+      console.log('Login successful:', res);
+      if (res) {
         setIsAuth(true);
+        console.log(isAuth, "from the login");
         navigate('/');
       }
     } catch (error) {

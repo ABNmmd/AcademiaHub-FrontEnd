@@ -27,9 +27,9 @@ function Header({ isAuth, isDark, setIsDark }) {
             </div>
             {isAuth ?
               (<div className='log-cont'>
-                <IoPerson />
+                <img src="https://media.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc" alt="" />
                 <ul role="menu">
-                  <li role="menuitem"><a href="/register">Register</a></li>
+                  <li role="menuitem"><a href="/user1">User1</a></li>
                   <li role="menuitem"><a href="/login">Login</a></li>
                 </ul>
               </div>)
