@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import { login } from '../../services/api.js'
 
 import { CiMail, CiRead, CiUnread } from "react-icons/ci";
@@ -10,13 +10,15 @@ function Login({ isAuth, setIsAuth }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    console.log(isAuth);
     if (isAuth) {
-      history.push('/');
+      navigate('/');
     }
-  }, [isAuth, history]);
+  }, [isAuth, navigate]);
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
