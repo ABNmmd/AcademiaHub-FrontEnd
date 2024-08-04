@@ -6,7 +6,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import './Header.css'
 import "react-toggle/style.css"
 
-function Header({ isDark, setIsDark }) {
+function Header({ isAuth, isDark, setIsDark }) {
   return (
     <header>
       <div className="header-container">

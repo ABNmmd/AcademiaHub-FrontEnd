@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import useLocalStorage from "use-local-storage";
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
@@ -17,6 +17,8 @@ import './index.css'
 const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
+
+  const [isAuth, setIsAuth] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -40,7 +42,7 @@ const App = () => {
 
   return (
     <div className='page-container'>
-      <Header isDark={isDark} setIsDark={setIsDark} />
+      <Header isAuth={isAuth} isDark={isDark} setIsDark={setIsDark} />
       <RouterProvider router={router} />
       <Footer />
     </div>
