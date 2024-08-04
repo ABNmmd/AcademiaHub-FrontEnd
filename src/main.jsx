@@ -27,11 +27,11 @@ const App = () => {
     },
     {
       path: "/register",
-      element: <Register />,
+      element: <Register isAuth={isAuth} setIsAuth={setIsAuth} />,
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <Login isAuth={isAuth} setIsAuth={setIsAuth} />,
     },
   ]);
 
