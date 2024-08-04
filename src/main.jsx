@@ -44,7 +44,6 @@ const App = () => {
     const verifyAuth = async () => {
       try {
         const authenticated = await checkAuthStatus();
-        console.log(authenticated, "from the main");
         setIsAuth(authenticated);
         localStorage.setItem('isAuth', authenticated);
       } catch (error) {
