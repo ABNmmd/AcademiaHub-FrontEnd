@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import { login } from '../../services/api.js'
 
 import { CiMail, CiRead, CiUnread } from "react-icons/ci";
 
 import './Login.css'
 
-function Login() {
+function Login({ isAuth, setIsAuth }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const history = useHistory();
+
+  useEffect(() => {
+    if (isAuth) {
+      history.push('/');
+    }
+  }, [isAuth, history]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

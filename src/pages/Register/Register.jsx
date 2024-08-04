@@ -5,7 +5,7 @@ import { CiMail, CiUser, CiRead, CiUnread } from "react-icons/ci";
 
 import './Register.css'
 
-function Register() {
+function Register({ isAuth, setIsAuth }) {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
