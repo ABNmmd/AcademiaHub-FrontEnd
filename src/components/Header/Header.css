@@ -79,6 +79,7 @@ header {
     display: block;
 }
 
+.header-container .container .icons-container .log-cont ul button,
 .header-container .container .icons-container .log-cont ul a {
     font-size: 16px;
     padding: 5px 10px;
@@ -87,6 +88,7 @@ header {
     color: #333;
 }
 
+.header-container .container .icons-container .log-cont ul li:hover button,
 .header-container .container .icons-container .log-cont ul li:hover a {
     background-color: #f0f0f0;
 }
