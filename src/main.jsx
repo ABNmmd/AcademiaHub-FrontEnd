@@ -18,7 +18,7 @@ import './index.css'
 const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
-  const [isAuth, setIsAuth] = useLocalStorage('isAuth', false);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth') === 'true');
 
 
   const router = createBrowserRouter([
@@ -46,6 +46,7 @@ const App = () => {
         const authenticated = await checkAuthStatus();
         console.log(authenticated, "from the main");
         setIsAuth(authenticated);
+        localStorage.setItem('isAuth', authenticated);
       } catch (error) {
         console.error('Error checking auth status:', error);
       }
@@ -55,7 +56,7 @@ const App = () => {
 
   return (
     <div className='page-container'>
-      <Header isAuth={isAuth} isDark={isDark} setIsDark={setIsDark} />
+      <Header isAuth={isAuth} setIsAuth={setIsAuth} isDark={isDark} setIsDark={setIsDark} />
       <RouterProvider router={router} />
       <Footer />
     </div>

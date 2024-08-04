@@ -24,11 +24,9 @@ function Login({ isAuth, setIsAuth }) {
     try {
       const res = await login({ email, password });
       console.log('Login successful:', res);
-      if (res) {
-        setIsAuth(true);
-        console.log(isAuth, "from the login");
-        navigate('/');
-      }
+      setIsAuth(true);
+      localStorage.setItem('isAuth', true);
+      navigate('/');
     } catch (error) {
       setError(error.message);
     }
