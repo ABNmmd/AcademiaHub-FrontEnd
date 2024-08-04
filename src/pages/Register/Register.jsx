@@ -24,6 +24,10 @@ function Register({ isAuth, setIsAuth }) {
     try {
       const data = await register({ email, username, password });
       console.log('register successful:', data);
+      if (data) {
+        setIsAuth(true);
+        navigate('/');
+      }
     } catch (error) {
       setError(error.message);
     }
