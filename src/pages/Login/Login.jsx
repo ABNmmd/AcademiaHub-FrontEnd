@@ -13,7 +13,6 @@ function Login({ isAuth, setIsAuth }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(isAuth);
     if (isAuth) {
       navigate('/');
     }
@@ -25,6 +24,10 @@ function Login({ isAuth, setIsAuth }) {
     try {
       const data = await login({ email, password });
       console.log('Login successful:', data);
+      if (data) {
+        setIsAuth(true);
+        navigate('/');
+      }
     } catch (error) {
       setError(error.message);
     }

@@ -17,8 +17,8 @@ import './index.css'
 const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
+  const [isAuth, setIsAuth] = useLocalStorage('isAuth', false);
 
-  const [isAuth, setIsAuth] = useState(false);
 
   const router = createBrowserRouter([
     {

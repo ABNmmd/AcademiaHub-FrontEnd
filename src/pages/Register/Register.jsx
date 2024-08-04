@@ -14,7 +14,6 @@ function Register({ isAuth, setIsAuth }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(isAuth);
     if (isAuth) {
       navigate('/');
     }
