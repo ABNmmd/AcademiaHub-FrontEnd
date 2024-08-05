@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../contexts/UserContext.js';
+import { UserContext } from '../../contexts/UserContext';
 
 import { CiMail, CiUser, CiRead, CiUnread } from "react-icons/ci";
 
