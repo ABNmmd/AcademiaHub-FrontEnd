@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../services/api.js'
 
 import { CiMail, CiRead, CiUnread } from "react-icons/ci";
 
@@ -22,10 +21,7 @@ function Login({ isAuth, setIsAuth }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ email, password });
-      console.log('Login successful:', res);
-      setIsAuth(true);
-      localStorage.setItem('isAuth', true);
+      
       navigate('/');
     } catch (error) {
       setError(error.message);
