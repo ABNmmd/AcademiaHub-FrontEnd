@@ -23,12 +23,12 @@ const UserProvider = ({ children }) => {
 
     const loginUser = async (credentials) => {
         try {
-          const userData = await login(credentials);
-          setUser(userData);
-          setIsAuth(true);
-          localStorage.setItem('isAuth', 'true');
+            const userData = await login(credentials);
+            setUser(userData);
+            setIsAuth(true);
+            localStorage.setItem('isAuth', 'true');
         } catch (error) {
-          console.error('Error logging in:', error);
+            console.error('Error logging in:', error);
         }
-      };
+    };
 }
