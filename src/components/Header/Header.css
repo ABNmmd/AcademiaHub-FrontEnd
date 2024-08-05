@@ -88,6 +88,11 @@ header {
     color: var(--nav);
 }
 
+.header-container .container .icons-container .log-cont ul li:not(:last-child),
+.header-container .container .icons-container .log-cont ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+
 .header-container .container .icons-container .log-cont ul li:hover button,
 .header-container .container .icons-container .log-cont ul li:hover a {
     background-color: var(--footer-bg);
