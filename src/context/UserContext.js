@@ -53,4 +53,12 @@ const UserProvider = ({ children }) => {
             console.error('Error logging out:', error);
         }
     };
+
+    return (
+        <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser }}>
+            {children}
+        </UserContext.Provider>
+    );
 }
+
+export { UserContext, UserProvider };
