@@ -1,8 +1,7 @@
 import React from 'react'
 import Toggle from "react-toggle";
 import { logout } from '../../services/api.js'
-import { IoPerson } from "react-icons/io5";
-import { IoSearchSharp } from "react-icons/io5";
+import { IoPerson, IoSearchSharp } from "react-icons/io5";
 
 import './Header.css'
 import "react-toggle/style.css"
@@ -40,7 +39,8 @@ function Header({ isAuth, setIsAuth, isDark, setIsDark }) {
               (<div className='log-cont'>
                 <img src="https://media.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc" alt="" />
                 <ul role="menu">
-                  <li role="menuitem"><a href="/user1">User1</a></li>
+                  <li role="menuitem"><a href="/profile/">User1</a></li>
+                  <li role="menuitem"><a href="/user1">Write</a></li>
                   <li role="menuitem"><button onClick={() => handleLogout()}>Logout</button></li>
                 </ul>
               </div>)
