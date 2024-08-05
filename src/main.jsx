@@ -43,10 +43,10 @@ const App = () => {
   useEffect(() => {
     const verifyAuth = async () => {
       try {
-        // const authenticated = await checkAuthStatus();
-        // setIsAuth(authenticated);
-        // localStorage.setItem('isAuth', authenticated);
-        localStorage.setItem('isAuth', true); //for easy dev
+        const authenticated = await checkAuthStatus();
+        setIsAuth(authenticated);
+        localStorage.setItem('isAuth', authenticated);
+        // localStorage.setItem('isAuth', true); //for easy dev
       } catch (error) {
         console.error('Error checking auth status:', error);
       }
