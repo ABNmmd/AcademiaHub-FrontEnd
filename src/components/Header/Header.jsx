@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import { useNavigate } from 'react-router-dom';
 import Toggle from "react-toggle";
 import { UserContext } from '../../contexts/UserContext';
 import { IoPerson, IoSearchSharp } from "react-icons/io5";
@@ -10,12 +9,10 @@ import "react-toggle/style.css"
 
 function Header({ isDark, setIsDark }) {
   const { user, isAuth, logoutUser } = useContext(UserContext);
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await logoutUser();
-      // navigate('/');
     } catch (error) {
       console.error('Error logging out:', error);
     }
