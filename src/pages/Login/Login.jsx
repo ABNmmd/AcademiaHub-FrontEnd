@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { UserContext } from '../../contexts/UserContext';
 import { CiMail, CiRead, CiUnread } from "react-icons/ci";
 
 import './Login.css'
 
-function Login({ isAuth, setIsAuth }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { loginUser, isAuth } = useContext(UserContext)
 
   useEffect(() => {
     if (isAuth) {
@@ -21,7 +22,7 @@ function Login({ isAuth, setIsAuth }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      
+      await loginUser({ email, password });
       navigate('/');
     } catch (error) {
       setError(error.message);
