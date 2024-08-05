@@ -27,11 +27,11 @@ const App = () => {
     },
     {
       path: "/register",
-      element: <Register isAuth={isAuth} setIsAuth={setIsAuth} />,
+      element: <Register />,
     },
     {
       path: "/login",
-      element: <Login isAuth={isAuth} setIsAuth={setIsAuth} />,
+      element: <Login />,
     },
   ]);
 
@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div className='page-container'>
-      <Header isAuth={isAuth} setIsAuth={setIsAuth} isDark={isDark} setIsDark={setIsDark} />
+      <Header isDark={isDark} setIsDark={setIsDark} />
       <RouterProvider router={router} />
       <Footer />
     </div>
