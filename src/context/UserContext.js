@@ -21,6 +21,17 @@ const UserProvider = ({ children }) => {
         verifyAuth();
     }, []);
 
+    const registerUser = async (credentials) => {
+        try {
+            const userData = await register(credentials);
+            setUser(userData);
+            setIsAuth(true);
+            localStorage.setItem('isAuth', 'true');
+        } catch (error) {
+            console.error('Error registering:', error);
+        }
+    };
+
     const loginUser = async (credentials) => {
         try {
             const userData = await login(credentials);

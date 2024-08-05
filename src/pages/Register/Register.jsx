@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { register } from '../../services/api.js'
+
 
 import { CiMail, CiUser, CiRead, CiUnread } from "react-icons/ci";
 
@@ -22,12 +22,8 @@ function Register({ isAuth, setIsAuth }) {
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
-      const data = await register({ email, username, password });
-      console.log('register successful:', data);
-      if (data) {
-        setIsAuth(true);
-        navigate('/');
-      }
+
+      navigate('/');
     } catch (error) {
       setError(error.message);
     }
