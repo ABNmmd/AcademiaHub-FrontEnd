@@ -1,6 +1,6 @@
 import React from 'react'
 import Toggle from "react-toggle";
-import { logout } from '../../services/api.js'
+
 import { IoPerson, IoSearchSharp } from "react-icons/io5";
 import { CiEdit, CiUser, CiLogout } from "react-icons/ci";
 
@@ -10,9 +10,7 @@ import "react-toggle/style.css"
 function Header({ isAuth, setIsAuth, isDark, setIsDark }) {
   const handleLogout = async () => {
     try {
-      await logout();
-      setIsAuth(false);
-      localStorage.setItem('isAuth', false);
+      
     } catch (error) {
       console.error('Error logging out:', error);
     }

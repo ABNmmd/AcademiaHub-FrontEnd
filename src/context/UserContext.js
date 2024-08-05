@@ -42,4 +42,15 @@ const UserProvider = ({ children }) => {
             console.error('Error logging in:', error);
         }
     };
+
+    const logoutUser = async () => {
+        try {
+            await logout();
+            setUser(null);
+            setIsAuth(false);
+            localStorage.setItem('isAuth', 'false');
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
+    };
 }
