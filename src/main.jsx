@@ -3,6 +3,8 @@ import useLocalStorage from "use-local-storage";
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
+import { UserProvider } from './contexts/UserContext';
+
 import Home from './pages/Home/Home.jsx'
 import Register from './pages/Register/Register.jsx'
 import Login from './pages/Login/Login.jsx'
@@ -18,8 +20,12 @@ const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
   
+  useEffect(() => {
+    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
 
 
+  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,18 +41,15 @@ const App = () => {
     },
   ]);
 
-  useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
-  
-
 
   return (
-    <div className='page-container'>
-      <Header isDark={isDark} setIsDark={setIsDark} />
-      <RouterProvider router={router} />
-      <Footer />
-    </div>
+    <UserProvider>
+      <div className='page-container'>
+        <Header isDark={isDark} setIsDark={setIsDark} />
+        <RouterProvider router={router} />
+        <Footer />
+      </div>
+    </UserProvider>
   );
 };
 
