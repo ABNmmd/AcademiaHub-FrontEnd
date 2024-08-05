@@ -1,16 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Toggle from "react-toggle";
-
+import { UserContext } from '../../contexts/UserContext';
 import { IoPerson, IoSearchSharp } from "react-icons/io5";
 import { CiEdit, CiUser, CiLogout } from "react-icons/ci";
 
 import './Header.css'
 import "react-toggle/style.css"
 
-function Header({ isAuth, setIsAuth, isDark, setIsDark }) {
+function Header({ isDark, setIsDark }) {
+  const { isAuth, logoutUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
-      
+      await logoutUser();
+      navigate('/');
     } catch (error) {
       console.error('Error logging out:', error);
     }
