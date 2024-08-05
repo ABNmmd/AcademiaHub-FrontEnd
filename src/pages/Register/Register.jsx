@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { UserContext } from '../../contexts/UserContext.js';
 
 import { CiMail, CiUser, CiRead, CiUnread } from "react-icons/ci";
 
@@ -11,6 +11,7 @@ function Register({ isAuth, setIsAuth }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { registerUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function Register({ isAuth, setIsAuth }) {
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
-
+      await registerUser({ username, email, password });
       navigate('/');
     } catch (error) {
       setError(error.message);
