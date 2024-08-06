@@ -65,6 +65,15 @@ const createPost = async (postData) => {
     }
 }
 
+// API call to get posts
+const getPosts = async () => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
 export {
     register,
     login,
