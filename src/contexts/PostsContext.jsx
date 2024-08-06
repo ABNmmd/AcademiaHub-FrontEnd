@@ -3,4 +3,16 @@ import { createPost, getPosts, getPostById, updatePost, deletePost, } from '../s
 
 const PostsContext = createContext();
 
-export { PostsContext,  };
+const PostsProvider = ({ children }) => {
+    const [posts, setPosts] = useState([]);
+
+    const createPost = async (postData) => {
+        try{
+            const newPost = await createPost(postData);
+        }catch(error){
+
+        }
+    }
+}
+
+export { PostsContext, PostsProvider };
