@@ -101,6 +101,11 @@ const updatePost = async (id, newPostData) => {
     }
 }
 
+// API call to delete a post
+const deletePost = async (id) => {
+    
+}
+
 export {
     register,
     login,
