@@ -36,6 +36,15 @@ const PostsProvider = ({ children }) => {
         }
     }
 
+    const updateOldPost = async (id, newPostData) => {
+        try {
+            const updatedPost = await updatePost(id, newPostData);
+            setPosts(posts.find((post) => {post.id == id ? updatedPost : post}));
+        } catch (error) {
+            console.error('Error creating post', error);
+        }
+    }
+
 }
 
 export { PostsContext, PostsProvider };
