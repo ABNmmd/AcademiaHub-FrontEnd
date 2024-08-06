@@ -9,8 +9,9 @@ const PostsProvider = ({ children }) => {
     const createPost = async (postData) => {
         try{
             const newPost = await createPost(postData);
+            setPosts([...posts, newPost]);
         }catch(error){
-
+            console.error('Error creating post');
         }
     }
 }
