@@ -79,7 +79,12 @@ const getPosts = async () => {
 
 // API call to get a post
 const getPostById = async (id) => {
-    
+    try {
+        
+    } catch (error) {
+        console.error('Error getting the post ', error);
+        throw error;
+    }
 }
 
 export {
