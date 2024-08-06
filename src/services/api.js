@@ -70,7 +70,8 @@ const getPosts = async () => {
     try {
         
     } catch (error) {
-        
+        console.error('Error getting posts ', error);
+        throw error;
     }
 }
 
