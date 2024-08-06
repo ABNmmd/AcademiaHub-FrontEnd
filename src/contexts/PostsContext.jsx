@@ -21,7 +21,7 @@ const PostsProvider = ({ children }) => {
     const createNewPost = async (postData) => {
         try {
             const newPost = await createPost(postData);
-            setPosts([...posts, newPost]);
+            setPosts((prevPosts) => [...prevPosts, newPost]);
         } catch (error) {
             console.error('Error creating post', error);
         }
@@ -39,12 +39,28 @@ const PostsProvider = ({ children }) => {
     const updateOldPost = async (id, newPostData) => {
         try {
             const updatedPost = await updatePost(id, newPostData);
-            setPosts(posts.find((post) => {post.id == id ? updatedPost : post}));
+            setPosts((prevPosts) =>
+                prevPosts.map((post) => (post.id === id ? updatedPost : post))
+            );
         } catch (error) {
             console.error('Error creating post', error);
         }
     }
 
+    const deleteExistingPost = async (id) => {
+        try {
+            await deletePost(id);
+            setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id));
+        } catch (error) {
+            console.error('Error deleting post', error);
+        }
+    }
+
+    return (
+        <PostsContext.Provider value={{ posts, createNewPost, getOnePost, updateOldPost, deleteExistingPost }}>
+            {children}
+        </PostsContext.Provider>
+    );
 }
 
 export { PostsContext, PostsProvider };
