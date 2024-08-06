@@ -90,9 +90,11 @@ const getPostById = async (id) => {
 }
 
 // API call to update a post
-const updatePost = async (newPostData) => {
+const updatePost = async (id, newPostData) => {
     try {
-        
+        const response = await api.put(`/posts/${id}`, newPostData);
+        console.log(response.data);
+        return response.data;
     } catch (error) {
         console.error('Error updatting the post ', error);
         throw error;
