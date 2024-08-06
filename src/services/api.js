@@ -21,6 +21,7 @@ const register = async (credentials) => {
 const login = async (credentials) => {
     try {
         const response = await api.post('/auth/login', credentials);
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error logging in:', error);

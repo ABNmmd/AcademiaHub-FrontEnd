@@ -24,7 +24,7 @@ const UserProvider = ({ children }) => {
     const registerUser = async (credentials) => {
         try {
             const userData = await register(credentials);
-            setUser(userData);
+            setUser(userData.user);
             setIsAuth(true);
             localStorage.setItem('isAuth', 'true');
         } catch (error) {
@@ -35,7 +35,7 @@ const UserProvider = ({ children }) => {
     const loginUser = async (credentials) => {
         try {
             const userData = await login(credentials);
-            setUser(userData);
+            setUser(userData.user);
             setIsAuth(true);
             localStorage.setItem('isAuth', 'true');
         } catch (error) {
