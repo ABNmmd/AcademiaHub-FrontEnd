@@ -89,6 +89,16 @@ const getPostById = async (id) => {
     }
 }
 
+// API call to update a post
+const updatePost = async (newPostData) => {
+    try {
+        
+    } catch (error) {
+        console.error('Error updatting the post ', error);
+        throw error;
+    }
+}
+
 export {
     register,
     login,
