@@ -103,7 +103,14 @@ const updatePost = async (id, newPostData) => {
 
 // API call to delete a post
 const deletePost = async (id) => {
-    
+    try {
+        const response = await api.delete(`/posts/${id}`);
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting the post ', error);
+        throw error;
+    }
 }
 
 export {
