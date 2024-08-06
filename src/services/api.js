@@ -51,6 +51,8 @@ const checkAuthStatus = async () => {
     }
 };
 
+//-------------
+
 export {
     register,
     login,
