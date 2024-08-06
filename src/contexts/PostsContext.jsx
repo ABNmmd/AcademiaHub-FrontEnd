@@ -23,11 +23,18 @@ const PostsProvider = ({ children }) => {
             const newPost = await createPost(postData);
             setPosts([...posts, newPost]);
         } catch (error) {
-            console.error('Error creating post');
+            console.error('Error creating post', error);
         }
     }
 
-
+    const getOnePost = async (id) => {
+        try {
+            const postData = await getPostById(id);
+            return postData;
+        } catch (error) {
+            console.error('Error fetching the post ', error);
+        }
+    }
 
 }
 
