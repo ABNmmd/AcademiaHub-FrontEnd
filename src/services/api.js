@@ -118,4 +118,9 @@ export {
     login,
     logout,
     checkAuthStatus,
+    createPost,
+    getPosts,
+    getPostById,
+    updatePost,
+    deletePost,
 }
