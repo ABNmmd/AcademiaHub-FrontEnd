@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import { UserProvider } from './contexts/UserContext';
+import { PostsProvider } from './contexts/PostsContext';
 
 import Home from './pages/Home/Home.jsx'
 import Register from './pages/Register/Register.jsx'
@@ -44,11 +45,13 @@ const App = () => {
 
   return (
     <UserProvider>
-      <div className='page-container'>
-        <Header isDark={isDark} setIsDark={setIsDark} />
-        <RouterProvider router={router} />
-        <Footer />
-      </div>
+      <PostsProvider>
+        <div className='page-container'>
+          <Header isDark={isDark} setIsDark={setIsDark} />
+          <RouterProvider router={router} />
+          <Footer />
+        </div>
+      </PostsProvider>
     </UserProvider>
   );
 };
