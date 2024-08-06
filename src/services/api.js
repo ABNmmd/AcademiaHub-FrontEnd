@@ -55,11 +55,11 @@ const checkAuthStatus = async () => {
 
 // API call to create post
 const createPost = async (postData) => {
-    try{
+    try {
         const response = await api.post('/posts/', postData);
         console.log(response.data);
         return response.data;
-    } catch(error) {
+    } catch (error) {
         console.error('Error crating the post ', error);
         throw error;
     }
@@ -80,7 +80,9 @@ const getPosts = async () => {
 // API call to get a post
 const getPostById = async (id) => {
     try {
-        
+        const response = await api.get(`/posts/${id}`);
+        console.log(response.data);
+        return response.data;
     } catch (error) {
         console.error('Error getting the post ', error);
         throw error;
