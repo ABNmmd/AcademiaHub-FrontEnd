@@ -77,6 +77,11 @@ const getPosts = async () => {
     }
 }
 
+// API call to get a post
+const getPostById = async (id) => {
+    
+}
+
 export {
     register,
     login,
