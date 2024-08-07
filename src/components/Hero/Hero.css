@@ -1,4 +1,8 @@
 .Hero{
+    padding-bottom: 5%;
+}
+
+.Hero .hero-container{
     position: relative;
 }
 

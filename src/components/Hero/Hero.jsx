@@ -28,10 +28,12 @@ function Hero({ p }) {
 
     return (
         <section className='Hero'>
-            <div className="bg-img">
-                <img src={bg} alt="" />
+            <div className="hero-container">
+                <div className="bg-img">
+                    <img src={bg} alt="" />
+                </div>
+                <DataBox data={p[1]} />
             </div>
-            <DataBox data={p[1]} />
         </section>
     )
 }
