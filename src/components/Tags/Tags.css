@@ -1,0 +1,12 @@
+.tags{
+    display: flex;
+    gap: 5px;
+}
+
+.tags > li a{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}

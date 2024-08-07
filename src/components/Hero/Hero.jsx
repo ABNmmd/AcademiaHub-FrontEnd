@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import Tags from '../Tags/Tags'
 import './Hero.css'
 import bg from "../../assets/Image.png"
 
@@ -13,13 +13,7 @@ function Hero({ p }) {
     const DataBox = ({ data }) => {
         return (
             <div className="data-box">
-                <ul className="tags">
-                    {data.tags.map((tag, i) => (
-                        <li key={i}>
-                            <a href="">{tag}</a>
-                        </li>
-                    ))}
-                </ul>
+                <Tags tags={data.tags} />
                 <h1>{data.title}</h1>
                 <div className="pos-info">
                     <div className="author">

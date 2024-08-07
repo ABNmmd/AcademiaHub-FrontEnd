@@ -5,7 +5,7 @@
 .Hero .data-box{
     background-color: var(--background);
     border-radius: 5px;
-    padding: 1rem;
+    padding: 1.5rem;
     width: 60%;
     position: absolute;
     bottom: 10%;
