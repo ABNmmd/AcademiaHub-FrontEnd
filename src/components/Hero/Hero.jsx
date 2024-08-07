@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
+
 import './Hero.css'
+import bg from '../../assets/image.png'
 
 function Hero({ p }) {
 
@@ -32,8 +34,10 @@ function Hero({ p }) {
 
     return (
         <section className='Hero'>
-            <div className="bg-img"></div>
-            <DataBox data={p[0]} />
+            <div className="bg-img">
+                <img src={bg} alt="" />
+            </div>
+            <DataBox data={p[1]} />
         </section>
     )
 }
