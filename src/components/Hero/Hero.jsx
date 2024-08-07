@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import './Hero.css'
-import bg from '../../assets/image.png'
+import bg from "../../assets/Image.png"
 
 function Hero({ p }) {
 
