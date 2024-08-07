@@ -2,6 +2,8 @@ import React from 'react'
 
 import Hero from '../../components/Hero/Hero';
 
+import './Home.css'
+
 function Home() {
   const p = [
     {

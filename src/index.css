@@ -68,16 +68,26 @@ button {
 }
 
 
+main {
+  padding: 1rem 5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
 
 
 /* form */
 
-form > div {
+form>div {
   margin-bottom: 1rem;
   position: relative;
 }
 
-form > div > svg{
+form>div>svg {
   color: var(--info);
   font-size: 16px;
   position: absolute;
@@ -85,7 +95,7 @@ form > div > svg{
   right: 10px;
 }
 
-form > .pass > svg{
+form>.pass>svg {
   cursor: pointer;
 }
 
