@@ -1,0 +1,13 @@
+.Hero{
+    position: relative;
+}
+
+.Hero .data-box{
+    background-color: var(--background);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 60%;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
