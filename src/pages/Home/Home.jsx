@@ -15,10 +15,10 @@ function Home() {
       updatedAt: "22/02/2024",
     },
     {
-      authorId: "123",
-      title: "This Is A Blog2",
+      authorId: "Jason Francisco",
+      title: "The Impact of Technology on the Workplace: How Technology is Changing",
       content: "<h1>hello welcome again</h1><p>Enjoy Reading</p>",
-      tags: ["tech", "sports"],
+      tags: ["Technology", "Sport"],
       likes: [],
       dislikes: [],
       createdAt: "22/02/2024",

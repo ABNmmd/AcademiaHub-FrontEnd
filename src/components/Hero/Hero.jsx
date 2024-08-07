@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import './Hero.css'
 
-function Hero({ p, }) {
+function Hero({ p }) {
 
     // for changing the hero blog
     // useEffect(()=>{
 
     // },[p])
 
-    const dataBox = ({ data }) => {
+    const DataBox = ({ data }) => {
         return (
             <div className="data-box">
                 <ul className="tags">
@@ -18,7 +18,7 @@ function Hero({ p, }) {
                         </li>
                     ))}
                 </ul>
-                <h1>data.title</h1>
+                <h1>{data.title}</h1>
                 <div className="pos-info">
                     <div className="author">
                         <img src="" alt="" />
@@ -33,7 +33,7 @@ function Hero({ p, }) {
     return (
         <section className='Hero'>
             <div className="bg-img"></div>
-            <dataBox data={p[1]} />
+            <DataBox data={p[0]} />
         </section>
     )
 }
