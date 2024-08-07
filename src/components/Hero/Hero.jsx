@@ -8,7 +8,7 @@ function Hero({ p, }) {
 
     // },[p])
 
-    const dataBox = ({data}) => {
+    const dataBox = ({ data }) => {
         return (
             <div className="data-box">
                 <ul className="tags">
@@ -24,9 +24,7 @@ function Hero({ p, }) {
                         <img src="" alt="" />
                         <span>{data.authorId}</span>
                     </div>
-                    <div className="creatio-date">
-                        <p>{data.createdAt}</p>
-                    </div>
+                    <p>{data.createdAt}</p>
                 </div>
             </div>
         );
