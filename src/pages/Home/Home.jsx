@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Hero from '../../components/Hero/Hero';
+
 function Home() {
   const p = [
     {
@@ -26,14 +28,7 @@ function Home() {
 
   return (
     <main>
-      <section className='Hero'>
-        <div className="bg-img"></div>
-        {p.map((item, index) => (
-          <div className="data-box">
-
-          </div>
-        ))}
-      </section>
+      <Hero p={p} />
     </main>
   )
 }
