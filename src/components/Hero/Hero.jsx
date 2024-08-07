@@ -5,19 +5,17 @@ function Hero({ p, }) {
 
     // for changing the hero blog
     // useEffect(()=>{
-        
+
     // },[p])
 
-  return (
-    <section className='Hero'>
-        <div className="bg-img"></div>
-        {p.map((item, index) => (
-          <div className="data-box" key={index}>
+    return (
+        <section className='Hero'>
+            <div className="bg-img"></div>
+            <div className="data-box" key={index}>
 
-          </div>
-        ))}
-      </section>
-  )
+            </div>
+        </section>
+    )
 }
 
 export default Hero
