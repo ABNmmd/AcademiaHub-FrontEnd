@@ -19,6 +19,15 @@ function Hero({ p, }) {
                     ))}
                 </ul>
                 <h1>data.title</h1>
+                <div className="pos-info">
+                    <div className="author">
+                        <img src="" alt="" />
+                        <span>{data.authorId}</span>
+                    </div>
+                    <div className="creatio-date">
+                        <p>{data.createdAt}</p>
+                    </div>
+                </div>
             </div>
         );
     }
