@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Hero.css'
 
 function Hero({ p, }) {
+
+    // for changing the hero blog
+    // useEffect(()=>{
+        
+    // },[p])
+
   return (
     <section className='Hero'>
         <div className="bg-img"></div>
         {p.map((item, index) => (
-          <div className="data-box">
+          <div className="data-box" key={index}>
 
           </div>
         ))}
