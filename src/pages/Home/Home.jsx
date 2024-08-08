@@ -31,6 +31,7 @@ function Home() {
   return (
     <main>
       <Hero p={p} />
+      
     </main>
   )
 }
