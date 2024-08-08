@@ -1,5 +1,5 @@
 .Hero{
-    padding-bottom: 5%;
+    padding-bottom: 4rem;
 }
 
 .Hero .hero-container{
@@ -10,16 +10,16 @@
     background-color: var(--background);
     border-radius: 8px;
     padding: 1.5rem;
-    width: 60%;
+    width: 80%;
     position: absolute;
-    bottom: -5%;
-    left: 5%;
+    bottom: -4rem;
+    left: 8%;
     box-shadow: 0 4px 8px var(--shadow-color);
     border: 1px solid var(--border);
 }
 
 .Hero .data-box h1{
-    font-size: ;
-    color: ;
+    font-size: 36px;
+    color: var(--headlines);
     margin: .4rem 0;
 }
