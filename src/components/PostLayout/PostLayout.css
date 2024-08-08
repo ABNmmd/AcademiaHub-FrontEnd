@@ -1,5 +1,6 @@
-.post-layout h1{
-    
+.post-layout h2{
+    font-size: 24px;
+    color: var(--headlines);
 }
 
 .post-layout .post-container .post-box{
