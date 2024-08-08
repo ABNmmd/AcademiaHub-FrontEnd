@@ -12,7 +12,7 @@
     padding: 1.5rem;
     width: 80%;
     position: absolute;
-    bottom: -4rem;
+    bottom: -3rem;
     left: 8%;
     box-shadow: 0 4px 8px var(--shadow-color);
     border: 1px solid var(--border);
@@ -22,4 +22,9 @@
     font-size: 36px;
     color: var(--headlines);
     margin: .4rem 0;
+}
+
+.Hero .data-box .pos-info{
+    display: flex;
+    gap: 1rem;
 }
