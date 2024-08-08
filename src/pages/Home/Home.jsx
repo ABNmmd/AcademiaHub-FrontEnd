@@ -27,6 +27,36 @@ function Home() {
       createdAt: "22/02/2024",
       updatedAt: "22/02/2024",
     },
+    {
+      authorId: "Jason Francisco",
+      title: "The Impact of Technology on the Workplace: How Technology is Changing",
+      content: "<h1>hello welcome again</h1><p>Enjoy Reading</p>",
+      tags: ["Technology", "Sport"],
+      likes: [],
+      dislikes: [],
+      createdAt: "22/02/2024",
+      updatedAt: "22/02/2024",
+    },
+    {
+      authorId: "Jason Francisco",
+      title: "The Impact of Technology on the Workplace: How Technology is Changing",
+      content: "<h1>hello welcome again</h1><p>Enjoy Reading</p>",
+      tags: ["Technology", "Sport"],
+      likes: [],
+      dislikes: [],
+      createdAt: "22/02/2024",
+      updatedAt: "22/02/2024",
+    },
+    {
+      authorId: "Jason Francisco",
+      title: "The Impact of Technology on the Workplace: How Technology is Changing",
+      content: "<h1>hello welcome again</h1><p>Enjoy Reading</p>",
+      tags: ["Technology", "Sport"],
+      likes: [],
+      dislikes: [],
+      createdAt: "22/02/2024",
+      updatedAt: "22/02/2024",
+    },
   ];
 
   return (

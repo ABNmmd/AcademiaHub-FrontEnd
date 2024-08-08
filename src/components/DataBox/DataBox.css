@@ -1,0 +1,55 @@
+.Hero .data-box{
+    width: 80%;
+    position: absolute;
+    bottom: -3rem;
+    left: 6%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.data-box{
+    background-color: var(--background);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid var(--border);
+}
+
+.data-box h1{
+    font-size: 34px;
+    color: var(--headlines);
+    margin: .8rem 0;
+}
+
+.data-box .h1-posts{
+    font-size: 24px;
+    color: var(--headlines);
+    font-weight: 500;
+}
+
+.data-box .pos-info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.data-box .pos-info .author{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.data-box .pos-info .author img{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.data-box .pos-info .author span{
+    font-size: 16px;
+    color: var(--info);
+}
+
+.data-box .pos-info p{
+    font-size: 16px;
+    color: var(--info);
+}

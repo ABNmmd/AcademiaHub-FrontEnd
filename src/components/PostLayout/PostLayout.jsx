@@ -1,10 +1,30 @@
 import React from 'react'
 
+import DataBox from '../DataBox/DataBox'
+
 import './PostLayout.css'
 
 function PostLayout({ p }) {
+
   return (
-    <div>PostLayout</div>
+    <section className="post-layout">
+        <h2>Latest Post</h2>
+        <div className="post-container">
+            {
+                p.map((post, index) => (
+                    <div key={index} className="post-box">
+                        <div className="image">
+                            <img src="" alt="" />
+                        </div>
+                        <DataBox data={post} h1Class={"h1-posts"} />
+                    </div>
+                ))
+            }
+        </div>
+        <div>
+            <a href="/blog" className="btn">View All Post</a>
+        </div>
+    </section>
   )
 }
 
