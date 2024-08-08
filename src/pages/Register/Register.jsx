@@ -34,28 +34,30 @@ function Register() {
 
   return (
     <main>
-      <div className="form-container">
-        <div className="headline">
-          <h2>Register</h2>
+      <section>
+        <div className="form-container">
+          <div className="headline">
+            <h2>Register</h2>
+          </div>
+          <form onSubmit={handleRegistration}>
+            <div>
+              <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
+              <CiMail />
+            </div>
+            <div>
+              <input type="text" name="username" id="username" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
+              <CiUser />
+            </div>
+            <div className='pass'>
+              <input type={ isSafe ? "text" : "password" } name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+              { isSafe ? <CiUnread onClick={() => setIsSafe(!isSafe)} /> : <CiRead onClick={() => setIsSafe(!isSafe)} /> }
+            </div>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <button type="submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="/Login">Login</a></p>
         </div>
-        <form onSubmit={handleRegistration}>
-          <div>
-            <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
-            <CiMail />
-          </div>
-          <div>
-            <input type="text" name="username" id="username" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
-            <CiUser />
-          </div>
-          <div className='pass'>
-            <input type={ isSafe ? "text" : "password" } name="password" id="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
-            { isSafe ? <CiUnread onClick={() => setIsSafe(!isSafe)} /> : <CiRead onClick={() => setIsSafe(!isSafe)} /> }
-          </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          <button type="submit">Register</button>
-        </form>
-        <p>Already have an account? <a href="/Login">Login</a></p>
-      </div>
+      </section>
     </main>
   )
 }
