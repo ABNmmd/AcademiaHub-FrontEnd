@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Hero from '../../components/Hero/Hero';
+import PostLayout from '../../components/PostLayout/PostLayout';
 
 import './Home.css'
 
@@ -31,7 +32,7 @@ function Home() {
   return (
     <main>
       <Hero p={p} />
-      
+      <PostLayout p={p} />
     </main>
   )
 }

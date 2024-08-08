@@ -2,7 +2,7 @@ import React from 'react'
 
 import './PostLayout.css'
 
-function PostLayout() {
+function PostLayout({ p }) {
   return (
     <div>PostLayout</div>
   )
