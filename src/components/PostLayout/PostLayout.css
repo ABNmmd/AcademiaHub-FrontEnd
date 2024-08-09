@@ -1,24 +1,30 @@
-.post-layout > div{
+.post-layout>div {
     margin-top: 1.5rem;
 }
 
-.post-layout h2{
+.post-layout h2 {
     font-size: 24px;
     color: var(--headlines);
 }
 
-.post-layout .post-container .post-box{
+.post-layout .post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-layout .post-container .post-box {
     border: 1px solid var(--border);
     padding: 1rem;
     border-radius: 8px;
-    width: 372px;
 }
 
-.post-layout .post-container .post-box .image{
-    height: 240px;
+.post-layout .post-container .post-box .image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
-.post-layout .post-container .post-box .image > img{
+.post-layout .post-container .post-box .image>img {
     object-fit: cover;
     height: 100%;
     border-radius: 6px;
