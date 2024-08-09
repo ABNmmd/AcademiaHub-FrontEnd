@@ -19,6 +19,7 @@
   --info: #97989F;
   --footer-bg: #F6F6F7;
   --footer-p: #3B3C4A;
+  --btn: #696A75;
 }
 
 [data-theme="dark"] {
@@ -33,6 +34,7 @@
   --info: #97989F;
   --footer-bg: #141624;
   --footer-p: #BABABF;
+  --btn: #696A75;
 }
 
 body {

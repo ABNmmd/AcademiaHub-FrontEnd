@@ -23,7 +23,7 @@ function PostLayout({ p }) {
                 ))
             }
         </div>
-        <div>
+        <div className='downBtn'>
             <a href="/blog" className="btn">View All Post</a>
         </div>
     </section>
