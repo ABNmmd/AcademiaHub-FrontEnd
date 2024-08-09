@@ -12,7 +12,7 @@
     font-weight: 400;
 }
 
-.post-layout .tags > li a{
+.post-container .tags > li a{
     color: var(--primary);
     background-color: var(--tags-bg);
 }

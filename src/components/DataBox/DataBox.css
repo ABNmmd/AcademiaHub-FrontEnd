@@ -9,7 +9,13 @@
     border-radius: 8px;
 }
 
-.post-layout .data-box{
+.blog-hero .data-box{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.post-container .data-box{
     margin-top: 16px;
 }
 
@@ -35,7 +41,7 @@
     margin-top: 1.4rem;
 }
 
-.post-layout .data-box .pos-info{
+.post-container .data-box .pos-info{
     margin-top: 1.2rem;
 }
 
