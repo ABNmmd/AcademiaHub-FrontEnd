@@ -9,6 +9,7 @@
 
 .post-layout .post-container .post-box{
     border: 1px solid var(--border);
-    padding: 1.4rem 1.6rem;
+    padding: 1rem;
     border-radius: 8px;
+    width: 372px;
 }

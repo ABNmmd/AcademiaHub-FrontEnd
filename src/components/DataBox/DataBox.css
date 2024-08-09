@@ -1,12 +1,16 @@
 .Hero .data-box{
-    width: 80%;
+    max-width: 582px;
     position: absolute;
     bottom: -3rem;
     left: 6%;
     box-shadow: 0 4px 8px var(--shadow-color);
     border: 1px solid var(--border);
-    padding: 1.4rem 1.6rem;
+    padding: 40px;
     border-radius: 8px;
+}
+
+.post-layout .data-box{
+    margin-top: 16px;
 }
 
 .data-box{
@@ -16,19 +20,23 @@
 .data-box h1{
     font-size: 34px;
     color: var(--headlines);
-    margin: .8rem 0;
+    margin-top: 16px;
 }
 
 .data-box .h1-posts{
     font-size: 24px;
-    color: var(--headlines);
     font-weight: 500;
 }
 
 .data-box .pos-info{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
+    margin-top: 1.4rem;
+}
+
+.post-layout .data-box .pos-info{
+    margin-top: 1.2rem;
 }
 
 .data-box .pos-info .author{
