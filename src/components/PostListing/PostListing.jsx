@@ -2,6 +2,8 @@ import React from 'react'
 
 import DataBox from '../DataBox/DataBox'
 
+import './PostListing.css'
+
 import bg from "../../assets/Image.png"
 
 function PostListing({ p }) {
