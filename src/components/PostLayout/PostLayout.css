@@ -13,3 +13,13 @@
     border-radius: 8px;
     width: 372px;
 }
+
+.post-layout .post-container .post-box .image{
+    height: 240px;
+}
+
+.post-layout .post-container .post-box .image > img{
+    object-fit: cover;
+    height: 100%;
+    border-radius: 6px;
+}
