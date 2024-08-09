@@ -11,7 +11,8 @@
   --background: #fff;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --border: #E8E8EA;
-  --primary: #4B6BFB;
+  --primary: rgba(75, 107, 251);
+  --tags-bg: rgba(75, 107, 251, 5%);
   --logo: #141624;
   --headlines: #181A2A;
   --nav: #3B3C4A;
@@ -24,7 +25,8 @@
   --background: #181A2A;
   --shadow-color: rgba(255, 255, 255, 0.1);
   --border: #242535;
-  --primary: #4B6BFB;
+  --primary: rgba(75, 107, 251);
+  --tags-bg: rgba(75, 107, 251, 5%);
   --logo: #fff;
   --headlines: #fff;
   --nav: #fff;

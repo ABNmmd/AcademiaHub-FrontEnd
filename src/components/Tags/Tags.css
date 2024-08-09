@@ -9,5 +9,10 @@
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
+}
+
+.post-layout .tags > li a{
+    color: var(--primary);
+    background-color: var(--tags-bg);
 }
