@@ -65,7 +65,7 @@ function Blog() {
     return (
         <main>
             <section className='blog-hero'>
-                <div className="blog-hero-container">
+                <div className="blog-hero-container" data-theme="dark">
                     <div className="bg-img">
                         <img src={p[1].img || bg} alt="" />
                     </div>

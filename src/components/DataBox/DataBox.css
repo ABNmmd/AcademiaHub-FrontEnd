@@ -10,9 +10,11 @@
 }
 
 .blog-hero .data-box{
+    background-color: transparent;
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    max-width: 582px;
 }
 
 .post-container .data-box{
