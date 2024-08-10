@@ -45,6 +45,10 @@ const App = () => {
       path: "/blog",
       element: <Blog />,
     },
+    {
+      path: "/categories",
+      element: <Categories />,
+    },
   ]);
 
 
