@@ -3,7 +3,7 @@
     gap: 5px;
 }
 
-.tags > li a{
+.tags > li .a{
     background-color: var(--primary);
     color: #fff;
     padding: 5px 8px;
@@ -12,7 +12,7 @@
     font-weight: 400;
 }
 
-.post-container .tags > li a{
+.post-container .tags > li .a{
     color: var(--primary);
     background-color: var(--tags-bg);
 }
