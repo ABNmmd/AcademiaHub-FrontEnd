@@ -9,7 +9,6 @@ function DataBox({ data, h1Class })  {
     const navigate = useNavigate();
 
     const handleTagClick = (tag) => {
-        console.log('tag to be added:', tag);
         navigate(`/categories/${tag}`); // Navigate with query parameter
     };
     

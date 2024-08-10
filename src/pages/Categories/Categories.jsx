@@ -10,7 +10,7 @@ import './Categories.css'
 import bg from "../../assets/Image.png"
 
 function Blog() {
-    const location = useLocation();
+    const { tag } = useParams();
 
     const [selectedTags, setSelectedTags] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -80,16 +80,19 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
-    const { tag } = useParams();
 
     useEffect(() => {
-        const initialSelectedTags = tag ? [tag] : [];
-        setSelectedTags(initialSelectedTags);
+        setSelectedTags(tag ? [tag] : []);
 
-        setFilteredPosts(p.filter((post) => {
-            return selectedTags.every((tag) => post.tags.includes(tag));
-        }));
-    }, [location.search, selectedTags]);
+        console.log('selectedTags:', selectedTags);
+    }, []);
+
+    useEffect(() => {
+        setFilteredPosts(p.filter((post) =>
+            selectedTags.every((tag) => post.tags.includes(tag))
+        ));
+        console.log('filteredPosts:', filteredPosts);
+    }, [selectedTags]);
 
     return (
         <main>

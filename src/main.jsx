@@ -42,7 +42,7 @@ const App = () => {
       element: <Login />,
     },
     {
-      path: "/categories",
+      path: "/categories/:tag",
       element: <Categories />,
     },
   ]);
