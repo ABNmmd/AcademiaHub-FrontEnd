@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import PostListing from '../../components/PostListing/PostListing'
 import DataBox from '../../components/DataBox/DataBox';
@@ -80,14 +80,12 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
+    const { tag } = useParams();
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const selectedTagFromUrl = searchParams.get('tag');
-        console.log('selected tag from url', selectedTagFromUrl);
-        if (selectedTagFromUrl) {
-            setSelectedTags([selectedTagFromUrl]);
-        }
+        const initialSelectedTags = tag ? [tag] : [];
+        setSelectedTags(initialSelectedTags);
+
         setFilteredPosts(p.filter((post) => {
             return selectedTags.every((tag) => post.tags.includes(tag));
         }));
