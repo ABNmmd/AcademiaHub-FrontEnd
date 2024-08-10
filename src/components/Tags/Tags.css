@@ -17,7 +17,7 @@
     background-color: var(--tags-bg);
 }
 
-.post-container .tags > li .a{
+.tags > li .active{
     color: var(--primary);
-    background-color: var(--tags-bg);
+    background-color: black;
 }

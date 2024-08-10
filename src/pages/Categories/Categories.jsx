@@ -13,7 +13,13 @@ function Blog() {
     const location = useLocation();
 
     const [selectedTags, setSelectedTags] = useState([]);
-
+    useEffect(() => {
+        const selectedTagFromUrl = new URLSearchParams(location.search).get('tag');
+        console.log('selected tag from url', selectedTagFromUrl);
+        if (selectedTags?.length && selectedTagFromUrl) {
+            setSelectedTags([selectedTagFromUrl]);
+        }
+    }, [location.search]);
 
     const p = [
         {
@@ -68,12 +74,6 @@ function Blog() {
         },
     ];
 
-    useEffect(() => {
-        const selectedTagFromUrl = new URLSearchParams(location.search).get('tag');
-        if (selectedTagFromUrl) {
-            setSelectedTags([selectedTagFromUrl]);
-        }
-    }, [location.search]);
 
     const handleTagClick = (tag) => {
         const newSelectedTags = [...selectedTags];
