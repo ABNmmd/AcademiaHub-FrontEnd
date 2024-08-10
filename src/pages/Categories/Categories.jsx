@@ -3,7 +3,7 @@ import React from 'react'
 import PostListing from '../../components/PostListing/PostListing'
 import DataBox from '../../components/DataBox/DataBox';
 
-import './Blog.css'
+import './Categories.css'
 
 import bg from "../../assets/Image.png"
 
@@ -72,6 +72,7 @@ function Blog() {
                     <DataBox data={p[1]} h1Class={null} />
                 </div>
             </section>
+            
             <section className='blog-list'>
                 <PostListing p={p} />
                 <div className='downBtn'>
