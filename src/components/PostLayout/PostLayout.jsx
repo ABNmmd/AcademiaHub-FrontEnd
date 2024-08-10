@@ -12,7 +12,7 @@ function PostLayout({ p }) {
         <h2>Latest Post</h2>
         <PostListing p={p} />
         <div className='downBtn'>
-            <a href="/blog" className="btn">View All Post</a>
+            <a href="/categories" className="btn">View All Post</a>
         </div>
     </section>
   )
