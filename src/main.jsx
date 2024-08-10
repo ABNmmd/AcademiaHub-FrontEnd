@@ -9,7 +9,6 @@ import { PostsProvider } from './contexts/PostsContext';
 import Home from './pages/Home/Home.jsx'
 import Register from './pages/Register/Register.jsx'
 import Login from './pages/Login/Login.jsx'
-import Blog from './pages/Blog/Blog.jsx';
 import Categories from './pages/Categories/Categories.jsx';
 
 import Header from './components/Header/Header.jsx'
@@ -41,10 +40,6 @@ const App = () => {
     {
       path: "/login",
       element: <Login />,
-    },
-    {
-      path: "/blog",
-      element: <Blog />,
     },
     {
       path: "/categories",
