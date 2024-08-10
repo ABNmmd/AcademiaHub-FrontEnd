@@ -1,14 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import Tags from '../Tags/Tags'
 
 import './DataBox.css'
 
 function DataBox({ data, h1Class })  {
+    const navigate = useNavigate();
+    const handleTagClick = (tag) => {
+        navigate('/categories', { search: `tag=${tag}` }); // Navigate with query parameter
+    };
     return (
         <div className="data-box">
             <div className="head">
-                <Tags tags={data.tags} />
+                <Tags tags={data.tags} selectedTags={[]} onTagClick={handleTagClick} />
                 <h1 className={h1Class}><a href="">{data.title}</a></h1>
             </div>
             <div className="pos-info">

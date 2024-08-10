@@ -1,9 +1,6 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import './Tags.css';
 
-function Tags({ tags, onTagClick }) {
+function Tags({ tags, selectedTags, onTagClick }) {
   return (
     <ul className="tags">
       {tags.map((tag, i) => (

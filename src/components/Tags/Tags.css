@@ -16,3 +16,8 @@
     color: var(--primary);
     background-color: var(--tags-bg);
 }
+
+.post-container .tags > li .a{
+    color: var(--primary);
+    background-color: var(--tags-bg);
+}

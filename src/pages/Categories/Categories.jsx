@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 
 import PostListing from '../../components/PostListing/PostListing'
 import DataBox from '../../components/DataBox/DataBox';
@@ -9,6 +10,11 @@ import './Categories.css'
 import bg from "../../assets/Image.png"
 
 function Blog() {
+    const location = useLocation();
+
+    const [selectedTags, setSelectedTags] = useState([]);
+
+
     const p = [
         {
             authorId: "123",
@@ -62,6 +68,27 @@ function Blog() {
         },
     ];
 
+    useEffect(() => {
+        const selectedTagFromUrl = new URLSearchParams(location.search).get('tag');
+        if (selectedTagFromUrl) {
+            setSelectedTags([selectedTagFromUrl]);
+        }
+    }, [location.search]);
+
+    const handleTagClick = (tag) => {
+        const newSelectedTags = [...selectedTags];
+        if (newSelectedTags.includes(tag)) {
+            const index = newSelectedTags.indexOf(tag);
+            newSelectedTags.splice(index, 1);
+        } else {
+            newSelectedTags.push(tag);
+        }
+        setSelectedTags(newSelectedTags);
+    };
+
+    const filteredPosts = p.filter((post) => {
+        return selectedTags.every((tag) => post.tags.includes(tag));
+    });
 
     return (
         <main>
@@ -73,9 +100,9 @@ function Blog() {
                     <DataBox data={p[1]} h1Class={null} />
                 </div>
             </section>
-            <CategoriesFilter />
+            <CategoriesFilter selectedTags={selectedTags} onTagClick={handleTagClick} />
             <section className='blog-list'>
-                <PostListing p={p} />
+                <PostListing p={filteredPosts} />
                 <div className='downBtn'>
                     <button onClick={null} className="btn">Load More</button>
                 </div>

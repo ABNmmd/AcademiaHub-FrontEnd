@@ -4,7 +4,7 @@ import Tags from '../Tags/Tags';
 
 import './CategoriesFilter.css'
 
-function CategoriesFilter() {
+function CategoriesFilter({ selectedTags, onTagClick }) {
     const tags = [
         "Lifestyle",
         "Technology",
@@ -17,7 +17,7 @@ function CategoriesFilter() {
     ];
     return (
         <section className='categories-filter'>
-            <Tags tags={tags} />
+            <Tags tags={tags} selectedTags={selectedTags} onTagClick={onTagClick} />
         </section>
     )
 }
