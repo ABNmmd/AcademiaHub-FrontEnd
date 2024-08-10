@@ -3,11 +3,21 @@ import React from 'react'
 import './CategoriesFilter.css'
 
 function CategoriesFilter() {
-  return (
-    <section className='categories-filter'>
+    const categories = [
+        "Lifestyle",
+        "Technology",
+        "Travel",
+        "Food",
+        "Business",
+        "Personal Development",
+        "Hobbies",
+        "Education"
+    ];
+    return (
+        <section className='categories-filter'>
 
-    </section>
-  )
+        </section>
+    )
 }
 
 export default CategoriesFilter
