@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import useLocalStorage from "use-local-storage";
 
 import './Tags.css'
 
@@ -7,14 +8,14 @@ function Tags({ tags }) {
     const navigate = useNavigate();
 
     const handleTags = (tag) => {
-        const newSelectedTags = [...selectedTags];
-        if (selectedTags.includes(tag)) {
+        const newSelectedTags = [...localStorage.getItem('selectedTags')];
+        if (newSelectedTags.includes(tag)) {
             const index = newSelectedTags.indexOf(tag);
             newSelectedTags.splice(index, 1);
         } else {
             newSelectedTags.push(tag);
         }
-        setSelectedTags(newSelectedTags);
+        localStorage.setItem('selectedTags', newSelectedTags);
 
         if (location.pathname !== '/categories') {
             navigate('/categories');
