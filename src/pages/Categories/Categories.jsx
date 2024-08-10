@@ -13,13 +13,7 @@ function Blog() {
     const location = useLocation();
 
     const [selectedTags, setSelectedTags] = useState([]);
-    useEffect(() => {
-        const selectedTagFromUrl = new URLSearchParams(location.search).get('tag');
-        console.log('selected tag from url', selectedTagFromUrl);
-        if (selectedTags?.length && selectedTagFromUrl) {
-            setSelectedTags([selectedTagFromUrl]);
-        }
-    }, [location.search]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
 
     const p = [
         {
@@ -86,9 +80,18 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
-    const filteredPosts = p.filter((post) => {
-        return selectedTags.every((tag) => post.tags.includes(tag));
-    });
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const selectedTagFromUrl = searchParams.get('tag');
+        console.log('selected tag from url', selectedTagFromUrl);
+        if (selectedTagFromUrl) {
+            setSelectedTags([selectedTagFromUrl]);
+        }
+        setFilteredPosts(p.filter((post) => {
+            return selectedTags.every((tag) => post.tags.includes(tag));
+        }));
+    }, [location.search, selectedTags]);
 
     return (
         <main>

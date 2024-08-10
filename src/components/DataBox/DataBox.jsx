@@ -7,9 +7,11 @@ import './DataBox.css'
 
 function DataBox({ data, h1Class })  {
     const navigate = useNavigate();
+
     const handleTagClick = (tag) => {
         navigate('/categories', { search: `tag=${tag}` }); // Navigate with query parameter
     };
+    
     return (
         <div className="data-box">
             <div className="head">
