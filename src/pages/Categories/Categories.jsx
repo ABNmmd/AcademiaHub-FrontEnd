@@ -2,6 +2,7 @@ import React from 'react'
 
 import PostListing from '../../components/PostListing/PostListing'
 import DataBox from '../../components/DataBox/DataBox';
+import CategoriesFilter from '../../components/CategoriesFilter/CategoriesFilter';
 
 import './Categories.css'
 
@@ -72,7 +73,7 @@ function Blog() {
                     <DataBox data={p[1]} h1Class={null} />
                 </div>
             </section>
-            
+            <CategoriesFilter />
             <section className='blog-list'>
                 <PostListing p={p} />
                 <div className='downBtn'>

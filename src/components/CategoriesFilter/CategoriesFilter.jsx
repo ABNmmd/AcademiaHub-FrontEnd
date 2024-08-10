@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Tags from '../Tags/Tags';
+
 import './CategoriesFilter.css'
 
 function CategoriesFilter() {
-    const categories = [
+    const tags = [
         "Lifestyle",
         "Technology",
         "Travel",
@@ -15,7 +17,7 @@ function CategoriesFilter() {
     ];
     return (
         <section className='categories-filter'>
-
+            <Tags tags={tags} />
         </section>
     )
 }
