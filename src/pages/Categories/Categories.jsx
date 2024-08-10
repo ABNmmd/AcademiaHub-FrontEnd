@@ -84,14 +84,14 @@ function Blog() {
     useEffect(() => {
         setSelectedTags(tag ? [tag] : []);
 
-        console.log('selectedTags:', selectedTags);
-    }, []);
+        // console.log('selectedTags:', selectedTags);
+    }, [tag]);
 
     useEffect(() => {
         setFilteredPosts(p.filter((post) =>
             selectedTags.every((tag) => post.tags.includes(tag))
         ));
-        console.log('filteredPosts:', filteredPosts);
+        // console.log('filteredPosts:', filteredPosts);
     }, [selectedTags]);
 
     return (
