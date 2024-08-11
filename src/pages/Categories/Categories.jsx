@@ -73,7 +73,6 @@ function Blog() {
 
 
     const handleTagClick = (tag) => {
-        // setCurrentPage(1);
         const newSelectedTags = [...selectedTags];
         if (newSelectedTags.includes(tag)) {
             const index = newSelectedTags.indexOf(tag);
@@ -84,7 +83,11 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
+    const handleLoadMore = () => {
+        setCurrentPage(currentPage + 1);
+    };
 
+    const [currentPosts, setCurrentPosts] = useState([]);
 
 
     useEffect(() => {
@@ -97,14 +100,16 @@ function Blog() {
         setFilteredPosts(p.filter((post) =>
             selectedTags.every((tag) => post.tags.includes(tag))
         ));
-        // console.log('filteredPosts:', filteredPosts);
-    }, [selectedTags]);
 
-    const handleLoadMore = () => {
-        setCurrentPage(currentPage + 1);
-    };
+        // console.log('filteredPosts:', filteredPosts);
+    }, [selectedTags, currentPage]);
     
-    const currentPosts = filteredPosts.slice(0, currentPage * postsPerPage);
+    useEffect(() => {
+        const newPosts = filteredPosts.slice(0, currentPage * postsPerPage);
+        setCurrentPosts(newPosts);
+    }, [filteredPosts, currentPage]);
+
+    
 
     return (
         <main>
