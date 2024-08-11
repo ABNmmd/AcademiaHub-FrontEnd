@@ -1,6 +1,6 @@
 .tags{
     display: flex;
-    gap: 5px;
+    gap: 2%;
 }
 
 .tags > li .a{
@@ -17,7 +17,12 @@
     background-color: var(--tags-bg);
 }
 
-.tags > li .active{
+
+
+.categories-filter .tags > li .active{
     color: var(--primary);
     background-color: black;
+}
+.categories-filter .tags{
+    
 }
