@@ -81,6 +81,7 @@ function Blog() {
     };
 
 
+
     useEffect(() => {
         setSelectedTags(tag ? [tag] : []);
 
@@ -104,7 +105,7 @@ function Blog() {
                     <DataBox data={p[1]} h1Class={null} />
                 </div>
             </section>
-            <CategoriesFilter selectedTags={selectedTags} onTagClick={handleTagClick} />
+            <CategoriesFilter selectedTags={selectedTags} setSelectedTags={setSelectedTags} onTagClick={handleTagClick} />
             <section className='blog-list'>
                 <PostListing p={filteredPosts} />
                 <div className='downBtn'>

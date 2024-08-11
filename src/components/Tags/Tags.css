@@ -12,17 +12,22 @@
     font-weight: 400;
 }
 
+.categories-filter .tags > li .a,
 .post-container .tags > li .a{
     color: var(--primary);
     background-color: var(--tags-bg);
 }
 
+.categories-filter .tags > li .a{
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
 
 
-
-.categories-filter .tags > li .active{
-    color: var(--primary);
-    background-color: black;
+.categories-filter .active{
+    background-color: var(--primary) !important;
+    color: #fff !important;
 }
 
 .categories-filter .tags{

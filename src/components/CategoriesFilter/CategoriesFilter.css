@@ -1,0 +1,14 @@
+.categories-filter{
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 16px;
+}
+
+.categories-filter > .reset-btn{
+    text-align: center;
+    font-size: 16px;
+    color: var(--btn);
+    padding: 7px 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
