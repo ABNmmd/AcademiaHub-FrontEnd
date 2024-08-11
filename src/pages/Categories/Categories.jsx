@@ -15,6 +15,10 @@ function Blog() {
     const [selectedTags, setSelectedTags] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(false);
+    const postsPerPage = 10;
+
     const p = [
         {
             authorId: "123",
