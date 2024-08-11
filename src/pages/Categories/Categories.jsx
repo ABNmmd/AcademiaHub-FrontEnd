@@ -84,6 +84,17 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
+    const handleLoadMore = () => {
+
+        const startIndex = currentPage * postsPerPage;
+        const endIndex = (currentPage + 1) * postsPerPage;
+        const newPosts = filteredPosts.slice(startIndex, endIndex);
+
+        setFilteredPosts([...filteredPosts, ...newPosts]);
+        setCurrentPage(currentPage + 1);
+
+    };
+
 
 
     useEffect(() => {
@@ -112,9 +123,11 @@ function Blog() {
             <CategoriesFilter selectedTags={selectedTags} setSelectedTags={setSelectedTags} onTagClick={handleTagClick} />
             <section className='blog-list'>
                 <PostListing p={filteredPosts} />
-                <div className='downBtn'>
-                    <button onClick={null} className="btn">Load More</button>
-                </div>
+                {filteredPosts.length > currentPage * postsPerPage && (
+                    <div className='downBtn'>
+                        <button onClick={handleLoadMore} className="btn">Load More</button>
+                    </div>
+                )}
             </section>
         </main>
     )
