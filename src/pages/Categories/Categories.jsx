@@ -14,10 +14,9 @@ function Blog() {
 
     const [selectedTags, setSelectedTags] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
-
     const [currentPage, setCurrentPage] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
-    const postsPerPage = 10;
+    const postsPerPage = 2;
+
 
     const p = [
         {
@@ -74,6 +73,7 @@ function Blog() {
 
 
     const handleTagClick = (tag) => {
+        // setCurrentPage(1);
         const newSelectedTags = [...selectedTags];
         if (newSelectedTags.includes(tag)) {
             const index = newSelectedTags.indexOf(tag);
@@ -84,16 +84,6 @@ function Blog() {
         setSelectedTags(newSelectedTags);
     };
 
-    const handleLoadMore = () => {
-
-        const startIndex = currentPage * postsPerPage;
-        const endIndex = (currentPage + 1) * postsPerPage;
-        const newPosts = filteredPosts.slice(startIndex, endIndex);
-
-        setFilteredPosts([...filteredPosts, ...newPosts]);
-        setCurrentPage(currentPage + 1);
-
-    };
 
 
 
@@ -110,6 +100,12 @@ function Blog() {
         // console.log('filteredPosts:', filteredPosts);
     }, [selectedTags]);
 
+    const handleLoadMore = () => {
+        setCurrentPage(currentPage + 1);
+    };
+    
+    const currentPosts = filteredPosts.slice(0, currentPage * postsPerPage);
+
     return (
         <main>
             <section className='blog-hero'>
@@ -122,8 +118,8 @@ function Blog() {
             </section>
             <CategoriesFilter selectedTags={selectedTags} setSelectedTags={setSelectedTags} onTagClick={handleTagClick} />
             <section className='blog-list'>
-                <PostListing p={filteredPosts} />
-                {filteredPosts.length > currentPage * postsPerPage && (
+                <PostListing p={currentPosts} />
+                {currentPosts.length < filteredPosts.length && (
                     <div className='downBtn'>
                         <button onClick={handleLoadMore} className="btn">Load More</button>
                     </div>
