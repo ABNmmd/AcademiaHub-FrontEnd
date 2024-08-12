@@ -22,6 +22,13 @@ function Write() {
     ];
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
+        { value: 'Technology', label: 'Technology' },
+        { value: 'Travel', label: 'Travel' },
+        { value: 'Food', label: 'Food' },
+        { value: 'Business', label: 'Business' },
+        { value: 'Personal Development', label: 'Personal Development' },
+        { value: 'Hobbies', label: 'Hobbies' },
+        { value: 'Education', label: 'Education' },
     ]
 
     return (
@@ -45,7 +52,8 @@ function Write() {
                     isMulti
                     name="tags"
                     className="basic-multi-select"
-                    classNamePrefix="select" />
+                    classNamePrefix="select"
+                />
             </section>
         </main>
     )
