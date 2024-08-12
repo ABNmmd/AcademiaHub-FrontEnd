@@ -49,6 +49,10 @@ const App = () => {
       path: "/categories/:tag",
       element: <Categories />,
     },
+    {
+      path: "/write",
+      element: <Write />,
+    },
   ]);
 
 
