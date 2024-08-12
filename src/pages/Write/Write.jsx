@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
 
 import './Write.css'
 
