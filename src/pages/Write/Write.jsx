@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
+import Select from 'react-select'
 
 import 'react-quill/dist/quill.snow.css';
 import './Write.css'
