@@ -33,17 +33,21 @@ function Write() {
                     />
                 </div>
                 <ReactQuill theme="snow" value={value} onChange={setValue} />
-            </section>
-            <section>
-                <h2>Tags</h2>
-                <Select
-                    options={options}
-                    defaultValue={[]}
-                    isMulti
-                    name="tags"
-                    className="basic-multi-select"
-                    classNamePrefix="select"
-                />
+                <div className="tags">
+                    <h2>Tags</h2>
+                    <Select
+                        options={options}
+                        defaultValue={[]}
+                        isMulti
+                        name="tags"
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                    />
+                </div>
+
+                <div className="buttons">
+                    <button type="submit">Publish</button>
+                </div>
             </section>
         </main>
     )
