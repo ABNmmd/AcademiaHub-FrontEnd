@@ -1,8 +1,12 @@
 import React from 'react'
 
+import './Write.css'
+
 function Write() {
   return (
-    <div>Write</div>
+    <main>
+        
+    </main>
   )
 }
 
