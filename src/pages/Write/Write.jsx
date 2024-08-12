@@ -10,6 +10,12 @@ function Write() {
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
 
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
+
     return (
         <main>
             <section className='write-content'>
@@ -24,7 +30,8 @@ function Write() {
                 <ReactQuill theme="snow" value={value} onChange={setValue} />;
             </section>
             <section>
-
+                <h2>Tags</h2>
+                <Select options={options} />
             </section>
         </main>
     )
