@@ -10,16 +10,6 @@ function Write() {
     const [title, setTitle] = useState('');
     const [selectedtags, setSelectedTags] = useState([]);
 
-    const tags = [
-        "Lifestyle",
-        "Technology",
-        "Travel",
-        "Food",
-        "Business",
-        "Personal Development",
-        "Hobbies",
-        "Education"
-    ];
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
         { value: 'Technology', label: 'Technology' },
