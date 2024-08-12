@@ -8,12 +8,20 @@ import './Write.css'
 function Write() {
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('');
-    const [tags, setTags] = useState([]);
+    const [selectedtags, setSelectedTags] = useState([]);
 
+    const tags = [
+        "Lifestyle",
+        "Technology",
+        "Travel",
+        "Food",
+        "Business",
+        "Personal Development",
+        "Hobbies",
+        "Education"
+    ];
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'Lifestyle', label: 'Lifestyle' },
     ]
 
     return (
@@ -27,11 +35,17 @@ function Write() {
                         onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
-                <ReactQuill theme="snow" value={value} onChange={setValue} />;
+                <ReactQuill theme="snow" value={value} onChange={setValue} />
             </section>
             <section>
                 <h2>Tags</h2>
-                <Select options={options} />
+                <Select
+                    options={options}
+                    defaultValue={[]}
+                    isMulti
+                    name="tags"
+                    className="basic-multi-select"
+                    classNamePrefix="select" />
             </section>
         </main>
     )
