@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
 
@@ -21,6 +21,10 @@ function Write() {
         { value: 'Education', label: 'Education' },
     ]
 
+    useEffect(() => {
+        selectedtags.forEach((t)=>console.log(t.value));
+    }, [selectedtags]);
+
     return (
         <main>
             <section className='write-content'>
@@ -42,6 +46,7 @@ function Write() {
                         name="tags"
                         className="basic-multi-select"
                         classNamePrefix="select"
+                        onChange={(t) => setSelectedTags(t)}
                     />
                 </div>
 
