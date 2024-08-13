@@ -23,7 +23,7 @@ function Write() {
         { value: 'Personal Development', label: 'Personal Development' },
         { value: 'Hobbies', label: 'Hobbies' },
         { value: 'Education', label: 'Education' },
-    ]
+    ];
 
     useEffect(() => {
         selectedtags.forEach((t)=>console.log(t.value));
