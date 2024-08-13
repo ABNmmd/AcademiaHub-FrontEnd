@@ -29,7 +29,6 @@ function Write() {
     const handleCreatePost = async (e) => {
         e.preventDefault();
         try {
-            console.log({ title, content, tags });
             const newPost = await createNewPost({ title, content, tags });
             console.log("Post created: ", newPost);
             // navigate(`/posts/${newPost._id}`);

@@ -1,0 +1,7 @@
+.write-content > div:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.write-content > .quill {
+    margin-bottom: 1.5rem;
+}
