@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
 
@@ -11,6 +11,8 @@ function Write() {
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('');
     const [selectedtags, setSelectedTags] = useState([]);
+
+    const { createNewPost } = useContext(PostsContext);
 
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
