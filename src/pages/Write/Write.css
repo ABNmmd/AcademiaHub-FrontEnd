@@ -3,13 +3,19 @@
 }
 
 .write-content h2{
-    margin-bottom: .4rem;
-    
+    margin-bottom: .5rem;
+    color: var(--headlines);
+    font-size: 24px;
 }
 
 .write-content .title input{
+    width: 100%;
+    padding: 10px 5px;
     border: none;
     outline: none;
+    font-size: 20px;
+    color: var(--nav);
+    background: linear-gradient(0deg, var(--background), var(--tags-bg));
 }
 
 .write-content > .quill {

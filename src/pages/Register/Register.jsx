@@ -34,7 +34,7 @@ function Register() {
 
   return (
     <main>
-      <section>
+      <section className='formSec'>
         <div className="form-container">
           <div className="headline">
             <h2>Register</h2>
