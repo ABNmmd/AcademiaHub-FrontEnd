@@ -18,6 +18,11 @@
     background-color: var(--background);
 }
 
+.write-content .content > .quill p {
+    color: var(--nav);
+    font-size: 16px;
+}
+
 .write-content .content > .quill > div {
     border: 1px solid var(--border);
 }
@@ -29,3 +34,4 @@
 .write-content .tags {
     flex-direction: column;
 }
+

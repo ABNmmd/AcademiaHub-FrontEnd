@@ -15,6 +15,7 @@ function Write() {
     const navigate = useNavigate();
     const { createNewPost } = useContext(PostsContext);
 
+
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
         { value: 'Technology', label: 'Technology' },
@@ -41,11 +42,11 @@ function Write() {
         const tagsArr = [];
         t.forEach((v) => tagsArr.push(v.value));
         setTags(tagsArr);
-        console.log('tags arr',tagsArr);
+        console.log('tags arr', tagsArr);
     }
 
     const handleTitle = (e) => {
-        console.log('title',e.target.value);
+        console.log('title', e.target.value);
         setTitle(e.target.value);
     }
 
@@ -80,6 +81,13 @@ function Write() {
                         className="basic-multi-select"
                         classNamePrefix="select"
                         onChange={handleTags}
+                        styles={{
+                            control: (baseStyles, state) => ({
+                                ...baseStyles,
+                                borderColor: 'var(--border)',
+                                backgroundColor: 'var(--background)',
+                            }),
+                        }}
                     />
                 </div>
 
