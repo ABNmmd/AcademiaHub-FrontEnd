@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
 
+import { PostsContext } from '../../contexts/PostsContext';
+
 import 'react-quill/dist/quill.snow.css';
 import './Write.css'
 
@@ -33,7 +35,7 @@ function Write() {
                         type="text"
                         className='title'
                         placeholder='Title'
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={null}
                     />
                 </div>
                 <ReactQuill theme="snow" value={value} onChange={setValue} />
