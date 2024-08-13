@@ -58,14 +58,18 @@ function Write() {
         <main>
             <section className='write-content'>
                 <div className="title">
+                    <h2><label htmlFor="title">Title</label></h2>
                     <input
                         type="text"
                         className='title'
-                        placeholder='Title'
+                        id='title'
                         onChange={handleTitle}
                     />
                 </div>
-                <ReactQuill theme="snow" value={content} onChange={setContent} />
+                <div className="content">
+                    <h2>Content</h2>
+                    <ReactQuill theme="snow" value={content} onChange={setContent} />
+                </div>
                 <div className="tags">
                     <h2>Tags</h2>
                     <Select

@@ -2,6 +2,16 @@
     margin-bottom: 1.5rem;
 }
 
+.write-content h2{
+    margin-bottom: .4rem;
+    
+}
+
+.write-content .title input{
+    border: none;
+    outline: none;
+}
+
 .write-content > .quill {
-    margin-bottom: 1.5rem;
+    height: 70%;
 }
