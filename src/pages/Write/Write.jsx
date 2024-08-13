@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
 
@@ -8,10 +9,10 @@ import 'react-quill/dist/quill.snow.css';
 import './Write.css'
 
 function Write() {
-    const [value, setValue] = useState('');
+    const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
-    const [selectedtags, setSelectedTags] = useState([]);
-
+    const [tags, setTags] = useState([]);
+    const navigate = useNavigate();
     const { createNewPost } = useContext(PostsContext);
 
     const options = [
@@ -25,9 +26,30 @@ function Write() {
         { value: 'Education', label: 'Education' },
     ];
 
-    useEffect(() => {
-        selectedtags.forEach((t)=>console.log(t.value));
-    }, [selectedtags]);
+    const handleCreatePost = async (e) => {
+        e.preventDefault();
+        try {
+            console.log({ title, content, tags });
+            const newPost = await createNewPost({ title, content, tags });
+            console.log(newPost);
+            // navigate(`/posts/${newPost._id}`);
+        } catch (error) {
+            setError(error.message);
+        }
+    }
+
+    const handleTags = (t) => {
+        const tagsArr = [];
+        t.forEach((v) => tagsArr.push(v.value));
+        setTags(tagsArr);
+        console.log('tags arr',tagsArr);
+    }
+
+    const handleTitle = (e) => {
+        console.log('title',e.target.value);
+        setTitle(e.target.value);
+    }
+
 
     return (
         <main>
@@ -37,10 +59,10 @@ function Write() {
                         type="text"
                         className='title'
                         placeholder='Title'
-                        onChange={null}
+                        onChange={handleTitle}
                     />
                 </div>
-                <ReactQuill theme="snow" value={value} onChange={setValue} />
+                <ReactQuill theme="snow" value={content} onChange={setContent} />
                 <div className="tags">
                     <h2>Tags</h2>
                     <Select
@@ -50,12 +72,12 @@ function Write() {
                         name="tags"
                         className="basic-multi-select"
                         classNamePrefix="select"
-                        onChange={(t) => setSelectedTags(t)}
+                        onChange={handleTags}
                     />
                 </div>
 
                 <div className="buttons">
-                    <button type="submit">Publish</button>
+                    <button type="submit" onClick={handleCreatePost}>Publish</button>
                 </div>
             </section>
         </main>
