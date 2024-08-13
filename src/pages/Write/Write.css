@@ -1,14 +1,14 @@
-.write-content > div:not(:last-child) {
+.write-content>div:not(:last-child) {
     margin-bottom: 1.5rem;
 }
 
-.write-content h2{
+.write-content h2 {
     margin-bottom: .6rem;
     color: var(--headlines);
     font-size: 24px;
 }
 
-.write-content .title input{
+.write-content .title input {
     width: 100%;
     padding: 8px 4px;
     border: 1px solid var(--border);
@@ -18,16 +18,16 @@
     background-color: var(--background);
 }
 
-.write-content .content > .quill p {
+.write-content .content>.quill p {
     color: var(--nav);
     font-size: 16px;
 }
 
-.write-content .content > .quill > div {
+.write-content .content>.quill>div {
     border: 1px solid var(--border);
 }
 
-.write-content .content > .quill > div:last-child {
+.write-content .content>.quill>div:last-child {
     min-height: 8rem;
 }
 
@@ -35,3 +35,19 @@
     flex-direction: column;
 }
 
+
+.write-content .buttons button {
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 4px;
+    text-align: center;
+    padding: .5rem 1.2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background linear 200ms, color linear 200ms;
+}
+
+.write-content .buttons button:hover {
+    background-color: var(--tags-bg);
+    color: var(--primary);
+}
