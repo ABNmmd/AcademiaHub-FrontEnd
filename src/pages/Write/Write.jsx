@@ -31,7 +31,7 @@ function Write() {
         try {
             console.log({ title, content, tags });
             const newPost = await createNewPost({ title, content, tags });
-            console.log(newPost);
+            console.log("Post created: ", newPost);
             // navigate(`/posts/${newPost._id}`);
         } catch (error) {
             setError(error.message);
@@ -49,6 +49,10 @@ function Write() {
         console.log('title',e.target.value);
         setTitle(e.target.value);
     }
+
+    useEffect(() => {
+        console.log('content: ', content)
+    }, [content])
 
 
     return (

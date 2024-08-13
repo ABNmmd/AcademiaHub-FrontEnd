@@ -20,8 +20,10 @@ const PostsProvider = ({ children }) => {
 
     const createNewPost = async (postData) => {
         try {
+            console.log("Payload being sent:", postData);
             const newPost = await createPost(postData);
             setPosts((prevPosts) => [...prevPosts, newPost]);
+            return newPost;
         } catch (error) {
             console.error('Error creating post', error);
         }

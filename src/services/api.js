@@ -57,7 +57,7 @@ const checkAuthStatus = async () => {
 const createPost = async (postData) => {
     try {
         const response = await api.post('/posts/', postData);
-        console.log(response.data);
+        console.log("from api: ",response.data);
         return response.data;
     } catch (error) {
         console.error('Error crating the post ', error);
