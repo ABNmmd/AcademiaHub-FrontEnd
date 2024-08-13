@@ -11,13 +11,17 @@
 .write-content .title input{
     width: 100%;
     padding: 10px 5px;
-    border: none;
+    border: 1px solid var(--border);
     outline: none;
     font-size: 20px;
     color: var(--nav);
-    background: linear-gradient(0deg, var(--background), var(--tags-bg));
+    background-color: var(--background);
 }
 
 .write-content > .quill {
     height: 70%;
+}
+
+.write-content .tags {
+    flex-direction: column;
 }
