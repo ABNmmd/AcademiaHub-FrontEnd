@@ -3,14 +3,14 @@
 }
 
 .write-content h2{
-    margin-bottom: .5rem;
+    margin-bottom: .6rem;
     color: var(--headlines);
     font-size: 24px;
 }
 
 .write-content .title input{
     width: 100%;
-    padding: 10px 5px;
+    padding: 8px 4px;
     border: 1px solid var(--border);
     outline: none;
     font-size: 20px;
@@ -18,8 +18,12 @@
     background-color: var(--background);
 }
 
-.write-content > .quill {
-    height: 70%;
+.write-content .content > .quill > div {
+    border: 1px solid var(--border);
+}
+
+.write-content .content > .quill > div:last-child {
+    min-height: 8rem;
 }
 
 .write-content .tags {
