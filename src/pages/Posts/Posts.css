@@ -1,0 +1,65 @@
+.posts-page{
+
+}
+
+.post > div{
+    margin-bottom: 2rem;
+}
+
+.post-content {
+    line-height: 1.6;
+    color: var(--nav);
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--headlines);
+}
+
+h3, h4{
+    margin-bottom: 1rem;
+    color: var(--headlines);
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content strong {
+    font-weight: bold;
+}
+
+.post-content i {
+    font-style: italic;
+}
+
+.post-content u {
+    text-decoration: underline;
+}
+
+.post-content a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
+.post-content ul {
+    list-style: disc inside;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-content ol {
+    list-style: decimal inside;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+

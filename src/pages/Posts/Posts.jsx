@@ -4,6 +4,7 @@ import parse from 'html-react-parser';
 import DataBox from '../../components/DataBox/DataBox'
 
 import './Posts.css'
+import bg from "../../assets/Image.png"
 
 function Posts() {
     const post = {
@@ -18,11 +19,11 @@ function Posts() {
     };
 
     return (
-        <main>
+        <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
                 <div className="banner">
-                    
+                    <img src={bg} alt="" />
                 </div>
                 <article className='post-content'>
                     {parse(post.content)}
