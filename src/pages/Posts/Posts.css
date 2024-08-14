@@ -1,5 +1,5 @@
-.posts-page{
-
+.posts-page section{
+    max-width: 800px;
 }
 
 .post > div{
