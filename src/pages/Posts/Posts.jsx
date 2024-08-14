@@ -8,7 +8,7 @@ function Posts() {
   return (
     <main>
         <section className="post">
-            <DataBox />
+            <DataBox data={null} />
         </section>
         <section className="comments">
 
