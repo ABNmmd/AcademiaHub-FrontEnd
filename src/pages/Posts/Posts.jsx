@@ -1,4 +1,5 @@
 import React from 'react'
+import parse from 'html-react-parser';
 
 import DataBox from '../../components/DataBox/DataBox'
 
@@ -20,6 +21,12 @@ function Posts() {
         <main>
             <section className="post">
                 <DataBox data={post} />
+                <div className="banner">
+                    
+                </div>
+                <article className='post-content'>
+                    {parse(post.content)}
+                </article>
             </section>
             <section className="comments">
 
