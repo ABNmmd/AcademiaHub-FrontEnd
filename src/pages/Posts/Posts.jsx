@@ -4,7 +4,9 @@ import './Posts.css'
 
 function Posts() {
   return (
-    <div>Posts</div>
+    <main>
+        
+    </main>
   )
 }
 
