@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import useLocalStorage from "use-local-storage";
 import ReactDOM from 'react-dom/client'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { UserProvider } from './contexts/UserContext';
 import { PostsProvider } from './contexts/PostsContext';
@@ -22,13 +22,13 @@ import './index.css'
 const App = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
-  
+
   useEffect(() => {
     document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
   }, [isDark]);
 
 
-  
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -45,10 +45,12 @@ const App = () => {
     {
       path: "/categories",
       element: <Categories />,
-    },
-    {
-      path: "/categories/:tag",
-      element: <Categories />,
+      children: [
+        {
+          path: ":tag",
+          element: <Categories />,
+        },
+      ],
     },
     {
       path: "/write",
