@@ -56,6 +56,10 @@ const App = () => {
       path: "/write",
       element: <Write />,
     },
+    {
+      path: "/posts",
+      element: <Posts />,
+    },
   ]);
 
 
