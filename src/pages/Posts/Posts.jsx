@@ -2,6 +2,7 @@ import React from 'react'
 import parse from 'html-react-parser';
 
 import DataBox from '../../components/DataBox/DataBox'
+import PostInteraction from '../../components/PostInteraction/PostInteraction';
 
 import './Posts.css'
 import bg from "../../assets/Image.png"
@@ -22,6 +23,7 @@ function Posts() {
         <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
+                <PostInteraction />
                 <div className="banner">
                     <img src={bg} alt="" />
                 </div>
