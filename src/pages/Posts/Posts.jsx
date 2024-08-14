@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import parse from 'html-react-parser';
 
 import DataBox from '../../components/DataBox/DataBox'
@@ -8,6 +8,8 @@ import './Posts.css'
 import bg from "../../assets/Image.png"
 
 function Posts() {
+    const [showComment, setShowComment] = useState();
+
     const post = {
         authorId: "Jason Francisco",
         title: "The Impact of Technology on the Workplace: How Technology is Changing",
@@ -23,7 +25,7 @@ function Posts() {
         <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
-                <PostInteraction />
+                <PostInteraction showComment={showComment} setShowComment={setShowComment} />
                 <div className="banner">
                     <img src={bg} alt="" />
                 </div>
@@ -31,9 +33,9 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            <section className="comments">
+            {showComment && <section className="comments">
 
-            </section>
+            </section>}
             <section className="related-posts">
 
             </section>

@@ -4,7 +4,7 @@ import { SlLike, SlDislike, SlBubble } from "react-icons/sl";
 
 import './PostInteraction.css'
 
-function PostInteraction() {
+function PostInteraction({ showComment, setShowComment }) {
     return (
         <div>
             <div className="di-like">
@@ -12,7 +12,7 @@ function PostInteraction() {
                 <button onClick={handleDiLike}><SlDislike /></button>
             </div>
             <div className="com">
-                <button onClick={h}><SlBubble /></button>
+                <button onClick={handleCommentClick}><SlBubble /></button>
             </div>
         </div>
     )
