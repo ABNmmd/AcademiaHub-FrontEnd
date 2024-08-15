@@ -4,18 +4,18 @@
     gap: 20px;
 }
 
-.post-container .post-box {
+.post-box {
     border: 1px solid var(--border);
     padding: 1rem;
     border-radius: 8px;
 }
 
-.post-container .post-box .image {
+.post-box .image {
     aspect-ratio: 4 / 3;
     overflow: hidden;
 }
 
-.post-container .post-box .image>img {
+.post-box .image>img {
     object-fit: cover;
     height: 100%;
     border-radius: 6px;

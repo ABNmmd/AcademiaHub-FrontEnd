@@ -66,12 +66,12 @@ function RecPosts({ tags }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToShow: 2,
+        slidesToScroll: 2
     };
 
     return (
-        <div className="slider-container">
+        <section className="related-posts">
             <Slider {...settings}>
                 {
                     p.map((post, index) => (
@@ -84,7 +84,7 @@ function RecPosts({ tags }) {
                     ))
                 }
             </Slider>
-        </div>
+        </section>
     )
 }
 
