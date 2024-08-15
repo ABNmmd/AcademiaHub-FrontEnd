@@ -34,7 +34,7 @@ function Posts() {
                 </article>
             </section>
             {showComment && <section className="comments">
-
+                
             </section>}
             <section className="related-posts">
 
