@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 
 import DataBox from '../../components/DataBox/DataBox'
 import PostInteraction from '../../components/PostInteraction/PostInteraction';
+import Comments from '../../components/Comments/Comments';
 import RecPosts from '../../components/RecPosts/RecPosts';
 
 import './Posts.css'
@@ -34,7 +35,7 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            
+            <Comments />
             <RecPosts tags={post.tags} />
         </main>
     )
