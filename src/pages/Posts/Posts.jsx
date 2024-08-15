@@ -36,7 +36,7 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            <Comments  postId={} />
+            <Comments  postId={post._id} />
             <RecPosts tags={post.tags} />
         </main>
     )
