@@ -1,11 +1,7 @@
 .interactions{
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
     margin-bottom: 1rem !important;
-    background-color: var(--footer-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .interactions .di-like button:first-child{
@@ -14,6 +10,15 @@
 
 .interactions button{
     font-size: 16px;
+    vertical-align: middle;
+    padding: 5px 15px;
+    background-color: var(--footer-bg);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.interactions button span{
+    margin-right: 5px;
 }
 
 .interactions button svg{
