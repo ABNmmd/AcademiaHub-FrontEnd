@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 
 import DataBox from '../../components/DataBox/DataBox'
 import PostInteraction from '../../components/PostInteraction/PostInteraction';
+import RecPosts from '../../components/RecPosts/RecPosts';
 
 import './Posts.css'
 import bg from "../../assets/Image.png"
@@ -37,7 +38,7 @@ function Posts() {
                 
             </section>}
             <section className="related-posts">
-                <RecPsts tags={post.tags} />
+                <RecPosts tags={post.tags} />
             </section>
         </main>
     )
