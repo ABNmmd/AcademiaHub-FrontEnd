@@ -1,4 +1,27 @@
+.slick-slider{
+    margin: 0 2rem;
+}
+
+.slick-slider .slick-next{
+    right: -1.9rem;
+}
+
+.slick-slider .slick-prev{
+    left: -1.9rem;
+}
+
 .slick-active{
     margin: 0 .5rem;
 }
 
+.slick-arrow::before{
+    color: var(--logo);
+}
+
+.slick-dots li button:before{
+    color: var(--logo);
+}
+
+.slick-dots li.slick-active button:before{
+    color: var(--logo);
+}
