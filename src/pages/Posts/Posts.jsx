@@ -34,9 +34,7 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            <section className="comments">
-
-            </section>
+            
             <RecPosts tags={post.tags} />
         </main>
     )
