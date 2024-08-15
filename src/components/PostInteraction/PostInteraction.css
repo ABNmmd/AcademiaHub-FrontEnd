@@ -1,0 +1,13 @@
+.interactions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.interactions:first-child{
+    margin-right: 1rem;
+}
+
+.interactions:first-child{
+    margin-right: 1rem;
+}
