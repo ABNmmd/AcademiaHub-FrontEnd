@@ -37,7 +37,7 @@ function Posts() {
                 
             </section>}
             <section className="related-posts">
-
+                <RecPsts tags={post.tags} />
             </section>
         </main>
     )

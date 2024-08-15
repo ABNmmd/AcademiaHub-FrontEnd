@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 import './RecPosts.css'
 
-function RecPosts() {
+function RecPosts({ tags }) {
     const settings = {
         dots: true,
         infinite: true,
@@ -16,7 +16,7 @@ function RecPosts() {
         <div className="slider-container">
             <Slider {...settings}>
                 {
-                    
+
                 }
             </Slider>
         </div>
