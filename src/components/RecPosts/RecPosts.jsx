@@ -66,8 +66,8 @@ function RecPosts({ tags }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToShow: 2.5,
+        slidesToScroll: 1
     };
 
     return (
