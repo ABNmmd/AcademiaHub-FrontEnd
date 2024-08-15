@@ -1,10 +1,21 @@
 import React from 'react'
+import { PostsContext } from '../../contexts/PostsContext';
 
 import { SlLike, SlDislike, SlBubble } from "react-icons/sl";
 
 import './PostInteraction.css'
 
 function PostInteraction({ showComment, setShowComment }) {
+    const handleLike = () => {
+
+    };
+    const handleDiLike = () => {
+
+    };
+    const handleCommentClick = () => {
+
+    };
+
     return (
         <div>
             <div className="di-like">
