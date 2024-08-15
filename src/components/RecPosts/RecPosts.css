@@ -1,4 +1,4 @@
-.slick-slide:not(:last-child){
-    margin-right: 1rem;
+.slick-active{
+    margin: 0 .5rem;
 }
 
