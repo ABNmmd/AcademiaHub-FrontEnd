@@ -1,13 +1,22 @@
 .interactions{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem !important;
+    background-color: var(--footer-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.interactions:first-child{
+.interactions .di-like button:first-child{
     margin-right: 1rem;
 }
 
-.interactions:first-child{
-    margin-right: 1rem;
+.interactions button{
+    font-size: 16px;
+}
+
+.interactions button svg{
+    vertical-align: middle;
+    color: var(--logo);
 }
