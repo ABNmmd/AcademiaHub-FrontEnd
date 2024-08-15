@@ -13,6 +13,7 @@ function Posts() {
     const [showComment, setShowComment] = useState();
 
     const post = {
+        _id: 11,
         authorId: "Jason Francisco",
         title: "The Impact of Technology on the Workplace: How Technology is Changing",
         content: "<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2><p>Fuga <strong>iusto </strong>autem cum inventore tempore corporis omnis, debitis iure culpa officiis cupiditate accusamus nisi dolor, aut mollitia, distinctio sint aliquam? <u>Culpa</u>.</p><ol><li><span>Lorem ipsum dolor sit amet</span></li><li><span>Fuga iusto autem cum inventore </span></li></ol>",
@@ -35,7 +36,7 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            <Comments />
+            <Comments  postId={} />
             <RecPosts tags={post.tags} />
         </main>
     )
