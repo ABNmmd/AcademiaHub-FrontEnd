@@ -15,7 +15,9 @@ function RecPosts() {
     return (
         <div className="slider-container">
             <Slider {...settings}>
-                
+                {
+                    
+                }
             </Slider>
         </div>
     )
