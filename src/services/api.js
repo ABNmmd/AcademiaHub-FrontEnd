@@ -130,7 +130,9 @@ const createComment = async (commentData) => {
 // API call to get comments
 const getComments = async (postId) => {
     try {
-        
+        const response = await api.get(`/comments/${postId}`);
+        console.log(response.data);
+        return response.data;
     } catch (error) {
         console.error('Error geting the comments ', error);
         throw error;
