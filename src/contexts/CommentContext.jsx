@@ -21,4 +21,13 @@ const PostsProvider = ({ children }) => {
             console.error('Error fetching comments:', error);
         }
     }
+
+    const updateOldComment = async (id, newCommentData) => {
+        try {
+            const updatedComment = await updateComment(id, newPostData);
+            return updatedComment;
+        } catch (error) {
+            console.error('Error updating Comment', error);
+        }
+    }
 }

@@ -45,7 +45,7 @@ const PostsProvider = ({ children }) => {
                 prevPosts.map((post) => (post.id === id ? updatedPost : post))
             );
         } catch (error) {
-            console.error('Error creating post', error);
+            console.error('Error updating post', error);
         }
     }
 
