@@ -120,7 +120,8 @@ const createComment = async (commentData) => {
     try {
         
     } catch (error) {
-        
+        console.error('Error creating a comment ', error);
+        throw error;
     }
 }
 
