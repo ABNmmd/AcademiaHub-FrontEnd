@@ -5,7 +5,7 @@ import './Comments.css'
 function Comments({ postId }) {
     return (
         <section className="comments">
-
+            
         </section>
     )
 }
