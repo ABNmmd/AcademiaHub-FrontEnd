@@ -4,10 +4,8 @@ import { createComment, getComments, updateComment, deleteComment } from '../ser
 const PostsContext = createContext();
 
 const PostsProvider = ({ children }) => {
-    const [comments, setComments] = useState([]);
-
     const createNewComment = async (commentData) => {
         const newComment = await createComment(commentData);
-        
+
     }
 }
