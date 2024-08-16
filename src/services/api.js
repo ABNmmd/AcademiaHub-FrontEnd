@@ -176,4 +176,5 @@ export {
     createComment,
     getComments,
     updateComment,
+    deleteComment,
 }
