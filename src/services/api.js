@@ -139,6 +139,11 @@ const getComments = async (postId) => {
     }
 }
 
+// API call to update comment
+const updateComment = async (id) => {
+    
+}
+
 export {
     register,
     login,
