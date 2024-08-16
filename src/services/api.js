@@ -118,7 +118,9 @@ const deletePost = async (id) => {
 // API call to creat a comment
 const createComment = async (commentData) => {
     try {
-        
+        const response = await api.post('/comments/', commentData);
+        console.log("from api: ",response.data);
+        return response.data;
     } catch (error) {
         console.error('Error creating a comment ', error);
         throw error;
