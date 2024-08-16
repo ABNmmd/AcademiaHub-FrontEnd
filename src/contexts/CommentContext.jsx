@@ -24,10 +24,18 @@ const PostsProvider = ({ children }) => {
 
     const updateOldComment = async (id, newCommentData) => {
         try {
-            const updatedComment = await updateComment(id, newPostData);
+            const updatedComment = await updateComment(id, newCommentData);
             return updatedComment;
         } catch (error) {
             console.error('Error updating Comment', error);
+        }
+    }
+
+    const deleteExistingComment = async (id) => {
+        try {
+            await deleteComment(id);
+        } catch (error) {
+            console.error('Error deleting post', error);
         }
     }
 }
