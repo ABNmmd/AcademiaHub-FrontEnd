@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 import { createComment, getComments, updateComment, deleteComment } from '../services/api';
 
 const CommentsContext = createContext();
@@ -40,9 +40,9 @@ const CommentsProvider = ({ children }) => {
     }
 
     return (
-        <PostsContext.Provider value={{ createNewComment, getAllComments, updateOldComment, deleteExistingComment }}>
+        <CommentsContext.Provider value={{ createNewComment, getAllComments, updateOldComment, deleteExistingComment }}>
             {children}
-        </PostsContext.Provider>
+        </CommentsContext.Provider>
     );
 }
 
