@@ -5,7 +5,11 @@ const PostsContext = createContext();
 
 const PostsProvider = ({ children }) => {
     const createNewComment = async (commentData) => {
-        const newComment = await createComment(commentData);
-
+        try {
+            const newComment = await createComment(commentData);
+            return newComment;
+        } catch (error) {
+            console.error('Error creating comment', error)
+        }
     }
 }
