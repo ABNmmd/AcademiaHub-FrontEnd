@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react';
 import { createComment, getComments, updateComment, deleteComment } from '../services/api';
 
-const PostsContext = createContext();
+const CommentsContext = createContext();
 
-const PostsProvider = ({ children }) => {
+const CommentsProvider = ({ children }) => {
     const createNewComment = async (commentData) => {
         try {
             const newComment = await createComment(commentData);
@@ -38,4 +38,12 @@ const PostsProvider = ({ children }) => {
             console.error('Error deleting post', error);
         }
     }
+
+    return (
+        <PostsContext.Provider value={{ createNewComment, getAllComments, updateOldComment, deleteExistingComment }}>
+            {children}
+        </PostsContext.Provider>
+    );
 }
+
+export { CommentsContext, CommentsProvider };
