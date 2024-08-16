@@ -26,6 +26,7 @@ function Comments({ postId, showComment }) {
                                 <span>Jhon Doe</span>
                             </div>
                             <div className="cont">
+                                <span className='time'></span>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             </div>
                             <div className="inter"></div>
