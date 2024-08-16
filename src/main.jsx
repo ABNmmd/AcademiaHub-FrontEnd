@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { UserProvider } from './contexts/UserContext';
 import { PostsProvider } from './contexts/PostsContext';
+import { CommentsProvider } from './contexts/CommentContext.jsx';
 
 import Home from './pages/Home/Home.jsx'
 import Register from './pages/Register/Register.jsx'
