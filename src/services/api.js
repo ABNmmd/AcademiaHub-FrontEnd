@@ -132,7 +132,8 @@ const getComments = async (postId) => {
     try {
         
     } catch (error) {
-        
+        console.error('Error geting the comments ', error);
+        throw error;
     }
 }
 
