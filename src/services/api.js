@@ -127,6 +127,15 @@ const createComment = async (commentData) => {
     }
 }
 
+// API call to get comments
+const getComments = async (postId) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
 export {
     register,
     login,
@@ -137,4 +146,5 @@ export {
     getPostById,
     updatePost,
     deletePost,
+    createComment,
 }
