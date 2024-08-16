@@ -117,7 +117,11 @@ const deletePost = async (id) => {
 
 // API call to creat a comment
 const createComment = async (commentData) => {
-    
+    try {
+        
+    } catch (error) {
+        
+    }
 }
 
 export {
