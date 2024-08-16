@@ -6,5 +6,7 @@ const PostsContext = createContext();
 const PostsProvider = ({ children }) => {
     const [comments, setComments] = useState([]);
 
-    
+    const createNewComment = async (commentData) => {
+        
+    }
 }
