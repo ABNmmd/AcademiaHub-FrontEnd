@@ -152,6 +152,9 @@ const updateComment = async (id, newCommentData) => {
 }
 
 // API call to delete comment
+const deleteComment = async (id) => {
+    
+}
 
 export {
     register,
