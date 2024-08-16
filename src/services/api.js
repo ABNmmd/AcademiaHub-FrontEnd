@@ -141,7 +141,12 @@ const getComments = async (postId) => {
 
 // API call to update comment
 const updateComment = async (id) => {
-    
+    try {
+        
+    } catch (error) {
+        console.error('Error updating the comments ', error);
+        throw error;
+    }
 }
 
 export {
