@@ -68,11 +68,13 @@ const App = () => {
   return (
     <UserProvider>
       <PostsProvider>
-        <div className='page-container'>
-          <Header isDark={isDark} setIsDark={setIsDark} />
-          <RouterProvider router={router} />
-          <Footer />
-        </div>
+        <CommentsProvider>
+          <div className='page-container'>
+            <Header isDark={isDark} setIsDark={setIsDark} />
+            <RouterProvider router={router} />
+            <Footer />
+          </div>
+        </CommentsProvider>
       </PostsProvider>
     </UserProvider>
   );
