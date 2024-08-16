@@ -57,7 +57,7 @@ const checkAuthStatus = async () => {
 const createPost = async (postData) => {
     try {
         const response = await api.post('/posts/', postData);
-        console.log("from api: ",response.data);
+        console.log("from api: ", response.data);
         return response.data;
     } catch (error) {
         console.error('Error crating the post ', error);
@@ -119,7 +119,7 @@ const deletePost = async (id) => {
 const createComment = async (commentData) => {
     try {
         const response = await api.post('/comments/', commentData);
-        console.log("from api: ",response.data);
+        console.log("from api: ", response.data);
         return response.data;
     } catch (error) {
         console.error('Error creating a comment ', error);
