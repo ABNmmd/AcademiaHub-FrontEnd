@@ -11,10 +11,13 @@ function Comments({ postId, showComment }) {
                 <div className="comment-edit-box">
                     <div className="user">
                         <img src="" alt="" />
-                        <span>Jhon Doe</span>
                     </div>
                     <div className="cont">
+                        <span>Jhon Doe</span>
                         <input type="text" />
+                    </div>
+                    <div className="send-btn">
+                        <button type="submit"></button>
                     </div>
                 </div>
                 {
@@ -23,13 +26,12 @@ function Comments({ postId, showComment }) {
                         <div className="comment-box" key={index}>
                             <div className="user">
                                 <img src="" alt="" />
-                                <span>Jhon Doe</span>
                             </div>
                             <div className="cont">
-                                <span className='time'></span>
+                                <span>Jhon Doe</span><span className='time'>2 days ago</span>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div className="inter"></div>
                             </div>
-                            <div className="inter"></div>
                         </div>
                     ))
                 }
