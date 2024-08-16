@@ -12,4 +12,13 @@ const PostsProvider = ({ children }) => {
             console.error('Error creating comment', error)
         }
     }
+
+    const getAllComments = async (postId) => {
+        try {
+            const comments = await getComments(postId);
+            return comments;
+        } catch (error) {
+            console.error('Error fetching comments:', error);
+        }
+    }
 }
