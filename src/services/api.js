@@ -162,4 +162,6 @@ export {
     updatePost,
     deletePost,
     createComment,
+    getComments,
+    updateComment,
 }
