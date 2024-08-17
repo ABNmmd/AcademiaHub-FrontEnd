@@ -24,10 +24,10 @@ function Comments({ postId, showComment }) {
                         </div>
                         <div className="cont">
                             <textarea type="text" placeholder='Add a comment' onInput={handleResize} />
-                            <div className="i-con">
+                            {<div className="i-con">
                                 <button type="reset">cancel</button>
                                 <button type="submit">send</button>
-                            </div>
+                            </div>}
                         </div>
                         <div className="send-btn">
                             <button type="submit"></button>
