@@ -22,8 +22,6 @@
 
 .comments-container .body .comment-edit-box .cont{
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .comments-container .body .comment-edit-box .cont span{
@@ -37,9 +35,11 @@
 .comments-container .body .comment-edit-box .cont input{
     width: 100%;
     color: var(--nav);
+    background-color: var(--footer-bg);
     white-space: nowrap;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
     border: none;
-    border-bottom: 1px solid var(--nav);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
 }

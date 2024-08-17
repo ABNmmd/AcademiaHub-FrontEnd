@@ -19,7 +19,11 @@ function Comments({ postId, showComment }) {
                         </div>
                         <div className="cont">
                             <span>Jhon Doe</span>
-                            <input type="text" placeholder='Add a comment' />
+                            <div className="i-con">
+                                <input type="text" placeholder='Add a comment' />
+                                <button type="reset"></button>
+                                <button type="submit"></button>
+                            </div>
                         </div>
                         <div className="send-btn">
                             <button type="submit"></button>
