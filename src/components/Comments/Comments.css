@@ -59,11 +59,11 @@
 
 .comments-container .body .comment-edit-box .cont .i-con button:first-child{
     margin-right: .5rem;
-    color: var(--headlines);
+    color: var(--info);
 }
 
 .comments-container .body .comment-edit-box .cont .i-con button.active:first-child{
-    color: var(--nav);
+    color: var(--headlines);
 }
 
 .comments-container .body .comment-edit-box .cont .i-con button:last-child{
