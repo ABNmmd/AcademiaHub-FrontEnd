@@ -1,12 +1,26 @@
 .comments .comments-container{
     background-color: var(--footer-bg);
     padding: 1rem;
+    border-radius: 6px;
 }
 
 .comments .comments-container .head h3{
     color: var(--headlines);
 }
 
-.comments .comments-container .body{
-    
+.comments-container .body .comment-edit-box{
+    display: flex;
+    gap: 1rem;
+}
+
+.comments-container .body .comment-edit-box .user img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comments-container .body .comment-edit-box .cont{
+    display: flex;
+    flex-direction: column;
 }
