@@ -1,0 +1,12 @@
+.comments .comments-container{
+    background-color: var(--footer-bg);
+    padding: 1rem;
+}
+
+.comments .comments-container .head h3{
+    color: var(--headlines);
+}
+
+.comments .comments-container .body{
+    
+}
