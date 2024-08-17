@@ -54,10 +54,16 @@
 
 .comments-container .body .comment-edit-box .cont .i-con button{
     color: 14px;
-    padding: 4px;
+    padding: 4px 8px;
 }
 
 .comments-container .body .comment-edit-box .cont .i-con button:first-child{
     margin-right: 1rem;
     color: var(--nav);
+}
+
+.comments-container .body .comment-edit-box .cont .i-con button:last-child{
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 4px;
 }
