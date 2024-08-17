@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Comments.css'
 import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
+    const [activeBtn, setActiveBtn] = useState(false);
     const comments = [];
 
     const handleResize = (event) => {
@@ -23,8 +24,8 @@ function Comments({ postId, showComment }) {
                             <img src={prf} alt="" />
                         </div>
                         <div className="cont">
-                            <textarea type="text" placeholder='Add a comment' onInput={handleResize} />
-                            {<div className="i-con">
+                            <textarea type="text" placeholder='Add a comment' onFocus={()=>setActiveBtn(true)} onBlur={()=>setActiveBtn(false)} onInput={handleResize} />
+                            {<div className={`i-con ${activeBtn? active : null}`}>
                                 <button type="reset">Cancel</button>
                                 <button type="submit">Send</button>
                             </div>}

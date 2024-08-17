@@ -62,7 +62,7 @@
     color: var(--info);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button.active:first-child{
+.comments-container .body .comment-edit-box .cont .active button:first-child{
     color: var(--headlines);
 }
 
@@ -72,7 +72,7 @@
     border-radius: 4px;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button.active:last-child{
+.comments-container .body .comment-edit-box .cont .active button:last-child{
     background-color: var(--primary);
     color: #fff;
 }
