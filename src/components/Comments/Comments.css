@@ -59,17 +59,20 @@
 
 .comments-container .body .comment-edit-box .cont .i-con button:first-child{
     margin-right: .5rem;
+    color: var(--headlines);
+}
+
+.comments-container .body .comment-edit-box .cont .i-con button.active:first-child{
     color: var(--nav);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button.active:last-child{
-    background-color: var(--primary);
-    color: #fff;
+.comments-container .body .comment-edit-box .cont .i-con button:last-child{
+    background-color: var(--border);
+    color: var(--headlines);
     border-radius: 4px;
 }
 
 .comments-container .body .comment-edit-box .cont .i-con button.active:last-child{
     background-color: var(--primary);
     color: #fff;
-    border-radius: 4px;
 }
