@@ -6,6 +6,11 @@ import prf from '../../assets/download.png'
 function Comments({ postId, showComment }) {
     const comments = [];
 
+    const handleResize = (event) => {
+        event.target.style.height = 'auto'; // Reset height
+        event.target.style.height = event.target.scrollHeight + 'px'; // Set height to match scroll height
+    };
+
     return (
         <section className="comments">
             <div className="comments-container">
@@ -18,9 +23,9 @@ function Comments({ postId, showComment }) {
                             <img src={prf} alt="" />
                         </div>
                         <div className="cont">
-                            <textarea type="text" placeholder='Add a comment' rows="1" />
+                            <textarea type="text" placeholder='Add a comment' onInput={handleResize} />
                             <div className="i-con">
-                                <button type="reset"></button>
+                                <button type="reset">cancel</button>
                                 <button type="submit"></button>
                             </div>
                         </div>
