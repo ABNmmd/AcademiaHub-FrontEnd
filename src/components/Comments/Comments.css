@@ -62,7 +62,13 @@
     color: var(--nav);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button:last-child{
+.comments-container .body .comment-edit-box .cont .i-con button.active:last-child{
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.comments-container .body .comment-edit-box .cont .i-con button.active:last-child{
     background-color: var(--primary);
     color: #fff;
     border-radius: 4px;
