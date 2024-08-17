@@ -7,8 +7,8 @@ function Comments({ postId, showComment }) {
     const comments = [];
 
     const handleResize = (event) => {
-        event.target.style.height = 'auto'; // Reset height
-        event.target.style.height = event.target.scrollHeight + 'px'; // Set height to match scroll height
+        event.target.style.height = 'auto';
+        event.target.style.height = event.target.scrollHeight + 'px';
     };
 
     return (
