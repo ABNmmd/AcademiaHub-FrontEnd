@@ -45,5 +45,9 @@
     overflow: hidden;
     border-radius: 4px;
     line-height: 1.2em;
-    height: 1.2em; /
+    height: 1.2em;
+}
+
+.comments-container .body .comment-edit-box .cont .i-con {
+    
 }
