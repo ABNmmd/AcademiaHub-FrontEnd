@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Comments.css'
+import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
     const comments = [];
@@ -10,7 +11,7 @@ function Comments({ postId, showComment }) {
             <div className="comments-container">
                 <div className="comment-edit-box">
                     <div className="user">
-                        <img src="" alt="" />
+                        <img src={prf} alt="" />
                     </div>
                     <div className="cont">
                         <span>Jhon Doe</span>
