@@ -48,6 +48,6 @@
     height: 1.2em;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con {
-    
+.comments-container .body .comment-edit-box .cont .i-con{
+    text-align: end;
 }
