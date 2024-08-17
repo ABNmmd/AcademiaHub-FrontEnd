@@ -44,4 +44,6 @@
     resize: none;
     overflow: hidden;
     border-radius: 4px;
+    min-height: 1.5em;
+    line-height: 1.5;
 }
