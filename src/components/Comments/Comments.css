@@ -26,5 +26,9 @@
 }
 
 .comments-container .body .comment-edit-box .cont span{
-    
+    color: var(--nav);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8rem;
 }
