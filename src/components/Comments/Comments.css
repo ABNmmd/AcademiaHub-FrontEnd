@@ -51,3 +51,7 @@
 .comments-container .body .comment-edit-box .cont .i-con{
     text-align: end;
 }
+
+.comments-container .body .comment-edit-box .cont .i-con button:first-child{
+    margin-right: 1rem;
+}
