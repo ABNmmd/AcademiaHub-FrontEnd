@@ -1,30 +1,30 @@
-.comments .comments-container{
+.comments .comments-container {
     background-color: var(--footer-bg);
     padding: 1rem;
     border-radius: 6px;
 }
 
-.comments .comments-container .head h3{
+.comments .comments-container .head h3 {
     color: var(--headlines);
 }
 
-.comments-container .body .comment-edit-box{
+.comments-container .body .comment-edit-box {
     display: flex;
     gap: 1rem;
 }
 
-.comments-container .body .comment-edit-box .user img{
-    width: 2.5rem;
-    height: 2.5rem;
+.comments-container .body .user img {
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.comments-container .body .comment-edit-box .cont{
+.comments-container .body .comment-edit-box .cont {
     flex: 1;
 }
 
-.comments-container .body .comment-edit-box .cont span{
+.comments-container .body .comment-edit-box .cont span {
     color: var(--nav);
     white-space: nowrap;
     font-size: 16px;
@@ -32,14 +32,14 @@
     line-height: 1.8rem;
 }
 
-.comments-container .body .comment-edit-box .cont input{
+.comments-container .body .comment-edit-box .cont textarea {
     width: 100%;
     color: var(--nav);
     background-color: var(--footer-bg);
-    white-space: nowrap;
     font-size: 14px;
     outline: none;
     border: none;
     border-bottom: 1px solid var(--border);
     padding-bottom: 2px;
+    resize: none;
 }

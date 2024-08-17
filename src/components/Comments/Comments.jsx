@@ -18,9 +18,8 @@ function Comments({ postId, showComment }) {
                             <img src={prf} alt="" />
                         </div>
                         <div className="cont">
-                            <span>Jhon Doe</span>
+                            <textarea type="text" placeholder='Add a comment' rows="1" />
                             <div className="i-con">
-                                <input type="text" placeholder='Add a comment' />
                                 <button type="reset"></button>
                                 <button type="submit"></button>
                             </div>
