@@ -52,6 +52,12 @@
     text-align: end;
 }
 
+.comments-container .body .comment-edit-box .cont .i-con button{
+    color: 14px;
+    padding: 4px;
+}
+
 .comments-container .body .comment-edit-box .cont .i-con button:first-child{
     margin-right: 1rem;
+    color: var(--nav);
 }
