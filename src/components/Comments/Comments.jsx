@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import './Comments.css'
 import prf from '../../assets/download.png'
@@ -8,6 +8,18 @@ function Comments({ postId, showComment }) {
     const textareaRef = useRef(null);
     const comments = [];
 
+    const handleInputChange = () => {
+        if (textareaRef.current.value) {
+            setActiveBtn(true);
+        } else {
+            setActiveBtn(false);
+        }
+    };
+
+    const handleCancel = () => {
+        textareaRef.current.value = '';
+        setActiveBtn(false);
+    };
 
     const handleResize = (event) => {
         event.target.style.height = 'auto';
@@ -26,9 +38,9 @@ function Comments({ postId, showComment }) {
                             <img src={prf} alt="" />
                         </div>
                         <div className="cont">
-                            <textarea type="text" placeholder='Add a comment' onInput={handleResize} />
-                            {<div className={`i-con ${activeBtn? 'active' : null}`}>
-                                <button type="reset">Cancel</button>
+                            <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
+                            {<div className={`i-con ${activeBtn ? 'active' : null}`}>
+                                <button type="reset" onClick={handleCancel}>Cancel</button>
                                 <button type="submit">Send</button>
                             </div>}
                         </div>
