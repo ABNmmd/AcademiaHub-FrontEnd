@@ -47,7 +47,7 @@ function Comments({ postId, showComment }) {
         <section className="comments">
             <div className="comments-container">
                 <div className="head">
-                    <h3>1033 comments</h3>
+                    <h3>{comments.length} comments</h3>
                 </div>
                 <div className='body'>
                     <div className="comment-edit-box">
