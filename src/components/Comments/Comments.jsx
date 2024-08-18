@@ -35,6 +35,20 @@ function Comments({ postId, showComment }) {
             dislikes: [1, 2, 5, 6, 8, 7],
             createdAt: '12/10/2024'
         },
+        {
+            authorId: 'Jhon Doe3',
+            content: 'Great.. ^_^',
+            likes: [1, 2, 1],
+            dislikes: [1, 2, 5, 6, 8, 7],
+            createdAt: '12/10/2024'
+        },
+        {
+            authorId: 'Jhon Doe3',
+            content: 'Great.. ^_^',
+            likes: [1, 2, 1],
+            dislikes: [1, 2, 5, 6, 8, 7],
+            createdAt: '12/10/2024'
+        },
     ];
 
     const [activeBtn, setActiveBtn] = useState(false);
@@ -66,9 +80,9 @@ function Comments({ postId, showComment }) {
         setCurrentPage(currentPage + 1);
     };
     const handleShowLess = () => {
-        setCurrentPage(currentPage - 1);
+        setCurrentPage(1);
     };
-    
+
     useEffect(() => {
         const newComments = comments.slice(0, currentPage * commentsPerPage);
         setCurrentComments(newComments);
