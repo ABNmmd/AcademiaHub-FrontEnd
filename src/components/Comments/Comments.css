@@ -8,6 +8,7 @@
     color: var(--headlines);
 }
 
+.comments-container .body .comment-box,
 .comments-container .body .comment-edit-box {
     display: flex;
     gap: 1rem;
