@@ -8,50 +8,62 @@ import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
-    const comments = [
-        {
-            authorId: 'Jhon Doe2',
-            content: 'very good',
-            likes: [1, 2, 3, 1],
-            dislikes: [1, 2],
-            createdAt: '12/10/2024'
-        },
-        {
-            authorId: 'Jhon Doe3',
-            content: 'Great.. ^_^',
-            likes: [1, 2, 1],
-            dislikes: [1, 2, 5, 6, 8, 7],
-            createdAt: '12/10/2024'
-        },
-        {
-            authorId: 'Jhon Doe3',
-            content: 'Great.. ^_^',
-            likes: [1, 2, 1],
-            dislikes: [1, 2, 5, 6, 8, 7],
-            createdAt: '12/10/2024'
-        },
-        {
-            authorId: 'Jhon Doe3',
-            content: 'Great.. ^_^',
-            likes: [1, 2, 1],
-            dislikes: [1, 2, 5, 6, 8, 7],
-            createdAt: '12/10/2024'
-        },
-        {
-            authorId: 'Jhon Doe3',
-            content: 'Great.. ^_^',
-            likes: [1, 2, 1],
-            dislikes: [1, 2, 5, 6, 8, 7],
-            createdAt: '12/10/2024'
-        },
-        {
-            authorId: 'Jhon Doe3',
-            content: 'Great.. ^_^',
-            likes: [1, 2, 1],
-            dislikes: [1, 2, 5, 6, 8, 7],
-            createdAt: '12/10/2024'
-        },
-    ];
+    // const commentsFake = [
+    //     {
+    //         authorId: 'Jhon Doe2',
+    //         content: 'very good',
+    //         likes: [1, 2, 3, 1],
+    //         dislikes: [1, 2],
+    //         createdAt: '12/10/2024'
+    //     },
+    //     {
+    //         authorId: 'Jhon Doe3',
+    //         content: 'Great.. ^_^',
+    //         likes: [1, 2, 1],
+    //         dislikes: [1, 2, 5, 6, 8, 7],
+    //         createdAt: '12/10/2024'
+    //     },
+    //     {
+    //         authorId: 'Jhon Doe3',
+    //         content: 'Great.. ^_^',
+    //         likes: [1, 2, 1],
+    //         dislikes: [1, 2, 5, 6, 8, 7],
+    //         createdAt: '12/10/2024'
+    //     },
+    //     {
+    //         authorId: 'Jhon Doe3',
+    //         content: 'Great.. ^_^',
+    //         likes: [1, 2, 1],
+    //         dislikes: [1, 2, 5, 6, 8, 7],
+    //         createdAt: '12/10/2024'
+    //     },
+    //     {
+    //         authorId: 'Jhon Doe3',
+    //         content: 'Great.. ^_^',
+    //         likes: [1, 2, 1],
+    //         dislikes: [1, 2, 5, 6, 8, 7],
+    //         createdAt: '12/10/2024'
+    //     },
+    //     {
+    //         authorId: 'Jhon Doe3',
+    //         content: 'Great.. ^_^',
+    //         likes: [1, 2, 1],
+    //         dislikes: [1, 2, 5, 6, 8, 7],
+    //         createdAt: '12/10/2024'
+    //     },
+    // ];
+    const [comments, setComments] = useState([]);
+    useEffect(() => {
+        const getCom = async (postId) => {
+            try {
+                const commentsData = await getAllComments(postId);
+                setComments(commentsData);
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        }
+        getCom(postId);
+    }, []);
 
     const [activeBtn, setActiveBtn] = useState(false);
     const textareaRef = useRef(null);
@@ -77,7 +89,7 @@ function Comments({ postId, showComment }) {
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 2;
     const [currentComments, setCurrentComments] = useState([]);
-    
+
     const handleShowMore = () => {
         setCurrentPage(currentPage + 1);
     };
@@ -88,7 +100,7 @@ function Comments({ postId, showComment }) {
     useEffect(() => {
         const newComments = comments.slice(0, currentPage * commentsPerPage);
         setCurrentComments(newComments);
-    }, [currentPage]);
+    }, [currentPage, comments]);
 
 
     return (
