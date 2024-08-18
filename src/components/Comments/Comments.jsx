@@ -6,7 +6,22 @@ import prf from '../../assets/download.png'
 function Comments({ postId, showComment }) {
     const [activeBtn, setActiveBtn] = useState(false);
     const textareaRef = useRef(null);
-    const comments = [];
+    const comments = [
+        {
+            authorId: 'Jhon Doe2',
+            content: 'very good',
+            likes: [1, 2, 3, 1],
+            dislikes: [1, 2],
+            createdAt: '12/10/2024'
+        },
+        {
+            authorId: 'Jhon Doe3',
+            content: 'Great.. ^_^',
+            likes: [1, 2, 3, 1],
+            dislikes: [1, 2, 5, 6, 8, 7],
+            createdAt: '12/10/2024'
+        }
+    ];
 
     const handleInputChange = () => {
         if (textareaRef.current.value) {
