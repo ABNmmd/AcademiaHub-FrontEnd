@@ -39,7 +39,7 @@ function Comments({ postId, showComment }) {
 
     const [activeBtn, setActiveBtn] = useState(false);
     const textareaRef = useRef(null);
-    
+
     const handleInputChange = () => {
         if (textareaRef.current.value) {
             setActiveBtn(true);
@@ -59,16 +59,20 @@ function Comments({ postId, showComment }) {
     };
 
     const [currentPage, setCurrentPage] = useState(1);
-    const postsPerPage = 2;
-    const handleLoadMore = () => {
+    const commentsPerPage = 2;
+    const [currentComments, setCurrentComments] = useState([]);
+    
+    const handleShowMore = () => {
         setCurrentPage(currentPage + 1);
     };
-    const [currentPosts, setCurrentPosts] = useState([]);
-
+    const handleShowLess = () => {
+        setCurrentPage(currentPage - 1);
+    };
+    
     useEffect(() => {
-        const newPosts = filteredPosts.slice(0, currentPage * postsPerPage);
-        setCurrentPosts(newPosts);
-    }, [filteredPosts, currentPage]);
+        const newComments = comments.slice(0, currentPage * commentsPerPage);
+        setCurrentComments(newComments);
+    }, [currentPage]);
 
 
     return (
@@ -92,7 +96,7 @@ function Comments({ postId, showComment }) {
                     </div>
                     {comments.length > 0 ?
                         <>
-                            {comments.map((com, index) => (
+                            {currentComments.map((com, index) => (
                                 <div className="comment-box" key={index}>
                                     <div className="user">
                                         <img src={prf} alt="" />
@@ -108,7 +112,10 @@ function Comments({ postId, showComment }) {
                                     </div>
                                 </div>
                             ))}
-                            <div className="mor"><button> Show More...</button></div>
+                            {currentComments.length < comments.length
+                                ? <div className="mor" onClick={handleShowMore}><button> Show More...</button></div>
+                                : <div className="mor" onClick={handleShowLess}><button> Show Less...</button></div>
+                            }
                         </>
                         :
                         (<p>No comments...</p>)
