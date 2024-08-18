@@ -109,7 +109,7 @@ function Comments({ postId, showComment }) {
     };
 
     useEffect(() => {
-        const newComments = comments.slice(0, currentPage * commentsPerPage);
+        const newComments = comments ? comments.slice(0, currentPage * commentsPerPage) : [];
         setCurrentComments(newComments);
     }, [currentPage, comments]);
 
@@ -118,7 +118,7 @@ function Comments({ postId, showComment }) {
         <section className="comments">
             <div className="comments-container">
                 <div className="head">
-                    <h3>{comments.length} comments</h3>
+                    <h3>{comments && comments.length || 0} comments</h3>
                 </div>
                 <div className='body'>
                     <div className="comment-edit-box">
@@ -128,13 +128,15 @@ function Comments({ postId, showComment }) {
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
                             {<div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                <button type="reset" onClick={handleCancel}>Cancel</button>
-                                <button type="submit">Send</button>
+                                {error && <p style={{color: 'red', fontSize: '13px',}}>This is error {error}</p>}
+                                <div>
+                                    <button type="reset" onClick={handleCancel}>Cancel</button>
+                                    <button type="submit">Send</button>
+                                </div>
                             </div>}
-                            {error && <p style={{color: 'red', fontSize: '13px',}}>{error}</p>}
                         </div>
                     </div>
-                    {comments.length > 0 ?
+                    {comments && comments.length > 0 ?
                         <>
                             {currentComments.map((com, index) => (
                                 <div className="comment-box" key={index}>

@@ -47,11 +47,17 @@
 }
 
 .comments-container .body .comment-edit-box .cont .i-con{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments-container .body .comment-edit-box .cont .i-con > div{
+    flex: 1;
     text-align: end;
 }
 
 .comments-container .body .comment-edit-box .cont .i-con button{
-    color: 14px;
+    font-size: 14px;
     padding: 4px 8px;
 }
 
