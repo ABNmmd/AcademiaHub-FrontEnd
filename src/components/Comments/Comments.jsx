@@ -80,7 +80,7 @@ function Comments({ postId, showComment }) {
                                     </div>
                                 </div>
                             ))}
-                            <div className="mor"><button> show more</button></div>
+                            <div className="mor"><button> Show More...</button></div>
                         </>
                         :
                         (<p>No comments...</p>)

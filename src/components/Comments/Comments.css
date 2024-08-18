@@ -6,6 +6,7 @@
 
 .comments .comments-container .head h3 {
     color: var(--headlines);
+    margin-bottom: 1.5rem;
 }
 
 .comments-container .body .comment-box,
@@ -122,6 +123,14 @@
     text-align: center;
 }
 
+.comments-container .body .mor button {
+    color: var(--nav);
+    font-size: 14px;
+}
+
+.comments-container .body .mor button:hover {
+    color: var(--headlines);
+}
 
 .comments-container .body > p {
     color: var(--headlines);
