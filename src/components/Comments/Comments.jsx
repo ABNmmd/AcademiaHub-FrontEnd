@@ -53,6 +53,7 @@ function Comments({ postId, showComment }) {
     //     },
     // ];
     const [comments, setComments] = useState([]);
+    const [error, setError] = useState(null);
     useEffect(() => {
         const getCom = async (postId) => {
             try {
@@ -84,6 +85,16 @@ function Comments({ postId, showComment }) {
     const handleResize = (event) => {
         event.target.style.height = 'auto';
         event.target.style.height = event.target.scrollHeight + 'px';
+    };
+
+    const handleCommentSub = async () => {
+        const content = textareaRef.current.value;
+        try {
+            const newCom = await createNewComment({ content, postId });
+            setComments(comments.push(newCom));
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -120,6 +131,7 @@ function Comments({ postId, showComment }) {
                                 <button type="reset" onClick={handleCancel}>Cancel</button>
                                 <button type="submit">Send</button>
                             </div>}
+                            {error && <p style={{color: 'red', fontSize: '13px',}}>{error}</p>}
                         </div>
                     </div>
                     {comments.length > 0 ?
