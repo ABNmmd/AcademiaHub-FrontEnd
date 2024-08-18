@@ -6,8 +6,6 @@ import { MdMoreVert } from "react-icons/md";
 import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
-    const [activeBtn, setActiveBtn] = useState(false);
-    const textareaRef = useRef(null);
     const comments = [
         {
             authorId: 'Jhon Doe2',
@@ -39,6 +37,9 @@ function Comments({ postId, showComment }) {
         },
     ];
 
+    const [activeBtn, setActiveBtn] = useState(false);
+    const textareaRef = useRef(null);
+    
     const handleInputChange = () => {
         if (textareaRef.current.value) {
             setActiveBtn(true);
@@ -56,6 +57,19 @@ function Comments({ postId, showComment }) {
         event.target.style.height = 'auto';
         event.target.style.height = event.target.scrollHeight + 'px';
     };
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const postsPerPage = 2;
+    const handleLoadMore = () => {
+        setCurrentPage(currentPage + 1);
+    };
+    const [currentPosts, setCurrentPosts] = useState([]);
+
+    useEffect(() => {
+        const newPosts = filteredPosts.slice(0, currentPage * postsPerPage);
+        setCurrentPosts(newPosts);
+    }, [filteredPosts, currentPage]);
+
 
     return (
         <section className="comments">
