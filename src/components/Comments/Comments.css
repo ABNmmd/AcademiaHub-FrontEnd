@@ -96,9 +96,9 @@
 .comments-container .body .comment-box .cont p {
     color: var(--footer-p);
     font-size: 14px;
-    margin-top: 4px;
+    margin: 4px 0;
 }
 
-.comments-container .body .comment-box .cont .inter {
-    
+.comments-container .body .comment-box .cont .inter button:not(:last-child) {
+    margin-right: 4px;
 }

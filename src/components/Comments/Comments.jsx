@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import './Comments.css'
 import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
+import { MdMoreVert } from "react-icons/md";
 import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
@@ -73,7 +74,7 @@ function Comments({ postId, showComment }) {
                                     <div className="inter">
                                         <button><BiSolidLike /> {com.likes.length}</button>
                                         <button><BiSolidDislike /> {com.dislikes.length}</button>
-                                        <button></button>
+                                        {<button><MdMoreVert /></button>}
                                     </div>
                                 </div>
                             </div>
