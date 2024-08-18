@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import './Comments.css'
+import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
 import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
@@ -17,7 +18,7 @@ function Comments({ postId, showComment }) {
         {
             authorId: 'Jhon Doe3',
             content: 'Great.. ^_^',
-            likes: [1, 2, 3, 1],
+            likes: [1, 2, 1],
             dislikes: [1, 2, 5, 6, 8, 7],
             createdAt: '12/10/2024'
         }
@@ -70,8 +71,8 @@ function Comments({ postId, showComment }) {
                                     <span>Jhon Doe</span><span className='time'>2 days ago</span>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                     <div className="inter">
-                                        <button></button>
-                                        <button></button>
+                                        <button><BiSolidLike /> {com.likes.length}</button>
+                                        <button><BiSolidDislike /> {com.dislikes.length}</button>
                                         <button></button>
                                     </div>
                                 </div>
