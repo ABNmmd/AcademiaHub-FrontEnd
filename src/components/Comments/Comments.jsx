@@ -91,6 +91,7 @@ function Comments({ postId, showComment }) {
         const content = textareaRef.current.value;
         try {
             const newCom = await createNewComment({ content, postId });
+            handleCancel();
             setComments(comments.push(newCom));
         } catch (error) {
             setError(error.message);
@@ -128,10 +129,10 @@ function Comments({ postId, showComment }) {
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
                             {<div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                {error && <p style={{color: 'red', fontSize: '13px',}}>This is error {error}</p>}
+                                {error && <p style={{color: 'red', fontSize: '13px',}}>{error}</p>}
                                 <div>
                                     <button type="reset" onClick={handleCancel}>Cancel</button>
-                                    <button type="submit">Send</button>
+                                    <button type="submit" onClick={handleCommentSub}>Send</button>
                                 </div>
                             </div>}
                         </div>
