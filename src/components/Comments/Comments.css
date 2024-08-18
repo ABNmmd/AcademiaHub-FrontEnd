@@ -100,7 +100,7 @@
 }
 
 .comments-container .body .comment-box .cont .inter button {
-    vertical-align: middle;
+    font-size: 14px;
 }
 
 .comments-container .body .comment-box .cont .inter button:not(:last-child) {
