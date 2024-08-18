@@ -96,13 +96,17 @@
 .comments-container .body .comment-box .cont p {
     color: var(--footer-p);
     font-size: 14px;
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
 .comments-container .body .comment-box .cont .inter button {
-    
+    vertical-align: middle;
 }
 
 .comments-container .body .comment-box .cont .inter button:not(:last-child) {
     margin-right: 4px;
+}
+
+.comments-container .body .comment-box .cont .inter button svg {
+    vertical-align: middle;
 }
