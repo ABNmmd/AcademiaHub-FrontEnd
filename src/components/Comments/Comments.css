@@ -25,14 +25,6 @@
     flex: 1;
 }
 
-.comments-container .body .comment-edit-box .cont span {
-    color: var(--nav);
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.8rem;
-}
-
 .comments-container .body .comment-edit-box .cont textarea {
     width: 100%;
     color: var(--nav);
@@ -76,4 +68,12 @@
 .comments-container .body .comment-edit-box .cont .active button:last-child{
     background-color: var(--primary);
     color: #fff;
+}
+
+.comments-container .body .comment-box .cont span:first-child {
+    color: var(--headlines);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8rem;
 }
