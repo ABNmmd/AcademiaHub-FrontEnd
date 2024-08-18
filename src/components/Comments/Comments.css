@@ -99,6 +99,10 @@
     margin: 4px 0;
 }
 
+.comments-container .body .comment-box .cont .inter button {
+    
+}
+
 .comments-container .body .comment-box .cont .inter button:not(:last-child) {
     margin-right: 4px;
 }
