@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 import './Comments.css'
 import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
@@ -6,6 +7,7 @@ import { MdMoreVert } from "react-icons/md";
 import prf from '../../assets/download.png'
 
 function Comments({ postId, showComment }) {
+    const { postId } = useParams();
     const comments = [
         {
             authorId: 'Jhon Doe2',
