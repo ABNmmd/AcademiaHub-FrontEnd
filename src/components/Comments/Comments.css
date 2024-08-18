@@ -110,3 +110,7 @@
 .comments-container .body .comment-box .cont .inter button svg {
     vertical-align: middle;
 }
+
+.comments-container .body .comment-box .cont .inter button.interacted svg {
+    color: var(--primary);
+}

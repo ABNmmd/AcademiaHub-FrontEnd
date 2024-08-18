@@ -72,8 +72,8 @@ function Comments({ postId, showComment }) {
                                     <span>Jhon Doe</span><span className='time'>2 days ago</span>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                     <div className="inter">
-                                        <button><BiSolidLike /> {com.likes.length}</button>
-                                        <button><BiSolidDislike /> {com.dislikes.length}</button>
+                                        <button className={true? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
+                                        <button className={false? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
                                         {<button><MdMoreVert /></button>}
                                     </div>
                                 </div>
