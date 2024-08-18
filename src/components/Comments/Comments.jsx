@@ -62,7 +62,7 @@ function Comments({ postId, showComment }) {
                             </div>}
                         </div>
                     </div>
-                    {
+                    {false ?
                         comments.map((com, index) => (
                             <div className="comment-box" key={index}>
                                 <div className="user">
@@ -78,7 +78,8 @@ function Comments({ postId, showComment }) {
                                     </div>
                                 </div>
                             </div>
-                        ))
+                        )):
+                        <p>No comments...</p>
                     }
                 </div>
             </div>

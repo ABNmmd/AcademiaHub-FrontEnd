@@ -100,6 +100,7 @@
 }
 
 .comments-container .body .comment-box .cont .inter button {
+    color: var(--footer-p);
     font-size: 14px;
 }
 
@@ -113,4 +114,10 @@
 
 .comments-container .body .comment-box .cont .inter button.interacted svg {
     color: var(--primary);
+}
+
+.comments-container .body > p {
+    color: var(--headlines);
+    font-size: 16px;
+    text-align: center;
 }
