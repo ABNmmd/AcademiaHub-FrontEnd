@@ -6,7 +6,7 @@ import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
 import { MdMoreVert } from "react-icons/md";
 import prf from '../../assets/download.png'
 
-function Comments({ postId, showComment }) {
+function Comments({ postId }) {
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
     // const commentsFake = [
     //     {
@@ -83,8 +83,10 @@ function Comments({ postId, showComment }) {
     };
 
     const handleResize = (event) => {
-        event.target.style.height = 'auto';
         event.target.style.height = event.target.scrollHeight + 'px';
+        if (textareaRef.current.value == '') {
+            event.target.style.height = '1.2em';
+        }
     };
 
     const handleCommentSub = async () => {

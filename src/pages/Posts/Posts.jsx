@@ -10,7 +10,6 @@ import './Posts.css'
 import bg from "../../assets/Image.png"
 
 function Posts() {
-    const [showComment, setShowComment] = useState();
 
     const post = {
         _id: 11,
@@ -36,7 +35,7 @@ function Posts() {
                     {parse(post.content)}
                 </article>
             </section>
-            <Comments  postId={post._id} showComment={showComment} />
+            <Comments  postId={post._id} />
             <RecPosts tags={post.tags} />
         </main>
     )
