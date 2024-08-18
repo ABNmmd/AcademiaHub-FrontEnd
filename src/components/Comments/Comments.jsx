@@ -62,28 +62,32 @@ function Comments({ postId, showComment }) {
                             </div>}
                         </div>
                     </div>
-                    {false ?
-                        comments.map((com, index) => (
-                            <div className="comment-box" key={index}>
-                                <div className="user">
-                                    <img src={prf} alt="" />
-                                </div>
-                                <div className="cont">
-                                    <span>Jhon Doe</span><span className='time'>2 days ago</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <div className="inter">
-                                        <button className={true? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
-                                        <button className={false? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
-                                        {<button><MdMoreVert /></button>}
+                    {comments ?
+                        <>
+                            {comments.map((com, index) => (
+                                <div className="comment-box" key={index}>
+                                    <div className="user">
+                                        <img src={prf} alt="" />
+                                    </div>
+                                    <div className="cont">
+                                        <span>Jhon Doe</span><span className='time'>2 days ago</span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        <div className="inter">
+                                            <button className={true ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
+                                            <button className={false ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
+                                            {<button><MdMoreVert /></button>}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )):
-                        <p>No comments...</p>
+                            ))}
+                            <div className="mor"><button> show more</button></div>
+                        </>
+                        :
+                        (<p>No comments...</p>)
                     }
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
