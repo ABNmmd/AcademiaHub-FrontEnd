@@ -96,7 +96,7 @@
 .comments-container .body .comment-box .cont p {
     color: var(--footer-p);
     font-size: 14px;
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 .comments-container .body .comment-box .cont .inter button {
@@ -104,7 +104,7 @@
 }
 
 .comments-container .body .comment-box .cont .inter button:not(:last-child) {
-    margin-right: 4px;
+    margin-right: 8px;
 }
 
 .comments-container .body .comment-box .cont .inter button svg {
