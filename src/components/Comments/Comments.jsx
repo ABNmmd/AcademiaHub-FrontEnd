@@ -10,15 +10,15 @@ function Comments({ postId, showComment }) {
         {
             authorId: 'Jhon Doe2',
             content: 'very good',
-            likes: [1,2,3,1],
-            dislikes: [1,2],
+            likes: [1, 2, 3, 1],
+            dislikes: [1, 2],
             createdAt: '12/10/2024'
         },
         {
             authorId: 'Jhon Doe3',
             content: 'Great.. ^_^',
-            likes: [1,2,3,1],
-            dislikes: [1,2,5,6,8,7],
+            likes: [1, 2, 3, 1],
+            dislikes: [1, 2, 5, 6, 8, 7],
             createdAt: '12/10/2024'
         }
     ];
@@ -64,7 +64,6 @@ function Comments({ postId, showComment }) {
                         </div>
                     </div>
                     {
-                        showComment &&
                         comments.map((com, index) => (
                             <div className="comment-box" key={index}>
                                 <div className="user">
