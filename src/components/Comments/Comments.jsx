@@ -152,8 +152,8 @@ function Comments({ postId }) {
                                         <span>{com.authorId}</span><span className='time'>{com.createdAt}</span>
                                         <p>{com.content}</p>
                                         <div className="inter">
-                                            <button className={com.likes.includes() ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
-                                            <button className={com.dislikes.includes() ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
+                                            <button className={com.likes.includes(user? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
+                                            <button className={com.dislikes.includes(user? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
                                             {<button><MdMoreVert /></button>}
                                         </div>
                                     </div>
