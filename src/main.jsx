@@ -59,7 +59,7 @@ const App = () => {
       element: <Write />,
     },
     {
-      path: "/posts",
+      path: "/posts/:postId",
       element: <Posts />,
     },
   ]);
