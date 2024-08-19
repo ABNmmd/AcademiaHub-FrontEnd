@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import parse from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 
@@ -15,6 +15,17 @@ import bg from "../../assets/Image.png"
 function Posts() {
     const { postId } = useParams();
     const { getOnePost } = useContext(PostsContext);
+
+    useEffect(() => {
+        const getPostData = async () => {
+            try {
+                
+            } catch (error) {
+                console.log(`Error fitshing post with id: ${postId}`, error);
+            }
+        };
+        getPostData();
+    },[]);
 
     const post = {
         _id: postId,
