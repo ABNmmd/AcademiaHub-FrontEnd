@@ -5,7 +5,7 @@ import { SlLike, SlDislike, SlBubble } from "react-icons/sl";
 
 import './PostInteraction.css'
 
-function PostInteraction({ likes, dislikes, showComment, setShowComment }) {
+function PostInteraction({ likes, dislikes }) {
     const { } = useContext(PostsContext);
     const handleLike = () => {
 

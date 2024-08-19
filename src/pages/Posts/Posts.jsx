@@ -20,7 +20,9 @@ function Posts() {
     useEffect(() => {
         const getPostData = async () => {
             try {
-                
+                const postData = await getOnePost(postId);
+                console.log('post :', postData);
+                setPost(postData);
             } catch (error) {
                 console.log(`Error fitshing post with id: ${postId}`, error);
             }
@@ -44,12 +46,12 @@ function Posts() {
         <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
-                <PostInteraction likes={post.likes.length} dislikes={post.dislikes.length} />
+                <PostInteraction likes={post && post.likes.length} dislikes={post && post.dislikes.length} />
                 <div className="banner">
                     <img src={bg} alt="" />
                 </div>
                 <article className='post-content'>
-                    {parse(post.content)}
+                    {parse(post && post.content)}
                 </article>
             </section>
             <Comments  postId={postId} />
