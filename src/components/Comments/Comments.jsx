@@ -133,7 +133,7 @@ function Comments({ postId }) {
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
                             {<div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                {error && <p style={{color: 'red', fontSize: '13px',}}>{error}</p>}
+                                {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
                                 <div>
                                     <button type="reset" onClick={handleCancel}>Cancel</button>
                                     <button type="submit" onClick={handleCommentSub}>Send</button>
@@ -152,9 +152,17 @@ function Comments({ postId }) {
                                         <span>{com.authorId}</span><span className='time'>{com.createdAt}</span>
                                         <p>{com.content}</p>
                                         <div className="inter">
-                                            <button className={com.likes.includes(user? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
-                                            <button className={com.dislikes.includes(user? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
-                                            {<button><MdMoreVert /></button>}
+                                            <button className={com.likes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
+                                            <button className={com.dislikes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
+                                            {com.authorId == user._id &&
+                                                <div className='onerOptions'>
+                                                    <button><MdMoreVert /></button>
+                                                    <ul role="menu">
+                                                        <li role="menuitem"> Edit</li>
+                                                        <li role="menuitem"> Delete</li>
+                                                    </ul>
+                                                </div>
+                                            }
                                         </div>
                                     </div>
                                 </div>
