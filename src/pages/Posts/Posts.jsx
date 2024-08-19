@@ -27,7 +27,7 @@ function Posts() {
         <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
-                <PostInteraction likes={post.likes.length} dislikes={post.dislikes.length} showComment={showComment} setShowComment={setShowComment} />
+                <PostInteraction likes={post.likes.length} dislikes={post.dislikes.length} />
                 <div className="banner">
                     <img src={bg} alt="" />
                 </div>
