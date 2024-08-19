@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Hero from '../../components/Hero/Hero';
 import PostLayout from '../../components/PostLayout/PostLayout';
@@ -6,6 +6,7 @@ import PostLayout from '../../components/PostLayout/PostLayout';
 import './Home.css'
 
 function Home() {
+  const [posts, setPosts] = useState([]);
   const p = [
     {
       authorId: "123",

@@ -13,7 +13,7 @@ import './Posts.css'
 import bg from "../../assets/Image.png"
 
 function Posts() {
-    const [post, setPost] = useState([]);
+    const [post, setPost] = useState({});
     const { postId } = useParams();
     const { getOnePost } = useContext(PostsContext);
 
