@@ -170,7 +170,7 @@ function Comments({ postId }) {
                                                     <i><MdMoreVert /></i>
                                                     <ul role="menu">
                                                         <li role="menuitem"><button><CiEdit /> Edit</button></li>
-                                                        <li role="menuitem"><button><MdDelete /> Delete</button></li>
+                                                        <li role="menuitem"><button onClick={() => handleCommentDel(com.id)}><MdDelete /> Delete</button></li>
                                                     </ul>
                                                 </div>
                                             }
