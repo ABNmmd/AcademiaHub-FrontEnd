@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import parse from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 
+import { PostsContext } from '../../contexts/PostsContext';
+
 import DataBox from '../../components/DataBox/DataBox'
 import PostInteraction from '../../components/PostInteraction/PostInteraction';
 import Comments from '../../components/Comments/Comments';
@@ -12,7 +14,7 @@ import bg from "../../assets/Image.png"
 
 function Posts() {
     const { postId } = useParams();
-    const { getOnePost } = useContext();
+    const { getOnePost } = useContext(PostsContext);
 
     const post = {
         _id: postId,
