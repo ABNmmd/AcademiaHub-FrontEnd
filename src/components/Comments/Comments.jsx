@@ -4,7 +4,8 @@ import { UserContext } from '../../contexts/UserContext';
 
 import './Comments.css'
 import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
-import { MdMoreVert } from "react-icons/md";
+import { MdMoreVert, MdDelete } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
 import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
@@ -156,10 +157,10 @@ function Comments({ postId }) {
                                             <button className={com.dislikes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
                                             {com.authorId == user._id &&
                                                 <div className='onerOptions'>
-                                                    <button><MdMoreVert /></button>
+                                                    <i><MdMoreVert /></i>
                                                     <ul role="menu">
-                                                        <li role="menuitem"> Edit</li>
-                                                        <li role="menuitem"> Delete</li>
+                                                        <li role="menuitem"><button><CiEdit /> Edit</button></li>
+                                                        <li role="menuitem"><button><MdDelete /> Delete</button></li>
                                                     </ul>
                                                 </div>
                                             }

@@ -46,42 +46,42 @@
     height: 1.2em;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con{
+.comments-container .body .comment-edit-box .cont .i-con {
     display: flex;
     justify-content: space-between;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con > div{
+.comments-container .body .comment-edit-box .cont .i-con>div {
     flex: 1;
     text-align: end;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button{
+.comments-container .body .comment-edit-box .cont .i-con button {
     font-size: 14px;
     padding: 4px 8px;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button:first-child{
+.comments-container .body .comment-edit-box .cont .i-con button:first-child {
     margin-right: .5rem;
     color: var(--info);
 }
 
-.comments-container .body .comment-edit-box .cont .active button:first-child{
+.comments-container .body .comment-edit-box .cont .active button:first-child {
     color: var(--headlines);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con button:last-child{
+.comments-container .body .comment-edit-box .cont .i-con button:last-child {
     background-color: var(--border);
     color: var(--headlines);
     border-radius: 4px;
 }
 
-.comments-container .body .comment-edit-box .cont .active button:last-child{
+.comments-container .body .comment-edit-box .cont .active button:last-child {
     background-color: var(--primary);
     color: #fff;
 }
 
-.comments-container .body .comment-box:not(:last-child){
+.comments-container .body .comment-box:not(:last-child) {
     margin-bottom: 1rem;
 }
 
@@ -106,6 +106,10 @@
     margin: 4px 0;
 }
 
+.comments-container .body .comment-box .cont .inter {
+    display: flex;
+}
+
 .comments-container .body .comment-box .cont .inter button {
     color: var(--footer-p);
     font-size: 14px;
@@ -123,6 +127,45 @@
     color: var(--primary);
 }
 
+.comments-container .body .comment-box .cont .inter .onerOptions {
+    position: relative;
+}
+
+.comments-container .body .comment-box .cont .inter .onerOptions ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 4px;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    display: none;
+    z-index: 5;
+}
+
+.comments-container .body .comment-box .cont .inter .onerOptions:hover ul {
+    display: block;
+}
+
+.comments-container .body .comment-box .cont .inter .onerOptions:hover ul button {
+    font-size: 14px;
+    padding: 5px 10px;
+    display: flex;
+    text-decoration: none;
+    color: var(--nav);
+    gap: 6px;
+    width: 100%;
+}
+
+.comments-container .body .comment-box .cont .inter .onerOptions:hover ul li:hover button {
+    background-color: var(--footer-bg);
+}
+
+.comments-container .body .comment-box .cont .inter .onerOptions:hover ul li:first-child button {
+    margin-bottom: 4px;
+}
+
 .comments-container .body .mor {
     padding-top: .5rem;
     border-top: 1px solid var(--border);
@@ -138,7 +181,7 @@
     color: var(--headlines);
 }
 
-.comments-container .body > p {
+.comments-container .body>p {
     color: var(--headlines);
     font-size: 16px;
     text-align: center;
