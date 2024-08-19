@@ -51,11 +51,11 @@ function Posts() {
                     <img src={bg} alt="" />
                 </div>
                 <article className='post-content'>
-                    {parse(post && post.content)}
+                    {parse(post.content)}
                 </article>
             </section>
             <Comments  postId={postId} />
-            <RecPosts tags={post.tags} />
+            <RecPosts tags={post && post.tags} />
         </main>
     )
 }
