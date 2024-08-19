@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import parse from 'html-react-parser';
+import { useParams } from 'react-router-dom';
 
 import DataBox from '../../components/DataBox/DataBox'
 import PostInteraction from '../../components/PostInteraction/PostInteraction';
@@ -10,6 +11,7 @@ import './Posts.css'
 import bg from "../../assets/Image.png"
 
 function Posts() {
+    const { postId } = useParams();
 
     const post = {
         _id: 11,
