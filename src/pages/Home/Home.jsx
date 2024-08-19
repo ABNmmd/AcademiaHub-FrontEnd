@@ -62,7 +62,7 @@ function Home() {
 
   return (
     <main>
-      <Hero p={posts} />
+      <Hero p={posts[0]} />
       <PostLayout p={posts} />
     </main>
   )

@@ -15,9 +15,9 @@ function Hero({ p }) {
         <section className='Hero'>
             <div className="hero-container">
                 <div className="bg-img">
-                    <img src={p[1].img || bg} alt="" />
+                    <img src={p.img || bg} alt="" />
                 </div>
-                <DataBox data={p[1]} h1Class={null} />
+                <DataBox data={p} h1Class={null} />
             </div>
         </section>
     )
