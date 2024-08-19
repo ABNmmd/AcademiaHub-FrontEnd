@@ -27,17 +27,17 @@ function Posts() {
         getPostData();
     },[]);
 
-    const post = {
-        _id: postId,
-        authorId: "Jason Francisco",
-        title: "The Impact of Technology on the Workplace: How Technology is Changing",
-        content: "<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2><p>Fuga <strong>iusto </strong>autem cum inventore tempore corporis omnis, debitis iure culpa officiis cupiditate accusamus nisi dolor, aut mollitia, distinctio sint aliquam? <u>Culpa</u>.</p><ol><li><span>Lorem ipsum dolor sit amet</span></li><li><span>Fuga iusto autem cum inventore </span></li></ol>",
-        tags: ["Technology", "Sport"],
-        likes: [1, 2, 3],
-        dislikes: [1, 2, 3, 4, 5, 6],
-        createdAt: "22/02/2024",
-        updatedAt: "22/02/2024",
-    };
+    // const post = {
+    //     _id: postId,
+    //     authorId: "Jason Francisco",
+    //     title: "The Impact of Technology on the Workplace: How Technology is Changing",
+    //     content: "<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2><p>Fuga <strong>iusto </strong>autem cum inventore tempore corporis omnis, debitis iure culpa officiis cupiditate accusamus nisi dolor, aut mollitia, distinctio sint aliquam? <u>Culpa</u>.</p><ol><li><span>Lorem ipsum dolor sit amet</span></li><li><span>Fuga iusto autem cum inventore </span></li></ol>",
+    //     tags: ["Technology", "Sport"],
+    //     likes: [1, 2, 3],
+    //     dislikes: [1, 2, 3, 4, 5, 6],
+    //     createdAt: "22/02/2024",
+    //     updatedAt: "22/02/2024",
+    // };
 
     return (
         <main className='posts-page'>
