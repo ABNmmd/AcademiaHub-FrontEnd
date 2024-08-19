@@ -8,8 +8,7 @@ import PostLayout from '../../components/PostLayout/PostLayout';
 import './Home.css'
 
 function Home() {
-  const [posts, setPosts] = useState([]);
-  const {  } = useContext(PostsContext);
+  const { posts } = useContext(PostsContext);
   const p = [
     {
       authorId: "123",
