@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { CommentsContext } from '../../contexts/CommentContext';
+import { UserContext } from '../../contexts/UserContext';
 
 import './Comments.css'
 import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
@@ -7,6 +8,7 @@ import { MdMoreVert } from "react-icons/md";
 import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
+    const { user } = useContext(UserContext);
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
     // const commentsFake = [
     //     {
