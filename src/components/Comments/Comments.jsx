@@ -57,6 +57,7 @@ function Comments({ postId }) {
     // ];
     const [comments, setComments] = useState([]);
     const [error, setError] = useState(null);
+    const [delError, setDelError] = useState(null);
     useEffect(() => {
         const getCom = async (postId) => {
             try {
@@ -100,6 +101,14 @@ function Comments({ postId }) {
             setComments(comments.push(newCom));
         } catch (error) {
             setError(error.message);
+        }
+    };
+    
+    const handleCommentDel = async (id) => {
+        try {
+            await deleteExistingComment(id);
+        } catch (error) {
+            setDelError(error.message);
         }
     };
 
@@ -152,6 +161,7 @@ function Comments({ postId }) {
                                     <div className="cont">
                                         <span>{com.authorId}</span><span className='time'>{com.createdAt}</span>
                                         <p>{com.content}</p>
+                                        {delError && <p>{delError}</p>}
                                         <div className="inter">
                                             <button className={com.likes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
                                             <button className={com.dislikes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
