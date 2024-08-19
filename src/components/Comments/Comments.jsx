@@ -147,11 +147,11 @@ function Comments({ postId }) {
                                         <img src={prf} alt="" />
                                     </div>
                                     <div className="cont">
-                                        <span>Jhon Doe</span><span className='time'>2 days ago</span>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        <span>{com.authorId}</span><span className='time'>{com.createdAt}</span>
+                                        <p>{com.content}</p>
                                         <div className="inter">
-                                            <button className={true ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
-                                            <button className={false ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
+                                            <button className={com.likes.includes() ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
+                                            <button className={com.dislikes.includes() ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
                                             {<button><MdMoreVert /></button>}
                                         </div>
                                     </div>
