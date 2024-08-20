@@ -110,7 +110,7 @@ function Comments({ postId }) {
     const handleCommentDel = async (id) => {
         try {
             await deleteExistingComment(id);
-            setComments(comments.filter(com => com.id !== id));
+            setComments(comments.filter(com => com._id !== id));
             console.log('after delete comment ', id, comments);
             setDelError(null);
         } catch (error) {
