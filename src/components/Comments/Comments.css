@@ -56,6 +56,7 @@
     text-align: end;
 }
 
+.comments-container .body .comment-edit-box .cont .i-con a,
 .comments-container .body .comment-edit-box .cont .i-con button {
     font-size: 14px;
     padding: 4px 8px;
@@ -70,12 +71,14 @@
     color: var(--headlines);
 }
 
+.comments-container .body .comment-edit-box .cont .i-con a,
 .comments-container .body .comment-edit-box .cont .i-con button:last-child {
     background-color: var(--border);
     color: var(--headlines);
     border-radius: 4px;
 }
 
+.comments-container .body .comment-edit-box .cont .active a,
 .comments-container .body .comment-edit-box .cont .active button:last-child {
     background-color: var(--primary);
     color: #fff;

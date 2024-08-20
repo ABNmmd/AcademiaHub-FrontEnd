@@ -98,7 +98,7 @@ function Comments({ postId }) {
     const handleCommentSub = async () => {
         const content = textareaRef.current.value;
         try {
-            if (!isAuth){
+            if (!isAuth) {
                 setError('Unautorized. Please login first');
                 return
             }
@@ -161,13 +161,19 @@ function Comments({ postId }) {
                         </div>
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
-                            {<div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
-                                <div>
-                                    <button type="reset" onClick={handleCancel}>Cancel</button>
-                                    <button type="submit" onClick={handleCommentSub}>Send</button>
+                            {isAuth ?
+                                <div className={`i-con ${activeBtn ? 'active' : null}`}>
+                                    {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
+                                    <div>
+                                        <button type="reset" onClick={handleCancel}>Cancel</button>
+                                        <button type="submit" onClick={handleCommentSub}>Send</button>
+                                    </div>
                                 </div>
-                            </div>}
+                                :
+                                <div className={`i-con active`}>
+                                    <div><a href="/login">Login</a></div>
+                                </div>
+                            }
                         </div>
                     </div>
                     {comments && comments.length > 0 ?
@@ -193,6 +199,7 @@ function Comments({ postId }) {
                                                     </ul>
                                                 </div>
                                             }
+                                            <p style={{ color: 'red', fontSize: '12px' }}>Error here</p>
                                         </div>
                                     </div>
                                 </div>
