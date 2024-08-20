@@ -9,7 +9,7 @@ import { CiEdit } from "react-icons/ci";
 import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
-    const { user } = useContext(UserContext);
+    const { user, isAuth } = useContext(UserContext);
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
     // const commentsFake = [
     //     {
@@ -98,6 +98,14 @@ function Comments({ postId }) {
     const handleCommentSub = async () => {
         const content = textareaRef.current.value;
         try {
+            if (!isAuth){
+
+            }
+
+            if (!content || content == ' ') {
+                setError('Invalid content. Please try again');
+                return
+            }
             const newCom = await createNewComment({ content, postId });
             handleCancel();
             setComments([...comments, newCom]);
