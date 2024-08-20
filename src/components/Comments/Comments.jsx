@@ -190,7 +190,7 @@ function Comments({ postId }) {
                             ))}
                             {currentComments.length < comments.length
                                 ? <div className="mor" onClick={handleShowMore}><button> Show More...</button></div>
-                                : <div className="mor" onClick={handleShowLess}><button> Show Less...</button></div>
+                                : (currentComments.length > commentsPerPage && <div className="mor" onClick={handleShowLess}><button> Show Less...</button></div>)
                             }
                         </>
                         :

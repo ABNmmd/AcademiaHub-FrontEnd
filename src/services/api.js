@@ -155,8 +155,6 @@ const updateComment = async (id, newCommentData) => {
 const deleteComment = async (id) => {
     try {
         const response = await api.delete(`/comments/${id}`);
-        console.log(response.data);
-        return response.data;
     } catch (error) {
         console.error('Error deleting the comments ', error);
         throw error
