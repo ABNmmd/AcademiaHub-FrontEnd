@@ -56,8 +56,9 @@ function Comments({ postId }) {
     //     },
     // ];
     const [comments, setComments] = useState([]);
-    const [error, setError] = useState(null);
-    const [delError, setDelError] = useState(null);
+    const [error, setError] = useState(null); // to handle error whene submitting comment
+    const [delError, setDelError] = useState(null); // to handle error whene deletting comment
+    const [intError, setIntError] = useState(null); // to handle error whene interacting withe comment
 
     useEffect(() => {
         const getCom = async (postId) => {
@@ -199,7 +200,7 @@ function Comments({ postId }) {
                                                     </ul>
                                                 </div>
                                             }
-                                            {<p style={{ color: 'red', fontSize: '12px' }}>Error here</p>}
+                                            {intError && <p style={{ color: 'red', fontSize: '12px' }}>{intError}</p>}
                                         </div>
                                     </div>
                                 </div>
