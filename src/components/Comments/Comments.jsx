@@ -99,7 +99,8 @@ function Comments({ postId }) {
         const content = textareaRef.current.value;
         try {
             if (!isAuth){
-
+                setError('Unautorized. Please login first');
+                return
             }
 
             if (!content || content == ' ') {
