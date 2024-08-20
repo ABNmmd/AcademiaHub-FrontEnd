@@ -15,8 +15,8 @@ function DataBox({ data, h1Class })  {
     return (
         <div className="data-box">
             <div className="head">
-                <Tags tags={data.tags} selectedTags={[]} onTagClick={handleTagClick} />
-                <h1 className={h1Class}><a href="">{data.title}</a></h1>
+                <Tags tags={data.tags || []} selectedTags={[]} onTagClick={handleTagClick} />
+                <h1 className={h1Class}><a href={`/posts/${data._id}`}>{data.title}</a></h1>
             </div>
             <div className="pos-info">
                 <div className="author">

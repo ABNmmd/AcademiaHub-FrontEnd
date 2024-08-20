@@ -58,17 +58,19 @@ function Comments({ postId }) {
     const [comments, setComments] = useState([]);
     const [error, setError] = useState(null);
     const [delError, setDelError] = useState(null);
+
     useEffect(() => {
         const getCom = async (postId) => {
             try {
                 const commentsData = await getAllComments(postId);
+                console.log('comments : ', commentsData);
                 setComments(commentsData);
             } catch (error) {
                 console.error('Error fetching comments:', error);
             }
         }
         getCom(postId);
-    }, []);
+    }, [postId]);
 
     const [activeBtn, setActiveBtn] = useState(false);
     const textareaRef = useRef(null);
@@ -98,17 +100,20 @@ function Comments({ postId }) {
         try {
             const newCom = await createNewComment({ content, postId });
             handleCancel();
-            setComments(comments.push(newCom));
+            setComments([...comments, newCom]);
+            setError(null);
         } catch (error) {
-            setError(error.message);
+            setError('Failed to submit comment. Please try again.');
         }
     };
-    
+
     const handleCommentDel = async (id) => {
         try {
             await deleteExistingComment(id);
+            setComments(comments.filter(com => com.id !== id));
+            setDelError(null);
         } catch (error) {
-            setDelError(error.message);
+            setDelError('Failed to delete the comment. Please try again.');
         }
     };
 
@@ -124,8 +129,12 @@ function Comments({ postId }) {
     };
 
     useEffect(() => {
-        const newComments = comments ? comments.slice(0, currentPage * commentsPerPage) : [];
-        setCurrentComments(newComments);
+        if (comments && comments.length > 0) {
+            const newComments = comments.slice(0, currentPage * commentsPerPage);
+            setCurrentComments(newComments);
+        } else {
+            setCurrentComments([]);
+        }
     }, [currentPage, comments]);
 
 
@@ -159,13 +168,13 @@ function Comments({ postId }) {
                                         <img src={prf} alt="" />
                                     </div>
                                     <div className="cont">
-                                        <span>{com.authorId}</span><span className='time'>{com.createdAt}</span>
+                                        <span>{com.authorId.username}</span><span className='time'>{com.createdAt}</span>
                                         <p>{com.content}</p>
                                         {delError && <p>{delError}</p>}
                                         <div className="inter">
                                             <button className={com.likes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
                                             <button className={com.dislikes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
-                                            {com.authorId == user._id &&
+                                            {com.authorId._id == (user ? user._id : null) &&
                                                 <div className='onerOptions'>
                                                     <i><MdMoreVert /></i>
                                                     <ul role="menu">

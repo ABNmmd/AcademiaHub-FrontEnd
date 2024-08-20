@@ -51,7 +51,7 @@ function Posts() {
                     <img src={bg} alt="" />
                 </div>
                 <article className='post-content'>
-                    {parse(post.content)}
+                    {parse(post.content || 'no content...')}
                 </article>
             </section>
             <Comments  postId={postId} />
