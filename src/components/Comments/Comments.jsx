@@ -199,7 +199,7 @@ function Comments({ postId }) {
                                                     </ul>
                                                 </div>
                                             }
-                                            <p style={{ color: 'red', fontSize: '12px' }}>Error here</p>
+                                            {<p style={{ color: 'red', fontSize: '12px' }}>Error here</p>}
                                         </div>
                                     </div>
                                 </div>
