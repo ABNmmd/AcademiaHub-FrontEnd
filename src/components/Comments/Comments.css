@@ -131,6 +131,10 @@
     position: relative;
 }
 
+.comments-container .body .comment-box .cont .inter .onerOptions > i {
+    cursor: pointer;
+}
+
 .comments-container .body .comment-box .cont .inter .onerOptions ul {
     position: absolute;
     top: 100%;
