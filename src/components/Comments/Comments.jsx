@@ -10,6 +10,7 @@ import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
     const { user } = useContext(UserContext);
+    console.log('user: ', user);
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
     // const commentsFake = [
     //     {

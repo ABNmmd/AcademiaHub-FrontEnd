@@ -21,6 +21,21 @@ const UserProvider = ({ children }) => {
         verifyAuth();
     }, []);
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+    
+    useEffect(() => {
+        if (user) {
+            localStorage.setItem('user', JSON.stringify(user));
+        } else {
+            localStorage.removeItem('user');
+        }
+    }, [user]);
+
     const registerUser = async (credentials) => {
         try {
             const userData = await register(credentials);
