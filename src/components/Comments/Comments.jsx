@@ -10,7 +10,6 @@ import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
     const { user } = useContext(UserContext);
-    console.log('user: ', user);
     const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
     // const commentsFake = [
     //     {
@@ -112,6 +111,7 @@ function Comments({ postId }) {
         try {
             await deleteExistingComment(id);
             setComments(comments.filter(com => com.id !== id));
+            console.log('after delete comment ', id, comments);
             setDelError(null);
         } catch (error) {
             setDelError('Failed to delete the comment. Please try again.');
@@ -180,7 +180,7 @@ function Comments({ postId }) {
                                                     <i><MdMoreVert /></i>
                                                     <ul role="menu">
                                                         <li role="menuitem"><button><CiEdit /> Edit</button></li>
-                                                        <li role="menuitem"><button onClick={() => handleCommentDel(com.id)}><MdDelete /> Delete</button></li>
+                                                        <li role="menuitem"><button onClick={() => handleCommentDel(com._id)}><MdDelete /> Delete</button></li>
                                                     </ul>
                                                 </div>
                                             }
