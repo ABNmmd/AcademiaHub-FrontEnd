@@ -186,7 +186,7 @@ function Comments({ postId }) {
                                         <img src={prf} alt="" />
                                     </div>
                                     <div className="cont">
-                                        <span>{com.authorId.username}</span><span className='time'>{moment(com.createdAt).fromNow()} ago</span>
+                                        <span>{com.authorId.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
                                         <p>{com.content}</p>
                                         {delError && <p>{delError}</p>}
                                         <div className="inter">
