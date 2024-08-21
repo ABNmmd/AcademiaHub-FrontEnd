@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { checkAuthStatus, login, logout, register } from '../services/api';
+import { checkAuthStatus, getProfile, getUser, login, logout, register } from '../services/api';
 
 const UserContext = createContext();
 
@@ -13,13 +13,26 @@ const UserProvider = ({ children }) => {
                 const authenticated = await checkAuthStatus();
                 setIsAuth(authenticated);
                 localStorage.setItem('isAuth', authenticated);
-                // localStorage.setItem('isAuth', true); //for easy dev
+                // localStorage.setItem('isAuth', true);
             } catch (error) {
                 console.error('Error checking auth status:', error);
             }
         };
         verifyAuth();
     }, []);
+
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const user = await getUser();
+                setUser(userdata);
+                localStorage.setItem('user', JSON.stringify(user));
+            } catch (error) {
+                console.error('Error checking auth status:', error);
+            }
+        };
+        if (isAuth) getUserData();
+    }, [isAuth]);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -39,7 +52,7 @@ const UserProvider = ({ children }) => {
     const registerUser = async (credentials) => {
         try {
             const userData = await register(credentials);
-            setUser(userData.user);
+            // setUser(userData.user);
             setIsAuth(true);
             localStorage.setItem('isAuth', 'true');
         } catch (error) {
@@ -50,7 +63,7 @@ const UserProvider = ({ children }) => {
     const loginUser = async (credentials) => {
         try {
             const userData = await login(credentials);
-            setUser(userData.user);
+            // setUser(userData.user);
             setIsAuth(true);
             localStorage.setItem('isAuth', 'true');
         } catch (error) {
@@ -69,8 +82,17 @@ const UserProvider = ({ children }) => {
         }
     };
 
+    const getProfileData = async () => {
+        try {
+            const user = await getProfile();
+            return user;
+        } catch (error) {
+            console.error('Error checking auth status:', error);
+        }
+    };
+
     return (
-        <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser }}>
+        <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser, getProfileData }}>
             {children}
         </UserContext.Provider>
     );

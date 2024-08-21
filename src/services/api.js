@@ -51,6 +51,17 @@ const checkAuthStatus = async () => {
     }
 };
 
+// API call to get User data
+const getUser = async () => {
+    try {
+        const response = await api.get('/user');
+        return response.data;
+    } catch (error) {
+        console.error('Error getting user:', error);
+    }
+};
+
+
 //-------------
 
 // API call to create post
@@ -161,11 +172,26 @@ const deleteComment = async (id) => {
     }
 }
 
+//-----------
+
+// API call to get profile data
+const getProfile = async (userId) => {
+    try {
+        const response = await api.get(`/user/${userId}`);
+        console.log('profile from api for ', userId, response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error geting the profile ', error);
+        throw error;
+    }
+}
+
 export {
     register,
     login,
     logout,
     checkAuthStatus,
+    getUser,
     createPost,
     getPosts,
     getPostById,
@@ -175,4 +201,5 @@ export {
     getComments,
     updateComment,
     deleteComment,
+    getProfile,
 }
