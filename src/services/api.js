@@ -177,9 +177,8 @@ const deleteComment = async (id) => {
 // API call to get profile data
 const getProfile = async (userId) => {
     try {
-        console.log('profile from api for ', userId);
         const response = await api.get(`/user/${userId}`);
-        console.log('profile from api for ', userId, response.data);
+        // console.log('profile from api for ', userId, response.data);
         return response.data;
     } catch (error) {
         console.error('Error geting the profile ', error);
