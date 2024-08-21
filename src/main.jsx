@@ -62,6 +62,10 @@ const App = () => {
       path: "/posts/:postId",
       element: <Posts />,
     },
+    {
+      path: "/profile/:userId",
+      element: ,
+    },
   ]);
 
 
