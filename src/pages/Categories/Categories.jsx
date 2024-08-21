@@ -99,7 +99,7 @@ function Blog() {
     }, [tag]);
 
     useEffect(() => {
-        setFilteredPosts(p.filter((post) =>
+        setFilteredPosts(posts.filter((post) =>
             selectedTags.every((tag) => post.tags.includes(tag))
         ));
 
