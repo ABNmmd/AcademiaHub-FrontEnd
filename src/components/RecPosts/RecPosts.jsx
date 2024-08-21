@@ -69,7 +69,7 @@ function RecPosts({ tags }) {
         setRecPosts(posts.filter((post) =>
             tags?.every((tag) => post.tags.includes(tag))
         ));
-        console.log(recPosts);
+        // console.log(recPosts);
     }, [tags, posts]);
 
     const settings = {
