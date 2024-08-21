@@ -25,7 +25,7 @@ const UserProvider = ({ children }) => {
         const getUserData = async () => {
             try {
                 const user = await getUser();
-                setUser(userdata);
+                setUser(user);
                 localStorage.setItem('user', JSON.stringify(user));
             } catch (error) {
                 console.error('Error checking auth status:', error);
