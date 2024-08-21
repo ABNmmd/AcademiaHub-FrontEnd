@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Slider from "react-slick";
+import { PostsContext } from '../../contexts/PostsContext';
 
 import DataBox from '../DataBox/DataBox';
 
@@ -9,9 +10,8 @@ import './RecPosts.css'
 import bg from "../../assets/Image.png"
 
 function RecPosts({ tags }) {
-    const [p, setP] = useState([]);
     const [recPosts, setRecPosts] = useState([]);
-    const { getOnePost } = useContext(PostsContext);
+    const { posts } = useContext(PostsContext);
     // const p = [
     //     {
     //         authorId: "123",
