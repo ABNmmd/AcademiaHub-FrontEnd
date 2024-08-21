@@ -13,6 +13,9 @@ function UserInfo({ author }) {
                     <h2></h2>
                 </div>
                 <p></p>
+                <div>
+                    
+                </div>
             </div>
         </section>
     )
