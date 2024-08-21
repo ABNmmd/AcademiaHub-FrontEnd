@@ -15,7 +15,7 @@ function Profile() {
         const getAuther = async () => {
             try {
                 const authorData = await getProfileData(userId);
-                console.log('post :', authorData);
+                console.log('author :', authorData);
                 setAuthor(authorData);
             } catch (error) {
                 console.log(`Error fitshing author with id: ${userId}`, error);
