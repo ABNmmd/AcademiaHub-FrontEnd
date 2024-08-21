@@ -4,7 +4,11 @@ import './UserInfo.css'
 
 function UserInfo() {
     return (
-        <section></section>
+        <section className='userInfo'>
+            <div className="info-container">
+                
+            </div>
+        </section>
     )
 }
 
