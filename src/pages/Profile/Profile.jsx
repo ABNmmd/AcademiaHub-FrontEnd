@@ -5,7 +5,7 @@ import './Profile.css'
 function Profile() {
     return (
         <main>
-
+            
         </main>
     )
 }
