@@ -6,7 +6,7 @@ import Tags from '../Tags/Tags'
 
 import './DataBox.css'
 
-function DataBox({ data, h1Class })  {
+function DataBox({ data, h1Class }) {
     const navigate = useNavigate();
 
     const handleTagClick = (tag) => {
