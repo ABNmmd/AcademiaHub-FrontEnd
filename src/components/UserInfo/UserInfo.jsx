@@ -12,7 +12,7 @@ function UserInfo({ author }) {
                     <img src={bg} alt="" />
                     <h2>{author?.username}</h2>
                 </div>
-                <p>{author?.bio || 'no bio for this profile'}</p>
+                <p>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</p>
             </div>
         </section>
     )
