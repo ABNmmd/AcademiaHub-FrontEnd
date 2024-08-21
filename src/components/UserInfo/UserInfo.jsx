@@ -10,11 +10,11 @@ function UserInfo({ author }) {
             <div className="info-container">
                 <div>
                     <img src={bg} alt="" />
-                    <h2></h2>
+                    <h2>{}</h2>
                 </div>
-                <p></p>
+                <p>{}</p>
                 <div>
-                    
+
                 </div>
             </div>
         </section>
