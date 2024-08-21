@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Toggle from "react-toggle";
 import { UserContext } from '../../contexts/UserContext';
 import { IoPerson, IoSearchSharp } from "react-icons/io5";
@@ -39,9 +39,9 @@ function Header({ isDark, setIsDark }) {
               (<div className='log-cont'>
                 <img src="https://media.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc" alt="" />
                 <ul role="menu">
-                  <li role="menuitem"><a href="/profile/"><CiUser/>{ "test"}</a></li>
-                  <li role="menuitem"><a href="/write"><CiEdit/>Write</a></li>
-                  <li role="menuitem"><button onClick={() => handleLogout()}><CiLogout/>Logout</button></li>
+                  <li role="menuitem"><a href="/profile/"><CiUser />{"test"}</a></li>
+                  <li role="menuitem"><a href="/write"><CiEdit />Write</a></li>
+                  <li role="menuitem"><button onClick={() => handleLogout()}><CiLogout />Logout</button></li>
                 </ul>
               </div>)
               :
