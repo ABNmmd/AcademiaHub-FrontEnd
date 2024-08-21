@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from "react-slick";
 
 import DataBox from '../DataBox/DataBox';
@@ -9,6 +9,7 @@ import './RecPosts.css'
 import bg from "../../assets/Image.png"
 
 function RecPosts({ tags }) {
+    const [recPosts, setRecPosts] = useState([]);
     const p = [
         {
             authorId: "123",
@@ -61,6 +62,12 @@ function RecPosts({ tags }) {
             updatedAt: "22/02/2024",
         },
     ];
+
+    useEffect(() => {
+        setRecPosts(p.filter((post) =>
+            selectedTags.every((tag) => post.tags.includes(tag))
+        ));
+    }, [tags]);
 
     const settings = {
         dots: true,
