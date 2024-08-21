@@ -8,7 +8,7 @@ function UserInfo({ author }) {
     return (
         <section className='userInfo'>
             <div className="info-container">
-                <div>
+                <div className='author'>
                     <img src={bg} alt="" />
                     <h2>{author?.username}</h2>
                 </div>

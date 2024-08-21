@@ -1,0 +1,29 @@
+.userInfo .info-container{
+    background-color: var(--footer-bg);
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+.userInfo .info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 670px;
+}
+
+.userInfo .info-container .author{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.userInfo .info-container .author img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 6px;
+}
+
+.userInfo .info-container p{
+    text-align: center;
+}
