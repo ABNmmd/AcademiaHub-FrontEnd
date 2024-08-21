@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 
@@ -8,16 +8,17 @@ import './Profile.css'
 
 function Profile() {
     const { userId } = useParams();
-    const {  } = useContext(UserContext);
+    const [author, setAuthor] = useState([]);
+    const { getProfileData } = useContext(UserContext);
     
     useEffect(() => {
         const getAuther = async () => {
             try {
-                const postData = await get(postId);
-                console.log('post :', postData);
-                setPost(postData);
+                const authorData = await getProfileData(userId);
+                console.log('post :', authorData);
+                setAuthor(authorData);
             } catch (error) {
-                console.log(`Error fitshing post with id: ${postId}`, error);
+                console.log(`Error fitshing author with id: ${userId}`, error);
             }
         };
         getAuther();
@@ -25,7 +26,7 @@ function Profile() {
     
     return (
         <main>
-            <UserInfo />
+            <UserInfo author={author} />
         </main>
     )
 }
