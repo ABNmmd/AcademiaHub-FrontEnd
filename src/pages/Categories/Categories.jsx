@@ -116,9 +116,9 @@ function Blog() {
             <section className='blog-hero'>
                 <div className="blog-hero-container" data-theme="dark">
                     <div className="bg-img">
-                        <img src={p[1].img || bg} alt="" />
+                        <img src={p[0].img || bg} alt="" />
                     </div>
-                    <DataBox data={p[1]} h1Class={null} />
+                    <DataBox data={p[0]} h1Class={null} />
                 </div>
             </section>
             <CategoriesFilter selectedTags={selectedTags} setSelectedTags={setSelectedTags} onTagClick={handleTagClick} />
