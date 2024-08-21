@@ -186,13 +186,13 @@ function Comments({ postId }) {
                                         <img src={prf} alt="" />
                                     </div>
                                     <div className="cont">
-                                        <span>{com.authorId.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
+                                        <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
                                         <p>{com.content}</p>
                                         {delError && <p>{delError}</p>}
                                         <div className="inter">
-                                            <button className={com.likes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes.length}</button>
-                                            <button className={com.dislikes.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes.length}</button>
-                                            {com.authorId._id == (user ? user._id : null) &&
+                                            <button className={com.likes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes?.length}</button>
+                                            <button className={com.dislikes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes?.length}</button>
+                                            {com.authorId?._id == (user ? user._id : null) &&
                                                 <div className='onerOptions'>
                                                     <i><MdMoreVert /></i>
                                                     <ul role="menu">
