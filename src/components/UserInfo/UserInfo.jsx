@@ -10,12 +10,9 @@ function UserInfo({ author }) {
             <div className="info-container">
                 <div>
                     <img src={bg} alt="" />
-                    <h2>{}</h2>
+                    <h2>{author?.username}</h2>
                 </div>
-                <p>{}</p>
-                <div>
-
-                </div>
+                <p>{author?.bio || 'no bio for this profile'}</p>
             </div>
         </section>
     )
