@@ -6,7 +6,7 @@ function UserInfo({ author }) {
     return (
         <section className='userInfo'>
             <div className="info-container">
-
+                
             </div>
         </section>
     )

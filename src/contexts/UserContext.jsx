@@ -82,9 +82,9 @@ const UserProvider = ({ children }) => {
         }
     };
 
-    const getProfileData = async () => {
+    const getProfileData = async (userId) => {
         try {
-            const user = await getProfile();
+            const user = await getProfile(userId);
             return user;
         } catch (error) {
             console.error('Error checking auth status:', error);
