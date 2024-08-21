@@ -66,10 +66,11 @@ function RecPosts({ tags }) {
     // ];
 
     useEffect(() => {
-        setRecPosts(p.filter((post) =>
+        setRecPosts(posts.filter((post) =>
             tags?.every((tag) => post.tags.includes(tag))
         ));
-    }, [tags, p]);
+        console.log(recPosts);
+    }, [tags, posts]);
 
     const settings = {
         dots: true,
