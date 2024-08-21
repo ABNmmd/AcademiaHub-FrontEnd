@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useLocation, useParams } from 'react-router-dom';
+import { PostsContext } from '../../contexts/PostsContext';
 
 import PostListing from '../../components/PostListing/PostListing'
 import DataBox from '../../components/DataBox/DataBox';
@@ -11,6 +12,7 @@ import bg from "../../assets/Image.png"
 
 function Blog() {
     const { tag } = useParams();
+    const { posts } = useContext(PostsContext);
 
     const [selectedTags, setSelectedTags] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
