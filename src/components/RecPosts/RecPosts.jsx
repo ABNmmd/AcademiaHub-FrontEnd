@@ -65,9 +65,9 @@ function RecPosts({ tags }) {
 
     useEffect(() => {
         setRecPosts(p.filter((post) =>
-            selectedTags.every((tag) => post.tags.includes(tag))
+            tags?.every((tag) => post.tags.includes(tag))
         ));
-    }, [tags]);
+    }, [tags, p]);
 
     const settings = {
         dots: true,
@@ -81,7 +81,7 @@ function RecPosts({ tags }) {
         <section className="related-posts">
             <Slider {...settings}>
                 {
-                    p.map((post, index) => (
+                    recPosts.map((post, index) => (
                         <div key={index} className="post-box">
                             <div className="image">
                                 <img src={bg} alt="" />
