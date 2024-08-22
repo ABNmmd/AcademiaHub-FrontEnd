@@ -121,6 +121,22 @@
     color: var(--headlines);
 }
 
+.userInfo .info-edit .btns{
+    text-align: center;
+}
+
 .userInfo .info-edit .btns button{
     font-size: 14px;
+    padding: 4px 8px;
+}
+
+.userInfo .info-edit .btns button:first-child{
+    margin-right: .5rem;
+    color: var(--headlines);
+}
+
+.userInfo .info-edit .btns button:last-child{
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 4px;
 }
