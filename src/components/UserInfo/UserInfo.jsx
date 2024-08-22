@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { UserContext } from '../../contexts/UserContext';
 
 import './UserInfo.css'
 import { MdModeEdit } from "react-icons/md";
@@ -6,11 +7,14 @@ import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
     const [editMode, setEditMode] = useState(false);
+    const {  } = useContext(UserContext);
     return (
         <section className='userInfo'>
             { }
             <div className="info-container">
-                <MdModeEdit />
+                { && <button className="i">
+                    <MdModeEdit />
+                </button>}
                 <div className='author'>
                     <img src={bg} alt="" />
                     <h2>{author?.username}</h2>
