@@ -1,14 +1,13 @@
-.userInfo .info-container{
+.userInfo{
     background-color: var(--footer-bg);
     border-radius: 6px;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .userInfo .info-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     max-width: 670px;
 }
 
@@ -24,6 +23,11 @@
     margin-bottom: 6px;
 }
 
+.userInfo .info-container .author h2{
+    
+}
+
 .userInfo .info-container p{
     text-align: center;
+    padding: 0 1rem;
 }
