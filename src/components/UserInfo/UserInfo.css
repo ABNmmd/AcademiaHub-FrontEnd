@@ -62,10 +62,10 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 1rem;
-    position: relative;
 }
 
 .userInfo .info-edit .author button{
+    position: relative;
     width: fit-content;
 }
 
