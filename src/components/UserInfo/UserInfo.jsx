@@ -19,7 +19,7 @@ function UserInfo({ author }) {
                         </div>
                         <input type="text" value={author?.username} />
                     </div>
-                    <p>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</p>
+                    <input type="text" value={author?.bio} />
                 </div>
                 : <div className="info-container">
                     {author?._id == user?._id &&
