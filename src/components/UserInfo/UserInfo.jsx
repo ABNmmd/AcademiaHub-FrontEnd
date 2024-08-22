@@ -7,12 +7,12 @@ import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
     const [editMode, setEditMode] = useState(false);
-    const {  } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     return (
         <section className='userInfo'>
             { }
             <div className="info-container">
-                { && <button className="i">
+                {author?._id == user?._id && <button className="i">
                     <MdModeEdit />
                 </button>}
                 <div className='author'>
