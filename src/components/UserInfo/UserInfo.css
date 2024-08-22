@@ -31,7 +31,7 @@
 
 .userInfo .info-container .author{
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .userInfo .author img{
@@ -43,7 +43,7 @@
 .userInfo .info-container .author h2{
     color: var(--headlines);
     font-size: 20px;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 .userInfo .info-container p{
@@ -85,4 +85,12 @@
 
 .userInfo .info-edit .author button:hover > svg{
     display: block;
+}
+
+.userInfo .info-edit .author input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
 }
