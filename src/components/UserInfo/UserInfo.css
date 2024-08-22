@@ -38,12 +38,12 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    margin-bottom: 6px;
 }
 
 .userInfo .info-container .author h2{
     color: var(--headlines);
     font-size: 20px;
+    margin-top: 6px;
 }
 
 .userInfo .info-container p{
