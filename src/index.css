@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  transition: background-color 0.25s ease-in-out;
 }
 
 :root {
@@ -41,7 +42,6 @@ body {
   background-color: var(--background);
   min-height: 100vh;
   width: 100%;
-  transition: background-color 0.25s ease-in-out;
 }
 
 .page-container {
