@@ -9,6 +9,7 @@
 
 .userInfo .info-container{
     max-width: 670px;
+    position: relative
 }
 
 .userInfo .info-container .author{

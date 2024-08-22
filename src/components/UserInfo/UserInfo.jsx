@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './UserInfo.css'
-
+import { MdModeEdit } from "react-icons/md";
 import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
+    const [editMode, setEditMode] = useState(false);
     return (
         <section className='userInfo'>
+            { }
             <div className="info-container">
+                <MdModeEdit />
                 <div className='author'>
                     <img src={bg} alt="" />
                     <h2>{author?.username}</h2>
