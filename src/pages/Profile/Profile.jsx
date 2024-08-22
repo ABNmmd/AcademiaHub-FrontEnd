@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 
 import UserInfo from '../../components/UserInfo/UserInfo';
+import PostLayout from '../../components/PostLayout/PostLayout';
 
 import './Profile.css'
 
@@ -27,6 +28,7 @@ function Profile() {
     return (
         <main>
             <UserInfo author={author} />
+            <PostLayout p={posts} />
         </main>
     )
 }
