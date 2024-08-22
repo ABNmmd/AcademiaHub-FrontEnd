@@ -12,9 +12,11 @@ function UserInfo({ author }) {
         <section className='userInfo'>
             { }
             <div className="info-container">
-                {author?._id == user?._id && <button className="i">
-                    <MdModeEdit />
-                </button>}
+                {author?._id == user?._id &&
+                    <button className="i">
+                        <MdModeEdit />
+                    </button>
+                }
                 <div className='author'>
                     <img src={bg} alt="" />
                     <h2>{author?.username}</h2>
