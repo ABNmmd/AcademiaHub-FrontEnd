@@ -71,9 +71,18 @@
 
 .userInfo .info-edit .author button > svg{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background);
-    color: var(--shadow-color);
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #c2c2c2c2;
     z-index: 3;
+    border-radius: 50%;
+    display: none;
+}
+
+.userInfo .info-edit .author button:hover > svg{
+    display: block;
 }
