@@ -24,14 +24,14 @@ function UserInfo({ author }) {
                         <input type="text" value={author?.username} />
                     </div>
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
-                    <div>
-                        <button>Cancel</button>
+                    <div className='btns'>
+                        <button onClick={() => setEditMode(false)}>Cancel</button>
                         <button>Update</button>
                     </div>
                 </div>
                 : <div className="info-container">
                     {author?._id == user?._id &&
-                        <button className="i">
+                        <button className="i" onClick={() => setEditMode(true)}>
                             <MdModeEdit />
                         </button>
                     }
