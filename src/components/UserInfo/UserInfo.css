@@ -1,4 +1,4 @@
-.userInfo{
+.userInfo {
     background-color: var(--footer-bg);
     border-radius: 6px;
     padding: 2rem;
@@ -7,12 +7,12 @@
     align-items: center;
 }
 
-.userInfo .info-container{
+.userInfo .info-container {
     max-width: 670px;
     position: relative
 }
 
-.userInfo .info-container .i{
+.userInfo .info-container .i {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -22,31 +22,31 @@
     box-shadow: 0 3px 2px var(--shadow-color);
 }
 
-.userInfo .info-container .i svg{
+.userInfo .info-container .i svg {
     width: 1.2rem;
     height: 1.2rem;
     vertical-align: middle;
     color: var(--headlines);
 }
 
-.userInfo .info-container .author{
+.userInfo .info-container .author {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.userInfo .author img{
+.userInfo .author img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
 }
 
-.userInfo .info-container .author h2{
+.userInfo .info-container .author h2 {
     color: var(--headlines);
     font-size: 20px;
     margin-top: 8px;
 }
 
-.userInfo .info-container p{
+.userInfo .info-container p {
     color: var(--footer-p);
     font-size: 18px;
     line-height: 26px;
@@ -56,7 +56,7 @@
 
 
 
-.userInfo .info-edit .author{
+.userInfo .info-edit .author {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,12 +64,12 @@
     margin-bottom: 1rem;
 }
 
-.userInfo .info-edit .author button{
+.userInfo .info-edit .author button {
     position: relative;
     width: fit-content;
 }
 
-.userInfo .info-edit .author button > svg{
+.userInfo .info-edit .author button>svg {
     position: absolute;
     top: 0;
     right: 0;
@@ -83,11 +83,11 @@
     display: none;
 }
 
-.userInfo .info-edit .author button:hover > svg{
+.userInfo .info-edit .author button:hover>svg {
     display: block;
 }
 
-.userInfo .info-edit .author input{
+.userInfo .info-edit .author input {
     border: none;
     outline: none;
     background-color: transparent;
@@ -98,7 +98,7 @@
     width: 100%;
 }
 
-.userInfo .info-edit textarea{
+.userInfo .info-edit textarea {
     border: none;
     outline: none;
     background-color: transparent;
