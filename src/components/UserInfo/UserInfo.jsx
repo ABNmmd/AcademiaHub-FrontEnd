@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { UserContext } from '../../contexts/UserContext';
 
 import './UserInfo.css'
@@ -9,6 +9,9 @@ import bg from "../../assets/download.png"
 function UserInfo({ author }) {
     const [editMode, setEditMode] = useState(true);
     const { user } = useContext(UserContext);
+    const textareaRef = useRef(null);
+
+
     return (
         <section className='userInfo'>
             {editMode
@@ -20,7 +23,7 @@ function UserInfo({ author }) {
                         </button>
                         <input type="text" value={author?.username} />
                     </div>
-                    <textarea name="bio" id="bio">{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
+                    <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     <div>
                         <button>Cancel</button>
                         <button>Update</button>

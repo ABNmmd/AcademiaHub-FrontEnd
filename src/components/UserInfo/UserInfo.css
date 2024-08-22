@@ -93,16 +93,31 @@
     background-color: transparent;
     border-bottom: 1px solid var(--border);
     text-align: center;
-    color: var(--headlines);
+    color: var(--footer-p);
     font-size: 16px;
 }
 
+.userInfo .info-edit .author input:focus {
+    color: var(--headlines);
+}
+
 .userInfo .info-edit textarea {
-    border: none;
     outline: none;
-    background-color: transparent;
-    text-align: center;
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    padding: 8px;
+    width: 100%;
+    height: auto;
+    min-width: 370px;
+    min-height: 70px;
     color: var(--footer-p);
     font-size: 14px;
     resize: none;
+    overflow: visible;
+    border-radius: 4px;
+    line-height: 1.2em;
+}
+
+.userInfo .info-edit textarea:focus {
+    color: var(--headlines);
 }
