@@ -20,7 +20,7 @@ function UserInfo({ author }) {
                         </button>
                         <input type="text" value={author?.username} />
                     </div>
-                    <textarea name="bio" id="bio">{author?.bio}</textarea>
+                    <textarea name="bio" id="bio">{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     <div>
                         <button>Cancel</button>
                         <button>Update</button>
