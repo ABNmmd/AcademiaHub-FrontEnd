@@ -3,6 +3,7 @@ import { UserContext } from '../../contexts/UserContext';
 
 import './UserInfo.css'
 import { MdModeEdit } from "react-icons/md";
+import { IoIosCamera } from "react-icons/io";
 import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
@@ -15,6 +16,7 @@ function UserInfo({ author }) {
                     <div className='author'>
                         <button>
                             <img src={bg} alt="" />
+                            <IoIosCamera />
                         </button>
                         <input type="text" value={author?.username} />
                     </div>
