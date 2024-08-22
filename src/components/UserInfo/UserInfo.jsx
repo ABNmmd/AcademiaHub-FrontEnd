@@ -39,7 +39,6 @@ function UserInfo({ author }) {
                     <p>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</p>
                 </div>
             }
-
         </section>
     )
 }
