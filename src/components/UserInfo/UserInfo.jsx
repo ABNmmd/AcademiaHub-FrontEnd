@@ -19,7 +19,7 @@ function UserInfo({ author }) {
                         </div>
                         <input type="text" value={author?.username} />
                     </div>
-                    <input type="text" value={author?.bio} />
+                    <textarea name="bio" id="bio">{author?.bio}</textarea>
                 </div>
                 : <div className="info-container">
                     {author?._id == user?._id &&
