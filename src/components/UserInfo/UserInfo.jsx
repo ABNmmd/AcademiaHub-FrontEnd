@@ -6,20 +6,23 @@ import { MdModeEdit } from "react-icons/md";
 import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
-    const [editMode, setEditMode] = useState(false);
+    const [editMode, setEditMode] = useState(true);
     const { user } = useContext(UserContext);
     return (
         <section className='userInfo'>
             {editMode
                 ? <div className="info-container">
                     <div className='author'>
-                        <div>
+                        <button>
                             <img src={bg} alt="" />
-                            <button></button>
-                        </div>
+                        </button>
                         <input type="text" value={author?.username} />
                     </div>
                     <textarea name="bio" id="bio">{author?.bio}</textarea>
+                    <div>
+                        <button>Cancel</button>
+                        <button>Update</button>
+                    </div>
                 </div>
                 : <div className="info-container">
                     {author?._id == user?._id &&
