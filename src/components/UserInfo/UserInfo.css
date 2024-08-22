@@ -120,3 +120,7 @@
 .userInfo .info-edit textarea:focus {
     color: var(--headlines);
 }
+
+.userInfo .info-edit .btns button{
+    font-size: 14px;
+}
