@@ -24,7 +24,8 @@
 }
 
 .userInfo .info-container .author h2{
-    
+    color: var(--headlines);
+    font-size: 20px;
 }
 
 .userInfo .info-container p{
