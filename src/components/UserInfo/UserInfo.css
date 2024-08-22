@@ -34,7 +34,7 @@
     margin-bottom: 1.5rem;
 }
 
-.userInfo .info-container .author img{
+.userInfo .author img{
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -53,3 +53,6 @@
     text-align: center;
     padding: 0 1rem;
 }
+
+
+

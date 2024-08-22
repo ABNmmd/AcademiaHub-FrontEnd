@@ -11,7 +11,7 @@ function UserInfo({ author }) {
     return (
         <section className='userInfo'>
             {editMode
-                ? <div className="info-container">
+                ? <div className="info-edit">
                     <div className='author'>
                         <button>
                             <img src={bg} alt="" />
