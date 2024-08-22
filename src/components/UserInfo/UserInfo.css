@@ -69,10 +69,11 @@
     width: fit-content;
 }
 
-.userInfo .info-edit .author > svg{
+.userInfo .info-edit .author button > svg{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--shadow-color);
-    color: var();
+    background-color: var(--background);
+    color: var(--shadow-color);
+    z-index: 3;
 }
