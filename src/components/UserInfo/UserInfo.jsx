@@ -11,6 +11,26 @@ function UserInfo({ author }) {
     const { user } = useContext(UserContext);
     const textareaRef = useRef(null);
 
+    const handleComUpdate = async () => {
+        const content = textareaRef.current.value;
+        try {
+            if (!isAuth) {
+                setError('Unautorized. Please login first');
+                return
+            }
+
+            if (!content || content == ' ') {
+                setError('Invalid content. Please try again');
+                return
+            }
+            const newCom = await createNewComment({ content, postId });
+            handleCancel();
+            setComments([...comments, newCom]);
+            setError(null);
+        } catch (error) {
+            setError('Failed to submit comment. Please try again.');
+        }
+    }
 
     return (
         <section className='userInfo'>
@@ -26,7 +46,7 @@ function UserInfo({ author }) {
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     <div className='btns'>
                         <button onClick={() => setEditMode(false)}>Cancel</button>
-                        <button>Update</button>
+                        <button onClick={handleComUpdate}>Update</button>
                     </div>
                 </div>
                 : <div className="info-container">
