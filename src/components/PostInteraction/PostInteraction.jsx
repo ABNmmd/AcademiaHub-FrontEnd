@@ -33,9 +33,9 @@ function PostInteraction({ likes, dislikes }) {
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
-                <button onClick={null}>
-                    <SlBubble />
-                </button>
+                <div className="x">
+                    <SlOptionsVertical />
+                </div>
             </div>
         </div>
     )
