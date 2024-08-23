@@ -3,7 +3,7 @@ import { PostsContext } from '../../contexts/PostsContext';
 import { useParams } from 'react-router-dom';
 
 import { SlLike, SlDislike, SlBubble, SlOptionsVertical } from "react-icons/sl";
-
+import { CiEdit } from "react-icons/ci";
 import './PostInteraction.css'
 
 function PostInteraction({ likes, dislikes }) {
@@ -39,6 +39,7 @@ function PostInteraction({ likes, dislikes }) {
                     <SlOptionsVertical />
                     <ul>
                         <li><a href={`edit/${postId}`}>Edit</a></li>
+                        <button onClick={null}>Delete</button>
                     </ul>
                 </div>
             </div>
