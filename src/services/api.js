@@ -190,7 +190,7 @@ const getProfile = async (userId) => {
 const updateProfile = async (newProfileData) => {
     try {
         const response = await api.put('/user/', newProfileData);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error updating the profile ', error);
