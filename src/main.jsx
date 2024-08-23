@@ -62,6 +62,12 @@ const App = () => {
     {
       path: "/posts/:postId",
       element: <Posts />,
+      children: [
+        {
+          path: "edit",
+          element: <PostsEdit />,
+        },
+      ],
     },
     {
       path: "/profile/:userId",
