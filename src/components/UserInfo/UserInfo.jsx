@@ -11,22 +11,25 @@ function UserInfo({ author }) {
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
-
+    const emailRef = useRef(null);
+    
     const handleComUpdate = async () => {
         const username = usernameRef.current.value;
         const bio = textareaRef.current.value;
+        const email = emailRef.current.value;
         // handling the profile pic
+
         try {
             if (!isAuth) {
                 setError('Unautorized. Please login first');
                 return
             }
 
-            if (!username || !bio) {
+            if (!username || !email) {
                 setError('Invalid content. Please try again');
                 return
             }
-            const updatedBio = await createNewComment({ content, postId });
+            const updatedBio = await updateAuthorProfile({ username, email, bio });
             setEditMode(true)
             setError(null);
         } catch (error) {
@@ -44,6 +47,7 @@ function UserInfo({ author }) {
                             <IoIosCamera />
                         </button>
                         <input ref={usernameRef} type="text" value={author?.username} />
+                        <input ref={emailRef} type="text" value={author?.email} />
                     </div>
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     <div className='btns'>
