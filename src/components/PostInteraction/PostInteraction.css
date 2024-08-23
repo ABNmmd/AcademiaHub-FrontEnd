@@ -32,3 +32,8 @@
     vertical-align: middle;
     color: var(--logo);
 }
+
+.interactions .com{
+    display: flex;
+    align-items: end;
+}
