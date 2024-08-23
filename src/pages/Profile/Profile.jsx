@@ -71,7 +71,7 @@ function Profile() {
         if (author?._id) {
             setFilteredP(posts.filter((p) => p.authorId === author._id));
         }
-        console.log(posts);
+        console.log('author posts ', posts);
     }, [posts, author]);
 
     useEffect(() => {
