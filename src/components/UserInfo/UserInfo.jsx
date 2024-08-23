@@ -53,8 +53,8 @@ function UserInfo({ author }) {
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     {!error && <p>{error}This Is Error</p>}
                     <div className='btns'>
-                        <button onClick={() => setEditMode(false)}>Cancel</button>
                         <button onClick={handleProfileUpdate}>Update</button>
+                        <button onClick={() => setEditMode(false)}>Cancel</button>
                     </div>
                 </div>
                 : <div className="info-container">
