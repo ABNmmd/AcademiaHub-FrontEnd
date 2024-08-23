@@ -1,3 +1,10 @@
+.related-posts h2{
+    font-size: 24px;
+    color: var(--headlines);
+    margin-bottom: 1rem;
+}
+
+
 .slick-slider{
     margin: 0 2rem;
 }
