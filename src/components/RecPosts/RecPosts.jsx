@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './RecPosts.css'
 import bg from "../../assets/Image.png"
+import PostListing from '../PostListing/PostListing';
 
 function RecPosts({ tags }) {
     const [recPosts, setRecPosts] = useState([]);
@@ -83,8 +84,9 @@ function RecPosts({ tags }) {
     return (
         <section className="related-posts">
             <Slider {...settings}>
-                {
-                    recPosts.map((post, index) => (
+                {recPosts.length < 3 ?
+                    <PostListing p={recPosts} />
+                    :recPosts.map((post, index) => (
                         <div key={index} className="post-box">
                             <div className="image">
                                 <img src={bg} alt="" />
