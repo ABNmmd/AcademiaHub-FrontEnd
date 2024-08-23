@@ -19,7 +19,7 @@ function UserInfo({ author }) {
         const bio = textareaRef.current.value;
         const email = emailRef.current.value;
         // handling the profile pic
-        console.log('new bio: ', { username, email, bio });
+        
         try {
             setError(null);
             if (!isAuth) {
