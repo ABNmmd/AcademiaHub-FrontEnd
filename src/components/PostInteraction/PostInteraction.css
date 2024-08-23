@@ -39,6 +39,7 @@
 }
 
 .interactions .com .x{
+    position: relative;
     margin-left: .5rem;
     height: 100%;
     color: var(--logo);
@@ -57,4 +58,8 @@
 
 .interactions .com .x:hover{
     box-shadow: none;
+}
+
+.interactions .com .x ul {
+    position: absolute;
 }

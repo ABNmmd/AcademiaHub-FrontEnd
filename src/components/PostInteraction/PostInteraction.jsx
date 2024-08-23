@@ -35,6 +35,9 @@ function PostInteraction({ likes, dislikes }) {
                 </button>
                 <div className="x">
                     <SlOptionsVertical />
+                    <ul>
+                        <li><a href="edit">Edit</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
