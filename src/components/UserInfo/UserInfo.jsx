@@ -6,7 +6,7 @@ import { MdModeEdit } from "react-icons/md";
 import { IoIosCamera } from "react-icons/io";
 import bg from "../../assets/download.png"
 
-function UserInfo({ author }) {
+function UserInfo({ author, setAuthor }) {
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
     const [editMode, setEditMode] = useState(false);
     const [error, setError] = useState('');
@@ -19,7 +19,7 @@ function UserInfo({ author }) {
         const bio = textareaRef.current.value;
         const email = emailRef.current.value;
         // handling the profile pic
-        
+
         try {
             setError(null);
             if (!isAuth) {
@@ -31,7 +31,8 @@ function UserInfo({ author }) {
                 setError('Invalid content. Please try again');
                 return
             }
-            await updateAuthorProfile({ username, email, bio });
+            const updatedProfile = await updateAuthorProfile({ username, email, bio });
+
             setEditMode(false)
         } catch (error) {
             setError('Failed to update profile. Please try again.');

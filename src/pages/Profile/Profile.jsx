@@ -89,7 +89,7 @@ function Profile() {
 
     return (
         <main>
-            <UserInfo author={author} />
+            <UserInfo author={author} setAuthor={setAuthor} />
             <PostLayout p={filteredP} />
         </main>
     )
