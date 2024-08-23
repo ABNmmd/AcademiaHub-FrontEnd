@@ -38,7 +38,7 @@ function PostInteraction({ likes, dislikes }) {
                 <div className="x">
                     <SlOptionsVertical />
                     <ul>
-                        <li><a href={`edit/${postId}`}>Edit</a></li>
+                        <li><a href={`edit/${postId}`}><CiEdit />Edit</a></li>
                         <button onClick={null}>Delete</button>
                     </ul>
                 </div>
