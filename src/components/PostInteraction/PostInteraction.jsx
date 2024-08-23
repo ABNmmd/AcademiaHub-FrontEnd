@@ -38,7 +38,7 @@ function PostInteraction({ likes, dislikes }) {
                 <div className="x">
                     <SlOptionsVertical />
                     <ul>
-                        <li><a href="edit/">Edit</a></li>
+                        <li><a href={`edit/${postId}`}>Edit</a></li>
                     </ul>
                 </div>
             </div>

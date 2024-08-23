@@ -61,9 +61,12 @@ const App = () => {
       element: <Write />,
     },
     {
-      path: "/posts/:postId",
-      element: <Posts />,
+      path: "/posts",
       children: [
+        {
+          path: ":postId",
+          element: <Posts />,
+        },
         {
           path: "edit/:postId",
           element: <PostsEdit />,
