@@ -11,7 +11,7 @@ import './Profile.css'
 function Profile() {
     const { userId } = useParams();
     const [author, setAuthor] = useState([]);
-    const [filtredP, setFiltredP] = useState([]);
+    const [filteredP, setFilteredP] = useState([]);
     const { getProfileData } = useContext(UserContext);
     const { posts } = useContext(PostsContext);
 
@@ -67,7 +67,15 @@ function Profile() {
     //         updatedAt: "22/02/2024",
     //     },
     // ];
-    useEffect();
+    useEffect(() => {
+        if (author?._id) {
+            setFilteredP(
+                posts.filter((p) => p.authorId === author._id)
+            );
+        }
+        // console.log(posts);
+    }, [posts, author]);
+
     useEffect(() => {
         const getAuther = async () => {
             try {
@@ -84,7 +92,7 @@ function Profile() {
     return (
         <main>
             <UserInfo author={author} />
-            <PostLayout p={posts} />
+            <PostLayout p={filteredP} />
         </main>
     )
 }
