@@ -20,6 +20,7 @@ function UserInfo({ author }) {
         // handling the profile pic
 
         try {
+            setError(null);
             if (!isAuth) {
                 setError('Unautorized. Please login first');
                 return
@@ -30,8 +31,7 @@ function UserInfo({ author }) {
                 return
             }
             const updatedBio = await updateAuthorProfile({ username, email, bio });
-            setEditMode(true)
-            setError(null);
+            setEditMode(false)
         } catch (error) {
             setError('Failed to submit comment. Please try again.');
         }
