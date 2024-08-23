@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { PostsContext } from '../../contexts/PostsContext';
 
-import { SlLike, SlDislike, SlBubble } from "react-icons/sl";
+import { SlLike, SlDislike, SlBubble, SlOptionsVertical } from "react-icons/sl";
 
 import './PostInteraction.css'
 
@@ -31,6 +31,9 @@ function PostInteraction({ likes, dislikes }) {
             </div>
             <div className="com">
                 <button onClick={handleCommentClick}>
+                    <SlBubble />
+                </button>
+                <button onClick={null}>
                     <SlBubble />
                 </button>
             </div>
