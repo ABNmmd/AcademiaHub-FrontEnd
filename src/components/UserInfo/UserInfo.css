@@ -138,7 +138,6 @@
 }
 
 .userInfo .info-edit .btns button:last-child{
-    margin-right: .5rem;
     color: var(--headlines);
 }
 
@@ -146,4 +145,5 @@
     background-color: var(--primary);
     color: #fff;
     border-radius: 4px;
+    margin-right: .5rem;
 }
