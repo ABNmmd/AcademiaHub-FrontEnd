@@ -8,7 +8,7 @@ import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
-    const [editMode, setEditMode] = useState(true);
+    const [editMode, setEditMode] = useState(false);
     const [error, setError] = useState('');
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
