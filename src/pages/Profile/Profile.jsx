@@ -10,7 +10,7 @@ import './Profile.css'
 
 function Profile() {
     const { userId } = useParams();
-    const [author, setAuthor] = useState([]);
+    const [author, setAuthor] = useState({});
     const [filteredP, setFilteredP] = useState([]);
     const { getProfileData } = useContext(UserContext);
     const { posts } = useContext(PostsContext);
@@ -73,11 +73,11 @@ function Profile() {
                 posts.filter((p) => p.authorId === author._id)
             );
         }
-        // console.log(posts);
+        console.log(posts);
     }, [posts, author]);
 
     useEffect(() => {
-        const getAuther = async () => {
+        const getAuthor = async () => {
             try {
                 const authorData = await getProfileData(userId);
                 console.log('author :', userId, authorData);
@@ -86,7 +86,7 @@ function Profile() {
                 console.log(`Error fitshing author with id: ${userId}`, error);
             }
         };
-        getAuther();
+        getAuthor();
     }, [userId]);
 
     return (
