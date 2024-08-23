@@ -40,7 +40,7 @@ const UserProvider = ({ children }) => {
             setUser(JSON.parse(storedUser));
         }
     }, []);
-    
+
     useEffect(() => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
