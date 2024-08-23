@@ -68,7 +68,7 @@ const getUser = async () => {
 const createPost = async (postData) => {
     try {
         const response = await api.post('/posts/', postData);
-        console.log("from api: ", response.data);
+        // console.log("from api: ", response.data);
         return response.data;
     } catch (error) {
         console.error('Error crating the post ', error);
@@ -80,7 +80,7 @@ const createPost = async (postData) => {
 const getPosts = async () => {
     try {
         const response = await api.get('/posts/');
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error getting posts ', error);
@@ -92,7 +92,7 @@ const getPosts = async () => {
 const getPostById = async (id) => {
     try {
         const response = await api.get(`/posts/${id}`);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error getting the post ', error);
@@ -104,7 +104,7 @@ const getPostById = async (id) => {
 const updatePost = async (id, newPostData) => {
     try {
         const response = await api.put(`/posts/${id}`, newPostData);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error updatting the post ', error);
@@ -116,7 +116,7 @@ const updatePost = async (id, newPostData) => {
 const deletePost = async (id) => {
     try {
         const response = await api.delete(`/posts/${id}`);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error deleting the post ', error);
@@ -130,7 +130,7 @@ const deletePost = async (id) => {
 const createComment = async (commentData) => {
     try {
         const response = await api.post('/comments/', commentData);
-        console.log("from api: ", response.data);
+        // console.log("from api: ", response.data);
         return response.data;
     } catch (error) {
         console.error('Error creating a comment ', error);
@@ -142,7 +142,7 @@ const createComment = async (commentData) => {
 const getComments = async (postId) => {
     try {
         const response = await api.get(`/comments/${postId}`);
-        console.log('comments from api for ', postId, response.data);
+        // console.log('comments from api for ', postId, response.data);
         return response.data;
     } catch (error) {
         console.error('Error geting the comments ', error);
@@ -154,7 +154,7 @@ const getComments = async (postId) => {
 const updateComment = async (id, newCommentData) => {
     try {
         const response = await api.put(`/comments/${id}`, newCommentData);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error updating the comments ', error);
@@ -182,6 +182,18 @@ const getProfile = async (userId) => {
         return response.data;
     } catch (error) {
         console.error('Error geting the profile ', error);
+        throw error;
+    }
+}
+
+// API call to update comment
+const updateProfile = async (newProfileData) => {
+    try {
+        const response = await api.put('/comments/', newProfileData);
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error updating the comments ', error);
         throw error;
     }
 }

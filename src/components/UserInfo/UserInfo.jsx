@@ -8,25 +8,26 @@ import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
     const [editMode, setEditMode] = useState(true);
-    const { user } = useContext(UserContext);
+    const { user, isAuth } = useContext(UserContext);
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
 
     const handleComUpdate = async () => {
-        const content = textareaRef.current.value;
+        const username = usernameRef.current.value;
+        const bio = textareaRef.current.value;
+        // handling the profile pic
         try {
             if (!isAuth) {
                 setError('Unautorized. Please login first');
                 return
             }
 
-            if (!content || content == ' ') {
+            if (!username || !bio) {
                 setError('Invalid content. Please try again');
                 return
             }
-            const newCom = await createNewComment({ content, postId });
-            handleCancel();
-            setComments([...comments, newCom]);
+            const updatedBio = await createNewComment({ content, postId });
+            setEditMode(true)
             setError(null);
         } catch (error) {
             setError('Failed to submit comment. Please try again.');

@@ -87,7 +87,7 @@ const UserProvider = ({ children }) => {
             const user = await getProfile(userId);
             return user;
         } catch (error) {
-            console.error('Error checking auth status:', error);
+            console.error('Error getting profile data:', error);
         }
     };
 
