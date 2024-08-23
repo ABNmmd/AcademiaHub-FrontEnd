@@ -9,6 +9,7 @@ import bg from "../../assets/download.png"
 function UserInfo({ author }) {
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
     const [editMode, setEditMode] = useState(true);
+    const [error, setError] = useState('');
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
     const emailRef = useRef(null);
@@ -33,7 +34,7 @@ function UserInfo({ author }) {
             const updatedBio = await updateAuthorProfile({ username, email, bio });
             setEditMode(false)
         } catch (error) {
-            setError('Failed to submit comment. Please try again.');
+            setError('Failed to update profile. Please try again.');
         }
     }
 
@@ -50,6 +51,7 @@ function UserInfo({ author }) {
                         <input ref={emailRef} type="text" value={author?.email} />
                     </div>
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
+                    {error && <p>{error}This Is Error</p>}
                     <div className='btns'>
                         <button onClick={() => setEditMode(false)}>Cancel</button>
                         <button onClick={handleComUpdate}>Update</button>
