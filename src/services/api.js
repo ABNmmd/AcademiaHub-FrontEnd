@@ -189,7 +189,7 @@ const getProfile = async (userId) => {
 // API call to update comment
 const updateProfile = async (newProfileData) => {
     try {
-        const response = await api.put('/comments/', newProfileData);
+        const response = await api.put('/user/', newProfileData);
         console.log(response.data);
         return response.data;
     } catch (error) {
