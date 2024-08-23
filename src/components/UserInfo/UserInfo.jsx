@@ -10,6 +10,7 @@ function UserInfo({ author }) {
     const [editMode, setEditMode] = useState(true);
     const { user } = useContext(UserContext);
     const textareaRef = useRef(null);
+    const usernameRef = useRef(null);
 
     const handleComUpdate = async () => {
         const content = textareaRef.current.value;
@@ -41,7 +42,7 @@ function UserInfo({ author }) {
                             <img src={bg} alt="" />
                             <IoIosCamera />
                         </button>
-                        <input type="text" value={author?.username} />
+                        <input ref={usernameRef} type="text" value={author?.username} />
                     </div>
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
                     <div className='btns'>
