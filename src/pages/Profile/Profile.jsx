@@ -69,9 +69,9 @@ function Profile() {
     // ];
     useEffect(() => {
         if (author?._id) {
-            setFilteredP(posts.filter((p) => p.authorId === author._id));
+            setFilteredP(posts.filter((p) => p.authorId?._id === author._id));
         }
-        console.log('author posts ', posts);
+        console.log('author posts ', filteredP);
     }, [posts, author]);
 
     useEffect(() => {
