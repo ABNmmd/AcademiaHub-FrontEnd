@@ -93,17 +93,15 @@ const UserProvider = ({ children }) => {
 
     const updateAuthorProfile = async (newProfileData) => {
         try {
-            const updatedPost = await updateProfile(newProfileData);
-            setPosts((prevPosts) =>
-                prevPosts.map((post) => (post.id === id ? updatedPost : post))
-            );
+            const updatedProfile = await updateProfile(newProfileData);
+            if (updatedProfile.user) setUser(updatedProfile.user);
         } catch (error) {
-            console.error('Error updating post', error);
+            console.error('Error updating profile', error);
         }
     }
 
     return (
-        <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser, getProfileData }}>
+        <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser, getProfileData, updateAuthorProfile }}>
             {children}
         </UserContext.Provider>
     );
