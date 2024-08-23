@@ -193,7 +193,7 @@ const updateProfile = async (newProfileData) => {
         console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error('Error updating the comments ', error);
+        console.error('Error updating the profile ', error);
         throw error;
     }
 }
@@ -214,4 +214,5 @@ export {
     updateComment,
     deleteComment,
     getProfile,
+    updateProfile,
 }
