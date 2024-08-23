@@ -83,19 +83,22 @@ function RecPosts({ tags }) {
 
     return (
         <section className="related-posts">
-            <Slider {...settings}>
-                {recPosts.length < 3 ?
-                    <PostListing p={recPosts} />
-                    :recPosts.map((post, index) => (
+            <h2>Recommended</h2>
+            {recPosts.length < 3
+                ?
+                (<PostListing p={recPosts} />)
+                :
+                (<Slider {...settings}>
+                    {recPosts.map((post, index) => (
                         <div key={index} className="post-box">
                             <div className="image">
                                 <img src={bg} alt="" />
                             </div>
                             <DataBox data={post} h1Class={"h1-posts"} />
                         </div>
-                    ))
-                }
-            </Slider>
+                    ))}
+                </Slider>)
+            }
         </section>
     )
 }
