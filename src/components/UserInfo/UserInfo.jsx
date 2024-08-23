@@ -7,8 +7,8 @@ import { IoIosCamera } from "react-icons/io";
 import bg from "../../assets/download.png"
 
 function UserInfo({ author }) {
-    const [editMode, setEditMode] = useState(true);
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
+    const [editMode, setEditMode] = useState(true);
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
     const emailRef = useRef(null);
