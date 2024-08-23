@@ -32,7 +32,7 @@ function UserInfo({ author, setAuthor }) {
                 return
             }
             const updatedProfile = await updateAuthorProfile({ username, email, bio });
-
+            setAuthor(updatedProfile.user);
             setEditMode(false)
         } catch (error) {
             setError('Failed to update profile. Please try again.');
