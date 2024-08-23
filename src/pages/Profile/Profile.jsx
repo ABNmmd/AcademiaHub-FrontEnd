@@ -11,6 +11,7 @@ import './Profile.css'
 function Profile() {
     const { userId } = useParams();
     const [author, setAuthor] = useState([]);
+    const [filtredP, setFiltredP] = useState([]);
     const { getProfileData } = useContext(UserContext);
     const { posts } = useContext(PostsContext);
 
@@ -66,7 +67,7 @@ function Profile() {
     //         updatedAt: "22/02/2024",
     //     },
     // ];
-
+    useEffect();
     useEffect(() => {
         const getAuther = async () => {
             try {
@@ -78,7 +79,7 @@ function Profile() {
             }
         };
         getAuther();
-    }, [userId])
+    }, [userId]);
 
     return (
         <main>
