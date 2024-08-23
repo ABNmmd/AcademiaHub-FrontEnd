@@ -14,7 +14,7 @@ function UserInfo({ author }) {
     const usernameRef = useRef(null);
     const emailRef = useRef(null);
     
-    const handleComUpdate = async () => {
+    const handleProfileUpdate = async () => {
         const username = usernameRef.current.value;
         const bio = textareaRef.current.value;
         const email = emailRef.current.value;
@@ -31,7 +31,7 @@ function UserInfo({ author }) {
                 setError('Invalid content. Please try again');
                 return
             }
-            const updatedBio = await updateAuthorProfile({ username, email, bio });
+            await updateAuthorProfile({ username, email, bio });
             setEditMode(false)
         } catch (error) {
             setError('Failed to update profile. Please try again.');
@@ -51,10 +51,10 @@ function UserInfo({ author }) {
                         <input ref={emailRef} type="text" value={author?.email} />
                     </div>
                     <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
-                    {error && <p>{error}This Is Error</p>}
+                    {!error && <p>{error}This Is Error</p>}
                     <div className='btns'>
                         <button onClick={() => setEditMode(false)}>Cancel</button>
-                        <button onClick={handleComUpdate}>Update</button>
+                        <button onClick={handleProfileUpdate}>Update</button>
                     </div>
                 </div>
                 : <div className="info-container">
