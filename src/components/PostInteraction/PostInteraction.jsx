@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { PostsContext } from '../../contexts/PostsContext';
+import { useParams } from 'react-router-dom';
 
 import { SlLike, SlDislike, SlBubble, SlOptionsVertical } from "react-icons/sl";
 
 import './PostInteraction.css'
 
 function PostInteraction({ likes, dislikes }) {
+    const { postId } = useParams();
     const { } = useContext(PostsContext);
     const handleLike = () => {
 
@@ -36,7 +38,7 @@ function PostInteraction({ likes, dislikes }) {
                 <div className="x">
                     <SlOptionsVertical />
                     <ul>
-                        <li><a href="edit">Edit</a></li>
+                        <li><a href="edit/">Edit</a></li>
                     </ul>
                 </div>
             </div>
