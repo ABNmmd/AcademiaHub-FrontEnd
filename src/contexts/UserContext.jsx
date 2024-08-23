@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { checkAuthStatus, getProfile, getUser, login, logout, register } from '../services/api';
+import { checkAuthStatus, getProfile, getUser, login, logout, register, updateProfile } from '../services/api';
 
 const UserContext = createContext();
 
@@ -90,6 +90,17 @@ const UserProvider = ({ children }) => {
             console.error('Error getting profile data:', error);
         }
     };
+
+    const updateAuthorProfile = async (newProfileData) => {
+        try {
+            const updatedPost = await updateProfile(newProfileData);
+            setPosts((prevPosts) =>
+                prevPosts.map((post) => (post.id === id ? updatedPost : post))
+            );
+        } catch (error) {
+            console.error('Error updating post', error);
+        }
+    }
 
     return (
         <UserContext.Provider value={{ user, isAuth, loginUser, logoutUser, registerUser, getProfileData }}>
