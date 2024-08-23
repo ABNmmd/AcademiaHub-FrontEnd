@@ -71,14 +71,14 @@ function Profile() {
         if (author?._id) {
             setFilteredP(posts.filter((p) => p.authorId?._id === author._id));
         }
-        console.log('author posts ', filteredP);
+        // console.log('author posts ', filteredP);
     }, [posts, author]);
 
     useEffect(() => {
         const getAuthor = async () => {
             try {
                 const authorData = await getProfileData(userId);
-                console.log('author :', userId, authorData);
+                // console.log('author :', userId, authorData);
                 setAuthor(authorData);
             } catch (error) {
                 console.log(`Error fitshing author with id: ${userId}`, error);
