@@ -86,6 +86,7 @@ header {
     display: flex;
     text-decoration: none;
     color: var(--nav);
+    min-width: 120px;
 }
 
 .header-container .container .icons-container .log-cont ul li:not(:last-child),
