@@ -47,10 +47,10 @@ function UserInfo({ author }) {
                             <img src={bg} alt="" />
                             <IoIosCamera />
                         </button>
-                        <input ref={usernameRef} type="text" value={author?.username} />
-                        <input ref={emailRef} type="text" value={author?.email} />
+                        <input ref={usernameRef} type="text" defaultValue={author?.username} />
+                        <input ref={emailRef} type="text" defaultValue={author?.email} />
                     </div>
-                    <textarea ref={textareaRef}>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</textarea>
+                    <textarea ref={textareaRef} defaultValue={author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}></textarea>
                     {error && <p>{error}This Is Error</p>}
                     <div className='btns'>
                         <button onClick={handleProfileUpdate}>Update</button>
