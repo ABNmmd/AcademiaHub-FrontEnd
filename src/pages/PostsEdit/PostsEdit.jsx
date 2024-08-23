@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import './PostsEdit.css'
 
 function PostsEdit() {
     return (
