@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { UserContext } from '../../contexts/UserContext';
 import { PostsContext } from '../../contexts/PostsContext';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import './PostInteraction.css'
 function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
+    const {  } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLike = async () => {
@@ -43,7 +45,7 @@ function PostInteraction({ likes, dislikes }) {
                     <SlDislike />
                 </button>
             </div>
-            <div className="com">
+            {<div className="com">
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
@@ -54,7 +56,7 @@ function PostInteraction({ likes, dislikes }) {
                         <li><button onClick={handlePostDelete}><MdDelete />Delete</button></li>
                     </ul>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }
