@@ -77,6 +77,10 @@ const App = () => {
       path: "/profile/:userId",
       element: <Profile />,
     },
+    {
+      path: "/search",
+      element: <Search />,
+    },
   ]);
 
 
