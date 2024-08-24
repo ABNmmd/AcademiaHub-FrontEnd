@@ -6,7 +6,7 @@ import './Search.css'
 function Search() {
     return (
         <main>
-            <PostListing />
+            <PostListing p={} />
         </main>
     )
 }
