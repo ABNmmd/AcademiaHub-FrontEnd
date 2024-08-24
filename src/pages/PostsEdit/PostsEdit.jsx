@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { PostsContext } from '../../contexts/PostsContext';
 
 import './PostsEdit.css'
-
+ 
 function PostsEdit() {
     const { postId } = useParams();
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
-    const [error, setError] = useState([]);
+    const [error, setError] = useState('');
     const { getOnePost, updateOldPost } = useContext(PostsContext);
+    const navigate = useNavigate();
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
         { value: 'Technology', label: 'Technology' },
@@ -54,12 +55,16 @@ function PostsEdit() {
     const handleUpdatePost = async (e) => {
         e.preventDefault();
         try {
-            const updatedPost = await updateOldPost({ title, content, tags });
-            console.log("updated created: ", updatedPost);
+            const updatedPost = await updateOldPost(postId ,{ title, content, tags });
+            console.log("updated post: ", updatedPost);
             navigate(`/posts/${updatedPost._id}`);
         } catch (error) {
             setError(error.message);
         }
+    }
+
+    const handleCancelUpdate = () => {
+        
     }
 
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
@@ -100,10 +105,10 @@ function PostsEdit() {
                         }}
                     />
                 </div>
-
+                {!error && <p className='error'>{error} this is error</p>}
                 <div className="buttons">
                     <button type="submit" onClick={handleUpdatePost}>Update</button>
-                    {/* <button type="submit" onClick={handleCancelUpdate}>Cancel</button> */}
+                    <button type="submit" onClick={handleCancelUpdate}>Cancel</button>
                 </div>
             </section>
         </main>
