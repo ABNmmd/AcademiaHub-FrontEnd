@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PostsContext } from '../../contexts/PostsContext';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { SlLike, SlDislike, SlBubble, SlOptionsVertical } from "react-icons/sl";
 import { MdDelete } from "react-icons/md";
@@ -10,6 +10,8 @@ import './PostInteraction.css'
 function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
+    const navigate = useNavigate();
+    
     const handleLike = async () => {
 
     };
