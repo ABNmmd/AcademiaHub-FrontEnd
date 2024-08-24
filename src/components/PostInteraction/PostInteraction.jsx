@@ -46,18 +46,20 @@ function PostInteraction({ likes, dislikes }) {
                     <SlDislike />
                 </button>
             </div>
-            {isAuth && (user._id == postId) && <div className="com">
+            <div className="com">
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
-                <div className="x">
-                    <SlOptionsVertical />
-                    <ul>
-                        <li><a href={`edit/${postId}`}><CiEdit />Edit</a></li>
-                        <li><button onClick={handlePostDelete}><MdDelete />Delete</button></li>
-                    </ul>
-                </div>
-            </div>}
+                {isAuth && (user._id == postId) &&
+                    <div className="x">
+                        <SlOptionsVertical />
+                        <ul>
+                            <li><a href={`edit/${postId}`}><CiEdit />Edit</a></li>
+                            <li><button onClick={handlePostDelete}><MdDelete />Delete</button></li>
+                        </ul>
+                    </div>
+                }
+            </div>
         </div>
     )
 }
