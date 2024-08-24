@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 import './PostsEdit.css'
 
 function PostsEdit() {
+    const { postId } = useParams();
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
@@ -28,7 +30,7 @@ function PostsEdit() {
         console.log('title', e.target.value);
         setTitle(e.target.value);
     }
-    
+
     return (
         <main>
             <section className='write-content'>
