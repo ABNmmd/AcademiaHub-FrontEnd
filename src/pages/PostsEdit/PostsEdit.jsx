@@ -3,6 +3,32 @@ import React from 'react'
 import './PostsEdit.css'
 
 function PostsEdit() {
+    const [content, setContent] = useState('');
+    const [title, setTitle] = useState('');
+    const [tags, setTags] = useState([]);
+    const options = [
+        { value: 'Lifestyle', label: 'Lifestyle' },
+        { value: 'Technology', label: 'Technology' },
+        { value: 'Travel', label: 'Travel' },
+        { value: 'Food', label: 'Food' },
+        { value: 'Business', label: 'Business' },
+        { value: 'Personal Development', label: 'Personal Development' },
+        { value: 'Hobbies', label: 'Hobbies' },
+        { value: 'Education', label: 'Education' },
+    ];
+
+    const handleTags = (t) => {
+        const tagsArr = [];
+        t.forEach((v) => tagsArr.push(v.value));
+        setTags(tagsArr);
+        console.log('tags arr', tagsArr);
+    }
+
+    const handleTitle = (e) => {
+        console.log('title', e.target.value);
+        setTitle(e.target.value);
+    }
+    
     return (
         <main>
             <section className='write-content'>
@@ -40,7 +66,8 @@ function PostsEdit() {
                 </div>
 
                 <div className="buttons">
-                    <button type="submit" onClick={handleCreatePost}>Publish</button>
+                    <button type="submit" onClick={handleUpdatePost}>Update</button>
+                    <button type="submit" onClick={handleCancelUpdate}>Cancel</button>
                 </div>
             </section>
         </main>

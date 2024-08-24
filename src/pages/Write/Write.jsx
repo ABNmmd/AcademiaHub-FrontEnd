@@ -50,9 +50,9 @@ function Write() {
         setTitle(e.target.value);
     }
 
-    useEffect(() => {
-        console.log('content: ', content)
-    }, [content])
+    // useEffect(() => {
+    //     console.log('content: ', content)
+    // }, [content])
 
 
     return (
