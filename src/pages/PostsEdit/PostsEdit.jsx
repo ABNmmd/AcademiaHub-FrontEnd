@@ -5,9 +5,8 @@ import './PostsEdit.css'
 
 function PostsEdit() {
     const { postId } = useParams();
-    const [content, setContent] = useState('');
-    const [title, setTitle] = useState('');
-    const [tags, setTags] = useState([]);
+    const [post, setPost] = useState({});
+    const { getOnePost } = useContext(PostsContext);
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
         { value: 'Technology', label: 'Technology' },
@@ -18,6 +17,19 @@ function PostsEdit() {
         { value: 'Hobbies', label: 'Hobbies' },
         { value: 'Education', label: 'Education' },
     ];
+
+    useEffect(() => {
+        const getPostData = async () => {
+            try {
+                const postData = await getOnePost(postId);
+                console.log('post :', postData);
+                setPost(postData);
+            } catch (error) {
+                console.log(`Error fitshing post with id: ${postId}`, error);
+            }
+        };
+        getPostData();
+    },[]);
 
     const handleTags = (t) => {
         const tagsArr = [];
