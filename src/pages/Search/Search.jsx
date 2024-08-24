@@ -7,10 +7,15 @@ import './Search.css'
 function Search() {
     const { posts } = useContext(PostsContext);
     const [searchedP, setSearchP] = useState([]);
-    
+
     return (
         <main>
-            <PostListing p={posts} />
+            <section className="search-form">
+                <form action="">
+                    
+                </form>
+            </section>
+            <PostListing p={searchedP} />
         </main>
     )
 }
