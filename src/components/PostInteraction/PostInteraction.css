@@ -1,15 +1,15 @@
-.interactions{
+.interactions {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem !important;
 }
 
-.interactions .di-like button:first-child{
+.interactions .di-like button:first-child {
     margin-right: 1rem;
 }
 
-.interactions .di-like > button,
-.interactions .com > button{
+.interactions .di-like>button,
+.interactions .com>button {
     font-size: 16px;
     color: var(--footer-p);
     vertical-align: middle;
@@ -20,27 +20,27 @@
     transition: box-shadow linear 200ms;
 }
 
-.interactions .di-like > button:hover,
-.interactions .com > button:hover{
+.interactions .di-like>button:hover,
+.interactions .com>button:hover {
     box-shadow: none;
 }
 
-.interactions button span{
+.interactions button span {
     margin-right: 8px;
     vertical-align: middle;
 }
 
-.interactions button svg{
+.interactions button svg {
     vertical-align: middle;
     color: var(--logo);
 }
 
-.interactions .com{
+.interactions .com {
     display: flex;
     align-items: end;
 }
 
-.interactions .com .x{
+.interactions .com .x {
     position: relative;
     margin-left: .5rem;
     height: 100%;
@@ -54,17 +54,23 @@
     cursor: pointer;
 }
 
-.interactions .com .x svg{
+.interactions .com .x svg {
     vertical-align: middle;
 }
 
-.interactions .com .x:hover{
+.interactions .com .x:hover {
     box-shadow: none;
 }
 
 .interactions .com .x ul {
     position: absolute;
     top: 100%;
-    left: 0;
-    z-index: 3;
+    right: 0;
+    padding: 6px;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    /* display: none; */
+    z-index: 5;
 }
