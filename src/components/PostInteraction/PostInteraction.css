@@ -87,3 +87,12 @@
 .interactions .com .x ul li button svg {
     margin-right: 6px;
 }
+
+.interactions .com .x ul li:hover a ,
+.interactions .com .x ul li:hover button {
+    border-color: var(--footer-bg);
+}
+
+.interactions .com .x ul li:not(:last-child){
+    margin-bottom: 6px;
+}
