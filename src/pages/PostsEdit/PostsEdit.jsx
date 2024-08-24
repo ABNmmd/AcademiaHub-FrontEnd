@@ -76,7 +76,7 @@ function PostsEdit() {
     }
 
     const handleCancelUpdate = () => {
-
+        navigate(`/posts/${updatedPost._id}`);
     }
 
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
