@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { PostsContext } from '../../contexts/PostsContext';
 
 import './PostsEdit.css'
 
 function PostsEdit() {
     const { postId } = useParams();
+    const [content, setContent] = useState('');
+    const [title, setTitle] = useState('');
+    const [tags, setTags] = useState([]);
     const [post, setPost] = useState({});
     const { getOnePost } = useContext(PostsContext);
     const options = [
@@ -52,6 +56,7 @@ function PostsEdit() {
                         type="text"
                         className='title'
                         id='title'
+                        defaultValue={post.title}
                         onChange={handleTitle}
                     />
                 </div>
