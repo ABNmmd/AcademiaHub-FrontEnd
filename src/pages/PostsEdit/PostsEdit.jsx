@@ -12,7 +12,7 @@ function PostsEdit() {
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
     const [post, setPost] = useState({});
-    const { getOnePost } = useContext(PostsContext);
+    const { getOnePost, updateOldPost } = useContext(PostsContext);
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
         { value: 'Technology', label: 'Technology' },
@@ -28,8 +28,11 @@ function PostsEdit() {
         const getPostData = async () => {
             try {
                 const postData = await getOnePost(postId);
-                console.log('post :', postData);
+                // console.log('post :', postData);
                 setPost(postData);
+                setTitle(postData.title);
+                setContent(postData.content || '');
+                setTags(postData.tags);
             } catch (error) {
                 console.log(`Error fitshing post with id: ${postId}`, error);
             }
@@ -49,11 +52,18 @@ function PostsEdit() {
         setTitle(e.target.value);
     }
 
-    const handleUpdatePost = async () => {
-
+    const handleUpdatePost = async (e) => {
+        e.preventDefault();
+        try {
+            const updatedPost = await updateOldPost({ title, content, tags });
+            console.log("updated created: ", updatedPost);
+            navigate(`/posts/${updatedPost._id}`);
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
-    const defTags = post?.tags?.map(tag => ({ value: tag, label: tag }));
+    const defTags = tags.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
             <section className='write-content'>
@@ -63,13 +73,13 @@ function PostsEdit() {
                         type="text"
                         className='title'
                         id='title'
-                        defaultValue={post?.title}
+                        value={title}
                         onChange={handleTitle}
                     />
                 </div>
                 <div className="content">
                     <h2>Content</h2>
-                    <ReactQuill theme="snow" defaultValue={post?.content} value={content} onChange={setContent} />
+                    <ReactQuill theme="snow" value={content} onChange={setContent} />
                 </div>
                 <div className="tags">
                     <h2>Tags</h2>

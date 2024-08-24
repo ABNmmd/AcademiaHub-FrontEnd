@@ -32,7 +32,7 @@ function Write() {
         try {
             const newPost = await createNewPost({ title, content, tags });
             console.log("Post created: ", newPost);
-            // navigate(`/posts/${newPost._id}`);
+            navigate(`/posts/${newPost._id}`);
         } catch (error) {
             setError(error.message);
         }
