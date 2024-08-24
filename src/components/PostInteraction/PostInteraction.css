@@ -70,6 +70,7 @@
     display: none;
     z-index: 5;
 }
+
 .interactions .com .x:hover ul {
     display: block;
 }
