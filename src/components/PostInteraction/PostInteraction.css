@@ -71,20 +71,11 @@
     border: 1px solid var(--border);
     border-radius: 5px;
     box-shadow: 0px 2px 5px var(--shadow-color);
-    /* display: none; */
+    display: none;
     z-index: 5;
 }
 .interactions .com .x ul {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    padding: 6px;
-    background-color: var(--background);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px var(--shadow-color);
-    /* display: none; */
-    z-index: 5;
+    display: block;
 }
 
 .interactions .com .x ul li a ,
