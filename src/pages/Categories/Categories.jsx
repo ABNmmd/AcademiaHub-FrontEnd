@@ -104,7 +104,7 @@ function Blog() {
         ));
 
         // console.log('filteredPosts:', filteredPosts);
-    }, [selectedTags, currentPage]);
+    }, [selectedTags, posts]);
     
     useEffect(() => {
         const newPosts = filteredPosts.slice(0, currentPage * postsPerPage);
