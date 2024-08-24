@@ -49,6 +49,10 @@ function PostsEdit() {
         setTitle(e.target.value);
     }
 
+    const handleUpdatePost = async () => {
+        
+    }
+
     return (
         <main>
             <section className='write-content'>
@@ -88,7 +92,7 @@ function PostsEdit() {
 
                 <div className="buttons">
                     <button type="submit" onClick={handleUpdatePost}>Update</button>
-                    <button type="submit" onClick={handleCancelUpdate}>Cancel</button>
+                    {/* <button type="submit" onClick={handleCancelUpdate}>Cancel</button> */}
                 </div>
             </section>
         </main>
