@@ -121,9 +121,9 @@ function Comments({ postId }) {
     const handleCommentDel = async (id) => {
         try {
             await deleteExistingComment(id);
-            setComments(comments.filter(com => com._id !== id));
-            console.log('after delete comment ', id, comments);
             setDelError(null);
+            setComments(comments.filter(com => com._id !== id));
+            // console.log('after delete comment ', id, comments);
         } catch (error) {
             setDelError('Failed to delete the comment. Please try again.');
         }

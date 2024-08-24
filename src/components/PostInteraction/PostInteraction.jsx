@@ -9,7 +9,7 @@ import './PostInteraction.css'
 
 function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
-    const { } = useContext(PostsContext);
+    const { deleteExistingPost } = useContext(PostsContext);
     const handleLike = () => {
 
     };
@@ -20,8 +20,13 @@ function PostInteraction({ likes, dislikes }) {
 
     };
 
-    const handlePostDelete = () => {
-        
+    const handlePostDelete = async () => {
+        try {
+            await deleteExistingPost(postId);
+            
+        } catch (error) {
+            alert('Failed to delete the post. Please try again.');
+        }
     };
 
     return (
