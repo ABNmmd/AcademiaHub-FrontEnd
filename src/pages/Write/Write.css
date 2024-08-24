@@ -53,10 +53,10 @@
     color: var(--primary);
 }
 
-.write-content .buttons button:last-child{
+.write-content .buttons button{
     color: var(--footer-p);
 }
 
-.write-content .buttons button:last-child:hover{
+.write-content .buttons button:hover{
     color: var(--headlines);
 }
