@@ -12,10 +12,13 @@ function Search() {
         <main>
             <section className="search-form">
                 <form action="">
-                    
+
                 </form>
             </section>
-            <PostListing p={searchedP} />
+            <section className="search-result">
+                <h2></h2>
+                <PostListing p={searchedP} />
+            </section>
         </main>
     )
 }
