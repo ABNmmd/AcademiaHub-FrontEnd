@@ -11,6 +11,7 @@ function PostsEdit() {
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
+    const [error, setError] = useState([]);
     const { getOnePost, updateOldPost } = useContext(PostsContext);
     const options = [
         { value: 'Lifestyle', label: 'Lifestyle' },
@@ -28,7 +29,6 @@ function PostsEdit() {
             try {
                 const postData = await getOnePost(postId);
                 // console.log('post :', postData);
-                setPost(postData);
                 setTitle(postData.title);
                 setContent(postData.content || '');
                 setTags(postData.tags);
