@@ -8,7 +8,7 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import './PostInteraction.css'
 
-function PostInteraction({ likes, dislikes }) {
+function PostInteraction({ autherId, likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
     const { isAuth, user } = useContext(UserContext);
@@ -50,7 +50,7 @@ function PostInteraction({ likes, dislikes }) {
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
-                {isAuth && (user._id == postId) &&
+                {isAuth && (user?._id == autherId?._id) &&
                     <div className="x">
                         <SlOptionsVertical />
                         <ul>
