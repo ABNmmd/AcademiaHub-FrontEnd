@@ -55,8 +55,20 @@ function PostsEdit() {
     const handleUpdatePost = async (e) => {
         e.preventDefault();
         try {
+            if (!title) {
+                setError('Messing title');
+                return;
+            }
+            if (!content) {
+                setError('Messing content');
+                return;
+            }
+            if (!tags) {
+                setError('Messing tags');
+                return;
+            }
             const updatedPost = await updateOldPost(postId ,{ title, content, tags });
-            console.log("updated post: ", updatedPost);
+            // console.log("updated post: ", updatedPost);
             navigate(`/posts/${updatedPost._id}`);
         } catch (error) {
             setError(error.message);
