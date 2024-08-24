@@ -46,7 +46,7 @@ function PostInteraction({ likes, dislikes }) {
                     <SlDislike />
                 </button>
             </div>
-            {isAuth && (user._id == postId) &&<div className="com">
+            {isAuth && (user._id == postId) && <div className="com">
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
