@@ -53,6 +53,8 @@ function PostsEdit() {
 
     }
 
+    const defaultOpt = post?.tags?.map(item => ({value: item, label: item}));
+    
     return (
         <main>
             <section className='write-content'>
@@ -62,19 +64,19 @@ function PostsEdit() {
                         type="text"
                         className='title'
                         id='title'
-                        defaultValue={post.title}
+                        defaultValue={post?.title}
                         onChange={handleTitle}
                     />
                 </div>
                 <div className="content">
                     <h2>Content</h2>
-                    <ReactQuill theme="snow" value={content} onChange={setContent} />
+                    <ReactQuill theme="snow" defaultValue={post?.content} value={content} onChange={setContent} />
                 </div>
                 <div className="tags">
                     <h2>Tags</h2>
                     <Select
                         options={options}
-                        defaultValue={[]}
+                        defaultValue={}
                         isMulti
                         name="tags"
                         className="basic-multi-select"
