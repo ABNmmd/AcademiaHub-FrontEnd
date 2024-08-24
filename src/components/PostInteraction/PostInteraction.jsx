@@ -13,7 +13,7 @@ function PostInteraction({ likes, dislikes }) {
     const handleLike = async () => {
 
     };
-    const handleDiLike = () => {
+    const handleDiLike = async () => {
 
     };
     const handleCommentClick = () => {
