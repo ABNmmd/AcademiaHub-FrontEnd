@@ -90,7 +90,7 @@
 
 .interactions .com .x ul li:hover a ,
 .interactions .com .x ul li:hover button {
-    border-color: var(--footer-bg);
+    background-color: var(--footer-bg);
 }
 
 .interactions .com .x ul li:not(:last-child){

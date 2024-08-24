@@ -20,6 +20,10 @@ function PostInteraction({ likes, dislikes }) {
 
     };
 
+    const handlePostDelete = () => {
+        
+    };
+
     return (
         <div className='interactions'>
             <div className="di-like">
@@ -40,7 +44,7 @@ function PostInteraction({ likes, dislikes }) {
                     <SlOptionsVertical />
                     <ul>
                         <li><a href={`edit/${postId}`}><CiEdit />Edit</a></li>
-                        <li><button onClick={null}><MdDelete />Delete</button></li>
+                        <li><button onClick={handlePostDelete}><MdDelete />Delete</button></li>
                     </ul>
                 </div>
             </div>
