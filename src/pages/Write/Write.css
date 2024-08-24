@@ -36,7 +36,7 @@
 }
 
 
-.write-content .buttons button {
+.write-content .buttons button:first-child {
     font-size: 16px;
     color: #fff;
     background-color: var(--primary);
@@ -45,9 +45,18 @@
     padding: .5rem 1.2rem;
     box-shadow: 0 2px 4px var(--shadow-color);
     transition: background linear 200ms, color linear 200ms;
+    margin-right: 1rem;
 }
 
-.write-content .buttons button:hover {
+.write-content .buttons button:first-child:hover {
     background-color: var(--tags-bg);
     color: var(--primary);
+}
+
+.write-content .buttons button:last-child{
+    color: var(--footer-p);
+}
+
+.write-content .buttons button:last-child:hover{
+    color: var(--headlines);
 }

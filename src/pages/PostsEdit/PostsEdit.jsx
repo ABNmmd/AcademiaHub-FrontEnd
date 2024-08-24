@@ -64,7 +64,7 @@ function PostsEdit() {
     }
 
     const handleCancelUpdate = () => {
-        
+
     }
 
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
@@ -105,7 +105,7 @@ function PostsEdit() {
                         }}
                     />
                 </div>
-                {!error && <p className='error'>{error} this is error</p>}
+                {error && <p className='error'>{error}</p>}
                 <div className="buttons">
                     <button type="submit" onClick={handleUpdatePost}>Update</button>
                     <button type="submit" onClick={handleCancelUpdate}>Cancel</button>
