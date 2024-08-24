@@ -11,7 +11,7 @@ import './PostInteraction.css'
 function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
-    const {  } = useContext(UserContext);
+    const { isAuth, user } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLike = async () => {
@@ -26,6 +26,7 @@ function PostInteraction({ likes, dislikes }) {
 
     const handlePostDelete = async () => {
         try {
+            if (!isAuth) return;
             await deleteExistingPost(postId);
             navigate('/');
         } catch (error) {
@@ -45,7 +46,7 @@ function PostInteraction({ likes, dislikes }) {
                     <SlDislike />
                 </button>
             </div>
-            {<div className="com">
+            {isAuth && (user._id == postId) &&<div className="com">
                 <button onClick={handleCommentClick}>
                     <SlBubble />
                 </button>
