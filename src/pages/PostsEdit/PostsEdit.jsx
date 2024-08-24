@@ -35,7 +35,7 @@ function PostsEdit() {
             }
         };
         getPostData();
-    },[]);
+    }, []);
 
     const handleTags = (t) => {
         const tagsArr = [];
@@ -53,8 +53,7 @@ function PostsEdit() {
 
     }
 
-    const defaultOpt = post?.tags?.map(item => ({value: item, label: item}));
-    
+    const defTags = post?.tags?.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
             <section className='write-content'>
@@ -75,8 +74,9 @@ function PostsEdit() {
                 <div className="tags">
                     <h2>Tags</h2>
                     <Select
+                        value={defTags}
                         options={options}
-                        defaultValue={}
+                        defaultValue={[]}
                         isMulti
                         name="tags"
                         className="basic-multi-select"
