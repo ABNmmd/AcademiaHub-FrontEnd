@@ -10,7 +10,7 @@ import './PostInteraction.css'
 function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
-    const handleLike = () => {
+    const handleLike = async () => {
 
     };
     const handleDiLike = () => {
