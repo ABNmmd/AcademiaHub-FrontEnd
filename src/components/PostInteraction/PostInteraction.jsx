@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PostsContext } from '../../contexts/PostsContext';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 import { SlLike, SlDislike, SlBubble, SlOptionsVertical } from "react-icons/sl";
 import { MdDelete } from "react-icons/md";
@@ -11,7 +11,7 @@ function PostInteraction({ likes, dislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost } = useContext(PostsContext);
     const navigate = useNavigate();
-    
+
     const handleLike = async () => {
 
     };
@@ -25,7 +25,7 @@ function PostInteraction({ likes, dislikes }) {
     const handlePostDelete = async () => {
         try {
             await deleteExistingPost(postId);
-            
+            Navigate('/');
         } catch (error) {
             alert('Failed to delete the post. Please try again.');
         }
