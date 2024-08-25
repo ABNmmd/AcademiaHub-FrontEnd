@@ -9,12 +9,16 @@ function Search() {
     const [searchedP, setSearchP] = useState([]);
     const [searchKeyWord, setSearchKeyWord] = useState([]);
 
+    const handleKeyWords = (e) => {
+        
+    }
+
     return (
         <main>
             <section className="search-form">
                 <form action="">
-                    <input type="search" name="search" id="search" placeholder='Search here...' />
-                    
+                    <input type="search" onChange={handleKeyWords} name="search" id="search" placeholder='Search here...' />
+                    <button type="button" onClick={null}></button>
                 </form>
             </section>
             <section className="search-result">
