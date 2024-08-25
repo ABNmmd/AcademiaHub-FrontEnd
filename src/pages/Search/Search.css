@@ -1,3 +1,7 @@
+.search {
+    display: block;
+}
+
 .search-form form{
     display: flex;
     align-items: stretch;
