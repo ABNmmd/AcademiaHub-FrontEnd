@@ -19,7 +19,7 @@ function Search() {
             <section className="search-form">
                 <form action="">
                     <input type="search" onChange={handleKeyWords} name="search" id="search" placeholder='Search here...' />
-                    <button type="button" onClick={null}></button>
+                    <button type="button" onClick={handleSearchBtn}></button>
                 </form>
             </section>
             <section className="search-result">
