@@ -14,6 +14,10 @@ function Search() {
         setSearchKeyWord(sString.split(' '));
     }
 
+    const handleSearchBtn = () => {
+
+    }
+
     return (
         <main>
             <section className="search-form">
