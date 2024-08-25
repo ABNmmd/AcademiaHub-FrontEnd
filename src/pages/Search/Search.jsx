@@ -10,7 +10,8 @@ function Search() {
     const [searchKeyWord, setSearchKeyWord] = useState([]);
 
     const handleKeyWords = (e) => {
-        
+        const sString = e.target.value;
+        setSearchKeyWord(sString.split(' '));
     }
 
     return (
