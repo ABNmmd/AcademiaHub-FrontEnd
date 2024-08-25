@@ -3,3 +3,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.newsletter .form-container{
+    min-width: 350px;
+}
+
+.newsletter .form-container .headline{
+    
+}
