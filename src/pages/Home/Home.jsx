@@ -4,6 +4,7 @@ import { PostsContext } from '../../contexts/PostsContext';
 
 import Hero from '../../components/Hero/Hero';
 import PostLayout from '../../components/PostLayout/PostLayout';
+import About from '../../components/About/About';
 
 import './Home.css'
 
@@ -66,6 +67,7 @@ function Home() {
     <main>
       <Hero p={posts[0]} />
       <PostLayout p={posts} />
+      <About />
     </main>
   )
 }
