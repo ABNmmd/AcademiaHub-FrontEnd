@@ -9,6 +9,7 @@ function Search() {
     const [showResult, setShowResult] = useState(false);
     const [searchedP, setSearchedP] = useState([]);
     const [searchKeyWord, setSearchKeyWord] = useState([]);
+    const [searchString, setSearchString] = useState('');
 
     const handleKeyWords = (e) => {
         const sString = e.target.value;
@@ -22,6 +23,7 @@ function Search() {
         );
         console.log(foundPosts);
         setSearchedP(foundPosts);
+        setSearchString(searchKeyWord.join(' '));
         setShowResult(true);
     }
 
@@ -34,7 +36,7 @@ function Search() {
                 </form>
             </section>
             {showResult && <section className="search-result">
-                <h2>Search Result Of {searchKeyWord.join(' ')}</h2>
+                <h2>Search Result Of {searchString}</h2>
                 <PostListing p={searchedP} />
             </section>}
         </main>
