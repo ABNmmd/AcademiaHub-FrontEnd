@@ -19,3 +19,13 @@
     border-bottom-left-radius: 0;
     border: 2px solid var(--primary);
 }
+
+.search-result h2{
+    margin-bottom: 1rem;
+    color: var(--headlines);
+    font-size: 24px;
+}
+
+.search-result h2 span{
+    
+}

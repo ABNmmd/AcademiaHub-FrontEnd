@@ -38,7 +38,7 @@ function Search() {
                 </form>
             </section>
             {showResult && <section className="search-result">
-                <h2>Search Result Of {searchString}</h2>
+                <h2>Search Result Of <span>{searchString}</span></h2>
                 <PostListing p={searchedP} />
             </section>}
         </main>
