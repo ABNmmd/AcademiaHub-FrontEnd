@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import { PostsContext } from '../../contexts/PostsContext';
+import { UserContext } from '../../contexts/UserContext';
 
 import Hero from '../../components/Hero/Hero';
 import PostLayout from '../../components/PostLayout/PostLayout';
@@ -10,6 +11,7 @@ import './Home.css'
 
 function Home() {
   const { posts } = useContext(PostsContext);
+  const { isAuth } = useContext(UserContext);
   // const p = [
   //   {
   //     authorId: "123",

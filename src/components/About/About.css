@@ -24,10 +24,9 @@
     display: inline-block;
     padding: 10px 20px;
     font-size: 1.1rem;
-    background-color: #2e8b57;
+    background-color: var(--primary);
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
