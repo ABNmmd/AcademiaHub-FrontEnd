@@ -7,6 +7,7 @@ import './Search.css'
 function Search() {
     const { posts } = useContext(PostsContext);
     const [searchedP, setSearchP] = useState([]);
+    const [searchKeyWord, setSearchKeyWord] = useState([]);
 
     return (
         <main>
