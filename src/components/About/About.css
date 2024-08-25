@@ -1,0 +1,33 @@
+/* About.css */
+.about-section {
+    padding: 30px;
+    background-color: var(--footer-bg);
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--headlines);
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--footer-p);
+}
+
+.about-section .login-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #2e8b57;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
