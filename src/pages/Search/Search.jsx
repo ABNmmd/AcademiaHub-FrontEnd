@@ -17,7 +17,7 @@ function Search() {
                 </form>
             </section>
             <section className="search-result">
-                <h2>Search Result Of {}</h2>
+                <h2>Search Result Of {searchKeyWord.join(' ')}</h2>
                 <PostListing p={searchedP} />
             </section>
         </main>
