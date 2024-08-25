@@ -6,6 +6,7 @@ import './Newsletter.css'
 
 function Newsletter() {
     const [email, setEmail] = useState('');
+    
     return (
         <section id='newsletter' className='newsletter'>
             <div className="form-container">
