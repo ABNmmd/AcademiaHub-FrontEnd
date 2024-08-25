@@ -27,5 +27,9 @@
 }
 
 .search-result h2 span{
-    
+    color: var(--footer-p);
+}
+
+.search-result h2 svg{
+    vertical-align: middle;
 }
