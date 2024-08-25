@@ -8,6 +8,6 @@
     min-width: 350px;
 }
 
-.newsletter .form-container .headline{
-    
+.newsletter .form-container form div{
+    margin-bottom: 0;
 }
