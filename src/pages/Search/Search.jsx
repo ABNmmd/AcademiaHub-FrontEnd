@@ -13,7 +13,8 @@ function Search() {
         <main>
             <section className="search-form">
                 <form action="">
-
+                    <input type="search" name="search" id="search" placeholder='Search here...' />
+                    
                 </form>
             </section>
             <section className="search-result">
