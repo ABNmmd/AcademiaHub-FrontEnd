@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import PostListing from '../../components/PostListing/PostListing'
 import { PostsContext } from '../../contexts/PostsContext';
 
+import { IoSearchSharp } from "react-icons/io5";
+
 import './Search.css'
 
 function Search() {
@@ -32,7 +34,7 @@ function Search() {
             <section className="search-form">
                 <form action="">
                     <input type="search" onChange={handleKeyWords} name="search" id="search" placeholder='Search here...' />
-                    <button type="submit" onClick={handleSearchBtn}></button>
+                    <button type="submit" onClick={handleSearchBtn}><IoSearchSharp /></button>
                 </form>
             </section>
             {showResult && <section className="search-result">
