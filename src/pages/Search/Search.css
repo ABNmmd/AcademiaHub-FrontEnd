@@ -1,12 +1,17 @@
 .search-form form{
-    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-form form input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .search-form form button{
     margin: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
     width: fit-content;
-    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 2px solid var(--primary);
 }

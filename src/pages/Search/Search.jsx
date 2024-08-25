@@ -30,7 +30,7 @@ function Search() {
     }
 
     return (
-        <main>
+        <main className='search'>
             <section className="search-form">
                 <form action="">
                     <input type="search" onChange={handleKeyWords} name="search" id="search" placeholder='Search here...' />
