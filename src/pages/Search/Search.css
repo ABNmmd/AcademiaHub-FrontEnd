@@ -2,6 +2,10 @@
     display: block;
 }
 
+.search svg{
+    vertical-align: middle;
+}
+
 .search-form form{
     display: flex;
     align-items: stretch;
@@ -30,6 +34,3 @@
     color: var(--footer-p);
 }
 
-.search-result h2 svg{
-    vertical-align: middle;
-}
