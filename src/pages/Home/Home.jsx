@@ -69,7 +69,7 @@ function Home() {
     <main>
       <Hero p={posts[0]} />
       <PostLayout p={posts} />
-      <About />
+      {!isAuth && <About />}
     </main>
   )
 }
