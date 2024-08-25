@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { CiMail } from "react-icons/ci";
 
 import './Newsletter.css'
 
 function Newsletter() {
+    const [email, setEmail] = useState('');
     return (
         <section id='newsletter' className='newsletter'>
             <div className="form-container">
