@@ -4,7 +4,7 @@ import './About.css'
 
 function About() {
     return (
-        <section className="about-section">
+        <section id='about' className="about-section">
             <h2>About AcademiaHub</h2>
             <p>
                 Welcome to <strong>AcademiaHub</strong>—your go-to destination for diverse and insightful content that spans a range of interests. Whether you're looking for the latest trends in technology, tips on personal development, or just want to explore new hobbies, we've got something for everyone.
