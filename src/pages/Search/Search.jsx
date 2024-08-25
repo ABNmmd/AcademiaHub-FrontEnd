@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import PostListing from '../../components/PostListing/PostListing'
+import PostLayout from '../../components/PostLayout/PostLayout'
 import { PostsContext } from '../../contexts/PostsContext';
 
 import { IoSearchSharp } from "react-icons/io5";
@@ -37,10 +38,14 @@ function Search() {
                     <button type="submit" onClick={handleSearchBtn}><IoSearchSharp /></button>
                 </form>
             </section>
-            {showResult && <section className="search-result">
-                <h2><IoSearchSharp /> Search Result Of <span>{searchString}</span></h2>
-                <PostListing p={searchedP} />
-            </section>}
+            {showResult ?
+                <section className="search-result">
+                    <h2><IoSearchSharp /> Search Result Of <span>{searchString}</span></h2>
+                    <PostListing p={searchedP} />
+                </section>
+                :
+                <PostLayout p={posts} />
+            }
         </main>
     )
 }
