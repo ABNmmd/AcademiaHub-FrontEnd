@@ -57,6 +57,7 @@ function Comments({ postId }) {
     //     },
     // ];
     const [comments, setComments] = useState([]);
+    const [editMode, setEditMode] = useState([]);
     const [error, setError] = useState(null); // to handle error whene submitting comment
     const [delError, setDelError] = useState(null); // to handle error whene deletting comment
     const [intError, setIntError] = useState(null); // to handle error whene interacting withe comment
@@ -103,6 +104,7 @@ function Comments({ postId }) {
         setEditMode(false);
     };
 
+    // resizing the textarea
     const handleResize = (event) => {
         event.target.style.height = event.target.scrollHeight + 'px';
         if (event.current.value == '') {
@@ -110,7 +112,7 @@ function Comments({ postId }) {
         }
     };
 
-    
+    // comment creation
     const handleCommentSub = async () => {
         const content = textareaRef.current.value;
         try {
