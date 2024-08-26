@@ -57,7 +57,7 @@ function Comments({ postId }) {
     //     },
     // ];
     const [comments, setComments] = useState([]);
-    const [editMode, setEditMode] = useState([]);
+    const [editMode, setEditMode] = useState(null);
     const [error, setError] = useState(null); // to handle error whene submitting comment
     const [delError, setDelError] = useState(null); // to handle error whene deletting comment
     const [intError, setIntError] = useState(null); // to handle error whene interacting withe comment
@@ -98,10 +98,13 @@ function Comments({ postId }) {
         textareaRef.current.value = '';
         setActiveBtn(false);
     };
-    
+
+    const handleEditClick = (id) => {
+        setEditMode(id); // Enable edit mode for the specific comment
+    };
+
     const handleEditCancel = () => {
-        editTextareaRef.current.value = '';
-        setEditMode(false);
+        setEditMode(null); // Exit edit mode
     };
 
     // resizing the textarea
@@ -145,6 +148,8 @@ function Comments({ postId }) {
             setDelError('Failed to delete the comment. Please try again.');
         }
     };
+
+    //
 
     //pagenation
     const [currentPage, setCurrentPage] = useState(1);
@@ -206,38 +211,40 @@ function Comments({ postId }) {
                                     <div className="user">
                                         <img src={prf} alt="" />
                                     </div>
-                                    {editMode ?
-                                        <div className="cont">
-                                            <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
-                                            <p>{com.content}</p>
-                                            {delError && <p>{delError}</p>}
-                                            <div className="inter">
-                                                <button className={com.likes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes?.length}</button>
-                                                <button className={com.dislikes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes?.length}</button>
-                                                {com.authorId?._id == (user ? user._id : null) &&
+                                    {editMode === com._id ?
+                                        (
+                                            <div className="cont">
+                                                <textarea
+                                                    ref={editTextareaRef}
+                                                    defaultValue={com.content} // Display current comment content in textarea
+                                                    onChange={handleEditInputChange}
+                                                    onInput={handleResize}
+                                                />
+                                                <div className={`i-con ${activeBtn ? 'active' : null}`}>
+                                                    <div>
+                                                        <button type="reset" onClick={handleEditCancel}>Cancel</button>
+                                                        <button type="submit" onClick={() => handleCommentUpdate(com._id)}>Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                        :
+                                        (
+                                            <div className="cont">
+                                                <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
+                                                <p>{com.content}</p>
+                                                {com.authorId?._id === (user ? user._id : null) && (
                                                     <div className='onerOptions'>
                                                         <i><MdMoreVert /></i>
                                                         <ul role="menu">
-                                                            <li role="menuitem"><button><CiEdit /> Edit</button></li>
+                                                            <li role="menuitem"><button onClick={() => handleEditClick(com._id)}><CiEdit /> Edit</button></li>
                                                             <li role="menuitem"><button onClick={() => handleCommentDel(com._id)}><MdDelete /> Delete</button></li>
                                                         </ul>
                                                     </div>
-                                                }
+                                                )}
                                                 {intError && <p style={{ color: 'red', fontSize: '12px' }}>{intError}</p>}
                                             </div>
-                                        </div>
-                                        :
-                                        <div className="cont">
-                                            <textarea ref={editTextareaRef} type="text" onChange={handleEditInputChange} onInput={handleResize} />
-                                            <div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                                {//error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
-                                                <div>
-                                                    <button type="reset" onClick={handleEditCancel}>Cancel</button>
-                                                    <button type="submit" onClick={handleCommentUpdate}>Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
+                                        )}
                                 </div>
                             ))}
                             {currentComments.length < comments.length
