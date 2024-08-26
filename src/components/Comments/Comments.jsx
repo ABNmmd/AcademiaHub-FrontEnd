@@ -104,6 +104,7 @@ function Comments({ postId }) {
     };
 
     const handleEditCancel = () => {
+        editTextareaRef.current.value = '';
         setEditMode(null); // Exit edit mode
     };
 
