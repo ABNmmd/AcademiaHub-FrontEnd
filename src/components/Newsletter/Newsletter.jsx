@@ -33,7 +33,7 @@ function Newsletter() {
                         <input type="email" name="entry.507768606" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
                         <CiMail />
                     </div>
-                    {error && <p className='error'>{error}This is error</p>}
+                    {error && <p className='error'>{error}</p>}
                     <button type="submit">Subscribe</button>
                 </form>
                 <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
