@@ -203,20 +203,20 @@ function Comments({ postId }) {
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
                             {isAuth ?
-                                <div className={`i-con ${activeBtn ? 'active' : null}`}>
+                                (activeBtn && <div className={`i-con ${activeBtn ? 'active' : null}`}>
                                     {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
                                     <div>
                                         <button type="reset" onClick={handleCancel}>Cancel</button>
                                         <button type="submit" onClick={handleCommentSub}>Send</button>
                                     </div>
-                                </div>
+                                </div>)
                                 :
-                                <div className={`i-con active`}>
+                                (<div className={`i-con active`}>
                                     <div>
                                         <a href="/login">Login</a>
                                         <a href="/register">Register</a>
                                     </div>
-                                </div>
+                                </div>)
                             }
                         </div>
                     </div>
