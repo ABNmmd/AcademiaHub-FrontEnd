@@ -16,8 +16,8 @@ function Newsletter() {
             setError(null);
             return true;
         } else {
-            setError(null);
-            return true;
+            setError('Invalid Email address, Please Try again');
+            return false;
         }
     };
 
@@ -33,6 +33,7 @@ function Newsletter() {
                         <input type="email" name="entry.507768606" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
                         <CiMail />
                     </div>
+                    {error && <p>{error}</p>}
                     <button type="submit">Subscribe</button>
                 </form>
                 <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
