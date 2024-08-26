@@ -149,7 +149,21 @@ function Comments({ postId }) {
         }
     };
 
-    //
+    // Comment Update
+    const handleCommentUpdate = async (id) => {
+        const updatedContent = editTextareaRef.current.value;
+        try {
+            if (!updatedContent || updatedContent.trim() === '') {
+                setError('Invalid content. Please try again.');
+                return;
+            }
+            const updatedComment = await updateOldComment(id, { content: updatedContent });
+            setComments(comments.map(com => (com._id === id ? updatedComment : com)));
+            setEditMode(null); // Exit edit mode after update
+        } catch (error) {
+            setError('Failed to update comment. Please try again.');
+        }
+    };
 
     //pagenation
     const [currentPage, setCurrentPage] = useState(1);
