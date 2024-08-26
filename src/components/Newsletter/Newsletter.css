@@ -9,5 +9,9 @@
 }
 
 .newsletter .form-container form div{
-    margin-bottom: 0;
+    margin-bottom: .5rem;
+}
+
+.newsletter .form-container form .error{
+    text-align: start;
 }
