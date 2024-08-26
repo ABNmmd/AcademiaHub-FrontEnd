@@ -76,9 +76,17 @@ function Comments({ postId }) {
 
     const [activeBtn, setActiveBtn] = useState(false);
     const textareaRef = useRef(null);
+    const editTextareaRef = useRef(null);
 
     const handleInputChange = () => {
         if (textareaRef.current.value) {
+            setActiveBtn(true);
+        } else {
+            setActiveBtn(false);
+        }
+    };
+    const handleEditInputChange = () => {
+        if (editTextareaRef.current.value) {
             setActiveBtn(true);
         } else {
             setActiveBtn(false);
@@ -89,14 +97,20 @@ function Comments({ postId }) {
         textareaRef.current.value = '';
         setActiveBtn(false);
     };
+    
+    const handleEditCancel = () => {
+        editTextareaRef.current.value = '';
+        setEditMode(false);
+    };
 
     const handleResize = (event) => {
         event.target.style.height = event.target.scrollHeight + 'px';
-        if (textareaRef.current.value == '') {
+        if (event.current.value == '') {
             event.target.style.height = '1.2em';
         }
     };
 
+    
     const handleCommentSub = async () => {
         const content = textareaRef.current.value;
         try {
@@ -118,6 +132,7 @@ function Comments({ postId }) {
         }
     };
 
+    //Comment delete
     const handleCommentDel = async (id) => {
         try {
             await deleteExistingComment(id);
@@ -129,6 +144,7 @@ function Comments({ postId }) {
         }
     };
 
+    //pagenation
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 2;
     const [currentComments, setCurrentComments] = useState([]);
