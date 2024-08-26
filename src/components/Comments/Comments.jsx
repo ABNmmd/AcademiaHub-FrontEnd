@@ -188,25 +188,38 @@ function Comments({ postId }) {
                                     <div className="user">
                                         <img src={prf} alt="" />
                                     </div>
-                                    <div className="cont">
-                                        <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
-                                        <p>{com.content}</p>
-                                        {delError && <p>{delError}</p>}
-                                        <div className="inter">
-                                            <button className={com.likes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes?.length}</button>
-                                            <button className={com.dislikes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes?.length}</button>
-                                            {com.authorId?._id == (user ? user._id : null) &&
-                                                <div className='onerOptions'>
-                                                    <i><MdMoreVert /></i>
-                                                    <ul role="menu">
-                                                        <li role="menuitem"><button><CiEdit /> Edit</button></li>
-                                                        <li role="menuitem"><button onClick={() => handleCommentDel(com._id)}><MdDelete /> Delete</button></li>
-                                                    </ul>
-                                                </div>
-                                            }
-                                            {intError && <p style={{ color: 'red', fontSize: '12px' }}>{intError}</p>}
+                                    {editMode ?
+                                        <div className="cont">
+                                            <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
+                                            <p>{com.content}</p>
+                                            {delError && <p>{delError}</p>}
+                                            <div className="inter">
+                                                <button className={com.likes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes?.length}</button>
+                                                <button className={com.dislikes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes?.length}</button>
+                                                {com.authorId?._id == (user ? user._id : null) &&
+                                                    <div className='onerOptions'>
+                                                        <i><MdMoreVert /></i>
+                                                        <ul role="menu">
+                                                            <li role="menuitem"><button><CiEdit /> Edit</button></li>
+                                                            <li role="menuitem"><button onClick={() => handleCommentDel(com._id)}><MdDelete /> Delete</button></li>
+                                                        </ul>
+                                                    </div>
+                                                }
+                                                {intError && <p style={{ color: 'red', fontSize: '12px' }}>{intError}</p>}
+                                            </div>
                                         </div>
-                                    </div>
+                                        :
+                                        <div className="cont">
+                                            <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
+                                            <div className={`i-con ${activeBtn ? 'active' : null}`}>
+                                                {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
+                                                <div>
+                                                    <button type="reset" onClick={handleCancel}>Cancel</button>
+                                                    <button type="submit" onClick={handleCommentSub}>Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
                             ))}
                             {currentComments.length < comments.length
