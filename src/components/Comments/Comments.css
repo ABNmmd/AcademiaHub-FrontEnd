@@ -44,6 +44,7 @@
     border-radius: 4px;
     line-height: 1.2em;
     height: 1.2em;
+    margin-bottom: .3rem;
 }
 
 .comments-container .body .comment-edit-box .cont .i-con {
@@ -62,23 +63,25 @@
     padding: 4px 8px;
 }
 
+.comments-container .body .comment-edit-box .cont .i-con a:first-child,
 .comments-container .body .comment-edit-box .cont .i-con button:first-child {
     margin-right: .5rem;
     color: var(--info);
 }
 
+.comments-container .body .comment-edit-box .cont .active a:first-child,
 .comments-container .body .comment-edit-box .cont .active button:first-child {
     color: var(--headlines);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con a,
+.comments-container .body .comment-edit-box .cont .i-con a:last-child,
 .comments-container .body .comment-edit-box .cont .i-con button:last-child {
     background-color: var(--border);
     color: var(--headlines);
     border-radius: 4px;
 }
 
-.comments-container .body .comment-edit-box .cont .active a,
+.comments-container .body .comment-edit-box .cont .active a:last-child,
 .comments-container .body .comment-edit-box .cont .active button:last-child {
     background-color: var(--primary);
     color: #fff;
