@@ -214,8 +214,8 @@ function Comments({ postId }) {
                                             <div className={`i-con ${activeBtn ? 'active' : null}`}>
                                                 {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
                                                 <div>
-                                                    <button type="reset" onClick={handleCancel}>Cancel</button>
-                                                    <button type="submit" onClick={handleCommentSub}>Send</button>
+                                                    <button type="reset" onClick={handleEditCancel}>Cancel</button>
+                                                    <button type="submit" onClick={handleCommentUpdate}>Send</button>
                                                 </div>
                                             </div>
                                         </div>
