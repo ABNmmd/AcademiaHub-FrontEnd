@@ -12,6 +12,7 @@
     margin-bottom: .5rem;
 }
 
-.newsletter .form-container form .error{
+.newsletter .form-container form p{
     text-align: start;
+    font-size: 14px;
 }

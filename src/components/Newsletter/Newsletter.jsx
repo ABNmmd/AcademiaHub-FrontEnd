@@ -7,6 +7,7 @@ import './Newsletter.css'
 function Newsletter() {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
+    const [valid, setValid] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,6 +16,8 @@ function Newsletter() {
         if (email.match(validRegex)) {
             setError(null);
             e.target.submit();
+            e.target.reset();
+            setValid('Subscribed successfully');
         } else {
             setError('Invalid Email address. Please Try again');
             return false;
@@ -34,6 +37,7 @@ function Newsletter() {
                         <CiMail />
                     </div>
                     {error && <p className='error'>{error}</p>}
+                    {valid && <p style={{color: 'green'}}>{valid}</p>}
                     <button type="submit">Subscribe</button>
                 </form>
                 <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
