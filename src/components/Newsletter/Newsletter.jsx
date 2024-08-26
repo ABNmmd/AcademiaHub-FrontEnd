@@ -14,7 +14,7 @@ function Newsletter() {
                     <h2>Weekly Newsletter</h2>
                     <p>Get blog articles and offers via email</p>
                 </div>
-                <form>
+                <form action=''>
                     <div>
                         <input type="email" name="email" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
                         <CiMail />

@@ -16,6 +16,7 @@ import Posts from './pages/Posts/Posts.jsx';
 import PostsEdit from './pages/PostsEdit/PostsEdit.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import Search from './pages/Search/Search.jsx';
+import About from './pages/About/About.jsx';
 
 import Header from './components/Header/Header.jsx'
 import Footer from './components/Footer/Footer.jsx'
@@ -81,6 +82,10 @@ const App = () => {
     {
       path: "/search",
       element: <Search />,
+    },
+    {
+      path: "/about",
+      element: <About />,
     },
   ]);
 
