@@ -230,6 +230,7 @@ function Comments({ postId }) {
                                     {editMode === com?._id ?
                                         (
                                             <div className="cont">
+                                                 <span>{com?.authorId?.username}</span><span className='time'>Last update: {moment(com?.updatedAt).fromNow()}</span>
                                                 <textarea
                                                     ref={editTextareaRef}
                                                     defaultValue={com.content} // Display current comment content in textarea
