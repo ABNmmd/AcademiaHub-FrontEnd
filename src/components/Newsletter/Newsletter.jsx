@@ -6,11 +6,19 @@ import './Newsletter.css'
 
 function Newsletter() {
     const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-        
+        if (email.match(validRegex)) {
+            setError(null);
+            return true;
+        } else {
+            setError(null);
+            return true;
+        }
     };
 
     return (
