@@ -212,7 +212,7 @@ function Comments({ postId }) {
                                         <div className="cont">
                                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
                                             <div className={`i-con ${activeBtn ? 'active' : null}`}>
-                                                {error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
+                                                {//error && <p style={{ color: 'red', fontSize: '13px', }}>{error}</p>}
                                                 <div>
                                                     <button type="reset" onClick={handleEditCancel}>Cancel</button>
                                                     <button type="submit" onClick={handleCommentUpdate}>Send</button>
