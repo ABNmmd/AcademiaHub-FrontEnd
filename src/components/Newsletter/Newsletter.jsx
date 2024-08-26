@@ -6,6 +6,8 @@ import './Newsletter.css'
 
 function Newsletter() {
     const [email, setEmail] = useState('');
+
+    
     
     return (
         <section id='newsletter' className='newsletter'>
@@ -14,13 +16,14 @@ function Newsletter() {
                     <h2>Weekly Newsletter</h2>
                     <p>Get blog articles and offers via email</p>
                 </div>
-                <form action='https://docs.google.com/forms/d/e/1FAIpQLSd6SxISvurzL3y_GRD5fTnQaOG7_j2SXrsHvFx7xFXAXhK7Lw/formResponse'>
+                <form action='https://docs.google.com/forms/d/e/1FAIpQLSd6SxISvurzL3y_GRD5fTnQaOG7_j2SXrsHvFx7xFXAXhK7Lw/formResponse' method="post" target="hidden_iframe" onSubmit={handleSubmit}>
                     <div>
                         <input type="email" name="entry.507768606" id="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
                         <CiMail />
                     </div>
                     <button type="submit">Subscribe</button>
                 </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
             </div>
         </section>
     )
