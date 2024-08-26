@@ -151,9 +151,9 @@ const getComments = async (postId) => {
 }
 
 // API call to update comment
-const updateComment = async (id, newCommentData) => {
+const updateComment = async (id, newContent) => {
     try {
-        const response = await api.put(`/comments/${id}`, newCommentData);
+        const response = await api.put(`/comments/${id}`, newContent);
         // console.log(response.data);
         return response.data;
     } catch (error) {

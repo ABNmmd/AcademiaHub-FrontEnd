@@ -22,9 +22,10 @@ const CommentsProvider = ({ children }) => {
         }
     }
 
-    const updateOldComment = async (id, newCommentData) => {
+    const updateOldComment = async (id, newContent) => {
         try {
-            const updatedComment = await updateComment(id, newCommentData);
+            const updatedComment = await updateComment(id, newContent);
+            console.log('from context', updatedComment);
             return updatedComment;
         } catch (error) {
             console.error('Error updating Comment', error);

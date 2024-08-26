@@ -152,14 +152,15 @@ function Comments({ postId }) {
 
     // Comment Update
     const handleCommentUpdate = async (id) => {
-        const updatedContent = editTextareaRef.current.value;
+        const content = editTextareaRef.current.value;
         try {
-            if (!updatedContent || updatedContent.trim() === '') {
+            if (!content || content.trim() === '') {
                 setError('Invalid content. Please try again.');
                 return;
             }
-            const updatedComment = await updateOldComment(id, { content: updatedContent });
+            const updatedComment = await updateOldComment(id, { content });
             setComments(comments.map(com => (com._id === id ? updatedComment : com)));
+            console.log(updatedComment);
             setEditMode(null); // Exit edit mode after update
         } catch (error) {
             setError('Failed to update comment. Please try again.');
@@ -226,7 +227,7 @@ function Comments({ postId }) {
                                     <div className="user">
                                         <img src={prf} alt="" />
                                     </div>
-                                    {editMode === com._id ?
+                                    {editMode === com?._id ?
                                         (
                                             <div className="cont">
                                                 <textarea
@@ -238,7 +239,7 @@ function Comments({ postId }) {
                                                 <div className={`i-con ${activeBtn ? 'active' : null}`}>
                                                     <div>
                                                         <button type="reset" onClick={handleEditCancel}>Cancel</button>
-                                                        <button type="submit" onClick={() => handleCommentUpdate(com._id)}>Update</button>
+                                                        <button type="submit" onClick={() => handleCommentUpdate(com?._id)}>Update</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,18 +247,18 @@ function Comments({ postId }) {
                                         :
                                         (
                                             <div className="cont">
-                                                <span>{com.authorId?.username}</span><span className='time'>{moment(com.createdAt).fromNow()}</span>
-                                                <p>{com.content}</p>
+                                                <span>{com?.authorId?.username}</span><span className='time'>{moment(com?.createdAt).fromNow()}</span>
+                                                <p>{com?.content}</p>
                                                 {delError && <p>{delError}</p>}
                                                 <div className="inter">
-                                                    <button className={com.likes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidLike /> {com.likes?.length}</button>
-                                                    <button className={com.dislikes?.includes(user ? user._id : null) ? 'interacted' : null}><BiSolidDislike /> {com.dislikes?.length}</button>
-                                                    {com.authorId?._id == (user ? user._id : null) &&
+                                                    <button className={com?.likes?.includes(user ? user?._id : null) ? 'interacted' : null}><BiSolidLike /> {com?.likes?.length}</button>
+                                                    <button className={com?.dislikes?.includes(user ? user?._id : null) ? 'interacted' : null}><BiSolidDislike /> {com?.dislikes?.length}</button>
+                                                    {com?.authorId?._id == (user ? user?._id : null) &&
                                                         <div className='onerOptions'>
                                                             <i><MdMoreVert /></i>
                                                             <ul role="menu">
-                                                                <li role="menuitem"><button><CiEdit /> Edit</button></li>
-                                                                <li role="menuitem"><button onClick={() => handleCommentDel(com._id)}><MdDelete /> Delete</button></li>
+                                                                <li role="menuitem"><button onClick={() => handleEditClick(com?._id)}><CiEdit /> Edit</button></li>
+                                                                <li role="menuitem"><button onClick={() => handleCommentDel(com?._id)}><MdDelete /> Delete</button></li>
                                                             </ul>
                                                         </div>
                                                     }

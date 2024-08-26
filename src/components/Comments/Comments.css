@@ -26,11 +26,11 @@
     object-fit: cover;
 }
 
-.comments-container .body .comment-edit-box .cont {
+.comments-container .body .cont {
     flex: 1;
 }
 
-.comments-container .body .comment-edit-box .cont textarea {
+.comments-container .body .cont textarea {
     width: 100%;
     color: var(--nav);
     background-color: var(--footer-bg);
@@ -47,42 +47,42 @@
     margin-bottom: .3rem;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con {
+.comments-container .body .cont .i-con {
     display: flex;
     justify-content: space-between;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con>div {
+.comments-container .body .cont .i-con>div {
     flex: 1;
     text-align: end;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con a,
-.comments-container .body .comment-edit-box .cont .i-con button {
+.comments-container .body .cont .i-con a,
+.comments-container .body .cont .i-con button {
     font-size: 14px;
     padding: 4px 8px;
 }
 
-.comments-container .body .comment-edit-box .cont .i-con a:first-child,
-.comments-container .body .comment-edit-box .cont .i-con button:first-child {
+.comments-container .body .cont .i-con a:first-child,
+.comments-container .body .cont .i-con button:first-child {
     margin-right: .5rem;
     color: var(--info);
 }
 
-.comments-container .body .comment-edit-box .cont .active a:first-child,
-.comments-container .body .comment-edit-box .cont .active button:first-child {
+.comments-container .body .cont .active a:first-child,
+.comments-container .body.cont .active button:first-child {
     color: var(--headlines);
 }
 
-.comments-container .body .comment-edit-box .cont .i-con a:last-child,
-.comments-container .body .comment-edit-box .cont .i-con button:last-child {
+.comments-container .body .cont .i-con a:last-child,
+.comments-container .body .cont .i-con button:last-child {
     background-color: var(--border);
     color: var(--headlines);
     border-radius: 4px;
 }
 
-.comments-container .body .comment-edit-box .cont .active a:last-child,
-.comments-container .body .comment-edit-box .cont .active button:last-child {
+.comments-container .body .cont .active a:last-child,
+.comments-container .body .cont .active button:last-child {
     background-color: var(--primary);
     color: #fff;
 }
