@@ -16,7 +16,7 @@ function Newsletter() {
             setError(null);
             return true;
         } else {
-            setError('Invalid Email address, Please Try again');
+            setError('Invalid Email address. Please Try again');
             return false;
         }
     };
