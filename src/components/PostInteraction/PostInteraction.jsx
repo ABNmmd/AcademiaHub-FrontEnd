@@ -21,7 +21,7 @@ function PostInteraction({ autherId, likes, dislikes }) {
 
     };
     const handleCommentClick = () => {
-
+        navigate('#comments');
     };
 
     const handlePostDelete = async () => {

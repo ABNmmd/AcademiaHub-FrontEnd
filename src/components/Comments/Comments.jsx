@@ -151,7 +151,7 @@ function Comments({ postId }) {
 
 
     return (
-        <section className="comments">
+        <section className="comments" id='comments'>
             <div className="comments-container">
                 <div className="head">
                     <h3>{comments && comments.length || 0} comments</h3>
