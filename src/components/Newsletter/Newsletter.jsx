@@ -11,10 +11,10 @@ function Newsletter() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
+        // console.log(email);
         if (email.match(validRegex)) {
             setError(null);
-            return true;
+            e.target.submit();
         } else {
             setError('Invalid Email address. Please Try again');
             return false;
