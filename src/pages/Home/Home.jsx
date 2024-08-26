@@ -5,7 +5,6 @@ import { UserContext } from '../../contexts/UserContext';
 
 import Hero from '../../components/Hero/Hero';
 import PostLayout from '../../components/PostLayout/PostLayout';
-import About from '../About/About';
 import Newsletter from '../../components/Newsletter/Newsletter';
 
 import './Home.css'
@@ -70,7 +69,6 @@ function Home() {
     <main>
       <Hero p={posts[0]} />
       <PostLayout p={posts} />
-      {!isAuth && <About />}
       <Newsletter />
     </main>
   )
