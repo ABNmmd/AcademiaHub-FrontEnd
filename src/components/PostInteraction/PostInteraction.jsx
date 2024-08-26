@@ -20,9 +20,6 @@ function PostInteraction({ autherId, likes, dislikes }) {
     const handleDiLike = async () => {
 
     };
-    const handleCommentClick = () => {
-        navigate('#comments');
-    };
 
     const handlePostDelete = async () => {
         try {
@@ -47,8 +44,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
                 </button>
             </div>
             <div className="com">
-                <button onClick={handleCommentClick}>
-                    <SlBubble />
+                <button>
+                    <a href="#comments">
+                        <SlBubble />
+                    </a>
                 </button>
                 {isAuth && (user?._id == autherId?._id) &&
                     <div className="x">
