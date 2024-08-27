@@ -28,7 +28,7 @@ function Posts() {
             }
         };
         getPostData();
-    },[]);
+    },[post]);
 
     // const post = {
     //     _id: postId,

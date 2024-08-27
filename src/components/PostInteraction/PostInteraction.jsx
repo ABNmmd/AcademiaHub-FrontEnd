@@ -27,7 +27,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
 
     const handleDislike = async () => {
         try {
-            if (!isAuth) return;
+            if (!isAuth) {
+                setError('Please Login and try again');
+                return;
+            }
             await dislikePostAction(postId);
             setError('');
         } catch (error) {
@@ -37,7 +40,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
 
     const handlePostDelete = async () => {
         try {
-            if (!isAuth) return;
+            if (!isAuth) {
+                setError('Please Login and try again');
+                return;
+            }
             await deleteExistingPost(postId);
             navigate('/');
         } catch (error) {
@@ -49,11 +55,11 @@ function PostInteraction({ autherId, likes, dislikes }) {
         <>
             <div className='interactions'>
                 <div className="di-like">
-                    <button className={dislikes?.includes(user._id) && 'activeAction'} onClick={handleLike}>
+                    <button className={dislikes?.includes(user?._id) && 'activeAction'} onClick={handleLike}>
                         <span>{likes?.length}</span>
                         <SlLike />
                     </button>
-                    <button className={dislikes?.includes(user._id) && 'activeAction'} onClick={handleDislike}>
+                    <button className={dislikes?.includes(user?._id) && 'activeAction'} onClick={handleDislike}>
                         <span>{dislikes?.length}</span>
                         <SlDislike />
                     </button>
