@@ -19,8 +19,9 @@ function PostInteraction({ autherId, likes, dislikes }) {
         try {
             if (!isAuth) return;
             await likePostAction(postId);
+            setError('');
         } catch (error) {
-            alert('Failed to like the post. Please try again.');
+            setError('Failed to like the post. Please try again.');
         }
     };
 
@@ -28,8 +29,9 @@ function PostInteraction({ autherId, likes, dislikes }) {
         try {
             if (!isAuth) return;
             await dislikePostAction(postId);
+            setError('');
         } catch (error) {
-            alert('Failed to dislike the post. Please try again.');
+            setError('Failed to dislike the post. Please try again.');
         }
     };
 
