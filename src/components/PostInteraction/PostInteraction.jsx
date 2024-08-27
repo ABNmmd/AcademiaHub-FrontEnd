@@ -10,15 +10,26 @@ import './PostInteraction.css'
 
 function PostInteraction({ autherId, likes, dislikes }) {
     const { postId } = useParams();
-    const { deleteExistingPost } = useContext(PostsContext);
+    const { deleteExistingPost, likePostAction, dislikePostAction } = useContext(PostsContext);
     const { isAuth, user } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLike = async () => {
-
+        try {
+            if (!isAuth) return;
+            await likePostAction(postId);
+        } catch (error) {
+            alert('Failed to like the post. Please try again.');
+        }
     };
-    const handleDiLike = async () => {
 
+    const handleDislike = async () => {
+        try {
+            if (!isAuth) return;
+            await dislikePostAction(postId);
+        } catch (error) {
+            alert('Failed to dislike the post. Please try again.');
+        }
     };
 
     const handlePostDelete = async () => {
@@ -34,12 +45,12 @@ function PostInteraction({ autherId, likes, dislikes }) {
     return (
         <div className='interactions'>
             <div className="di-like">
-                <button onClick={handleLike}>
-                    <span>{likes}</span>
+                <button className={dislikes?.includes(user._id) && 'activeAction'} onClick={handleLike}>
+                    <span>{likes?.length}</span>
                     <SlLike />
                 </button>
-                <button onClick={handleDiLike}>
-                    <span>{dislikes}</span>
+                <button className={dislikes?.includes(user._id) && 'activeAction'} onClick={handleDislike}>
+                    <span>{dislikes?.length}</span>
                     <SlDislike />
                 </button>
             </div>

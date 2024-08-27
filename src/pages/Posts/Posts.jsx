@@ -46,7 +46,7 @@ function Posts() {
         <main className='posts-page'>
             <section className="post">
                 <DataBox data={post} />
-                <PostInteraction autherId={post?.authorId} likes={post.likes ? post.likes?.length : 0} dislikes={post.dislikes ? post.dislikes?.length : 0} />
+                <PostInteraction autherId={post?.authorId} likes={post?.likes} dislikes={post?.dislikes} />
                 <div className="banner">
                     <img src={bg} alt="" />
                 </div>
