@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { createComment, getComments, updateComment, deleteComment } from '../services/api';
+import { createComment, getComments, updateComment, deleteComment, likeComment, dislikeComment } from '../services/api';
 
 const CommentsContext = createContext();
 
@@ -40,8 +40,33 @@ const CommentsProvider = ({ children }) => {
         }
     }
 
+    const likeCommentAction = async (id) => {
+        try {
+            const updatedComment = await likeComment(id);
+            return updatedComment;
+        } catch (error) {
+            console.error('Error liking comment', error);
+        }
+    }
+
+    const dislikeCommentAction = async (id) => {
+        try {
+            const updatedComment = await dislikeComment(id);
+            return updatedComment;
+        } catch (error) {
+            console.error('Error disliking comment', error);
+        }
+    }
+
     return (
-        <CommentsContext.Provider value={{ createNewComment, getAllComments, updateOldComment, deleteExistingComment }}>
+        <CommentsContext.Provider value={{
+            createNewComment,
+            getAllComments,
+            updateOldComment,
+            deleteExistingComment,
+            likeCommentAction,
+            dislikeCommentAction
+        }}>
             {children}
         </CommentsContext.Provider>
     );
