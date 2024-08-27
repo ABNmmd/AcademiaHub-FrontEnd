@@ -23,6 +23,7 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border: 2px solid var(--primary);
+    box-shadow: none;
 }
 
 .search-result h2{
