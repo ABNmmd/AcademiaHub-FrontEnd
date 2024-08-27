@@ -11,7 +11,7 @@ import prf from '../../assets/download.png'
 
 function Comments({ postId }) {
     const { user, isAuth } = useContext(UserContext);
-    const { createNewComment, getAllComments, updateOldComment, deleteExistingComment } = useContext(CommentsContext);
+    const { createNewComment, getAllComments, updateOldComment, deleteExistingComment, likeCommentAction, dislikeCommentAction } = useContext(CommentsContext);
     // const commentsFake = [
     //     {
     //         authorId: 'Jhon Doe2',
@@ -167,6 +167,36 @@ function Comments({ postId }) {
         }
     };
 
+    // Like a comment
+    const handleLike = async (id) => {
+        try {
+            if (!isAuth) {
+                setIntError('Please login to interact');
+                return;
+            }
+
+            const updatedComment = await likeCommentAction(id);
+            setComments(comments.map(com => (com._id === id ? updatedComment : com)));
+        } catch (error) {
+            setIntError('Failed to like the comment. Please try again.');
+        }
+    };
+
+    // Dislike a comment
+    const handleDislike = async (id) => {
+        try {
+            if (!isAuth) {
+                setIntError('Please login to interact');
+                return;
+            }
+
+            const updatedComment = await dislikeCommentAction(id);
+            setComments(comments.map(com => (com._id === id ? updatedComment : com)));
+        } catch (error) {
+            setIntError('Failed to dislike the comment. Please try again.');
+        }
+    };
+
     //pagenation
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 2;
@@ -230,7 +260,7 @@ function Comments({ postId }) {
                                     {editMode === com?._id ?
                                         (
                                             <div className="cont">
-                                                 <span>{com?.authorId?.username}</span><span className='time'>Last update: {moment(com?.updatedAt).fromNow()}</span>
+                                                <span>{com?.authorId?.username}</span><span className='time'>Last update: {moment(com?.updatedAt).fromNow()}</span>
                                                 <textarea
                                                     ref={editTextareaRef}
                                                     defaultValue={com.content} // Display current comment content in textarea
@@ -252,9 +282,19 @@ function Comments({ postId }) {
                                                 <p>{com?.content}</p>
                                                 {delError && <p>{delError}</p>}
                                                 <div className="inter">
-                                                    <button className={com?.likes?.includes(user ? user?._id : null) ? 'interacted' : null}><BiSolidLike /> {com?.likes?.length}</button>
-                                                    <button className={com?.dislikes?.includes(user ? user?._id : null) ? 'interacted' : null}><BiSolidDislike /> {com?.dislikes?.length}</button>
-                                                    {com?.authorId?._id == (user ? user?._id : null) &&
+                                                <button
+                                                    className={com?.likes?.includes(user?._id) ? 'interacted' : ''}
+                                                    onClick={() => handleLike(com?._id)}
+                                                >
+                                                    <BiSolidLike /> {com?.likes?.length}
+                                                </button>
+                                                <button
+                                                    className={com?.dislikes?.includes(user?._id) ? 'interacted' : ''}
+                                                    onClick={() => handleDislike(com?._id)}
+                                                >
+                                                    <BiSolidDislike /> {com?.dislikes?.length}
+                                                </button>
+                                                    {com?.authorId?._id == user?._id &&
                                                         <div className='onerOptions'>
                                                             <i><MdMoreVert /></i>
                                                             <ul role="menu">
