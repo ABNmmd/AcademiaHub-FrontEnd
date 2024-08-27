@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { createPost, getPosts, getPostById, updatePost, deletePost } from '../services/api';
+import { createPost, getPosts, getPostById, updatePost, deletePost, likePost, dislikePost } from '../services/api';
 
 const PostsContext = createContext();
 
@@ -59,8 +59,40 @@ const PostsProvider = ({ children }) => {
         }
     }
 
+    const likePostAction = async (id) => {
+        try {
+            const updatedPost = await likePost(id);
+            setPosts((prevPosts) =>
+                prevPosts.map((post) => (post._id === id ? updatedPost : post))
+            );
+            return updatedPost;
+        } catch (error) {
+            console.error('Error liking post', error);
+        }
+    }
+
+    const dislikePostAction = async (id) => {
+        try {
+            const updatedPost = await dislikePost(id);
+            setPosts((prevPosts) =>
+                prevPosts.map((post) => (post._id === id ? updatedPost : post))
+            );
+            return updatedPost;
+        } catch (error) {
+            console.error('Error disliking post', error);
+        }
+    }
+
     return (
-        <PostsContext.Provider value={{ posts, createNewPost, getOnePost, updateOldPost, deleteExistingPost }}>
+        <PostsContext.Provider value={{
+            posts,
+            createNewPost,
+            getOnePost,
+            updateOldPost,
+            deleteExistingPost,
+            likePostAction,
+            dislikePostAction
+        }}>
             {children}
         </PostsContext.Provider>
     );
