@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../contexts/UserContext';
 import { PostsContext } from '../../contexts/PostsContext';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,6 +17,11 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
 
     const [likes, setLikes] = useState(initialLikes || []);
     const [dislikes, setDislikes] = useState(initialDislikes || []);
+
+    useEffect(() => {
+        setLikes(initialLikes || []);
+        setDislikes(initialDislikes || []);
+    }, [initialLikes, initialDislikes]);
 
     const handleLike = async () => {
         try {
@@ -74,11 +79,11 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
             <div className='interactions'>
                 <div className="di-like">
                     <button className={likes?.includes(user?._id) ? 'activeAction' : ''} onClick={handleLike}>
-                        <span>{likes?.length}</span>
+                        <span>{likes.length}</span>
                         <SlLike />
                     </button>
                     <button className={dislikes?.includes(user?._id) ? 'activeAction' : ''} onClick={handleDislike}>
-                        <span>{dislikes?.length}</span>
+                        <span>{dislikes.length}</span>
                         <SlDislike />
                     </button>
                 </div>

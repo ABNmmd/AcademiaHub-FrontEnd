@@ -4,9 +4,14 @@
     margin-bottom: 1rem !important;
 }
 
-.interactions .activeAction{
+.interactions .di-like .activeAction{
     background-color: var(--primary);
     box-shadow: none;
+    color: #fff;
+}
+
+.interactions .di-like .activeAction svg{
+    color: #fff;
 }
 
 .interactions .di-like button:first-child {
@@ -22,7 +27,7 @@
     background-color: var(--footer-bg);
     border-radius: 6px;
     box-shadow: 0 3px 2px var(--shadow-color);
-    transition: box-shadow linear 200ms;
+    transition: box-shadow linear 0.03s;
 }
 
 .interactions .di-like>button:hover,
