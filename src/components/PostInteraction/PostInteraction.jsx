@@ -8,12 +8,15 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import './PostInteraction.css'
 
-function PostInteraction({ autherId, likes, dislikes }) {
+function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDislikes }) {
     const { postId } = useParams();
     const { deleteExistingPost, likePostAction, dislikePostAction } = useContext(PostsContext);
     const { isAuth, user } = useContext(UserContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');
+
+    const [localLikes, setLocalLikes] = useState(initialLikes || []);
+    const [localDislikes, setLocalDislikes] = useState(initialDislikes || []);;
 
     const handleLike = async () => {
         try {
@@ -22,6 +25,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
                 return;
             }
             await likePostAction(postId);
+            if (!likes.includes(user?._id)) {
+                setLikes((prevLikes) => [...prevLikes, user?._id]);
+                setDislikes((prevDislikes) => prevDislikes.filter((id) => id !== user?._id)); // Remove from dislikes if it exists
+            }
             setError('');
         } catch (error) {
             setError('Failed to like the post. Please try again.');
@@ -35,6 +42,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
                 return;
             }
             await dislikePostAction(postId);
+            if (!dislikes.includes(user?._id)) {
+                setDislikes((prevDislikes) => [...prevDislikes, user?._id]);
+                setLikes((prevLikes) => prevLikes.filter((id) => id !== user?._id)); // Remove from likes if it exists
+            }
             setError('');
         } catch (error) {
             setError('Failed to dislike the post. Please try again.');
