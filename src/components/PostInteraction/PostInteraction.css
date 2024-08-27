@@ -4,6 +4,11 @@
     margin-bottom: 1rem !important;
 }
 
+.interactions .activeAction{
+    background-color: var(--primary);
+    box-shadow: none;
+}
+
 .interactions .di-like button:first-child {
     margin-right: 1rem;
 }
@@ -97,3 +102,4 @@
 .interactions .com .x ul li:not(:last-child){
     margin-bottom: 6px;
 }
+

@@ -65,6 +65,7 @@ const PostsProvider = ({ children }) => {
             setPosts((prevPosts) =>
                 prevPosts.map((post) => (post._id === id ? updatedPost : post))
             );
+            console.log(updatedPost);
             return updatedPost;
         } catch (error) {
             console.error('Error liking post', error);
