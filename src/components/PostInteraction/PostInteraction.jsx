@@ -15,8 +15,8 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
     const navigate = useNavigate();
     const [error, setError] = useState('');
 
-    const [localLikes, setLocalLikes] = useState(initialLikes || []);
-    const [localDislikes, setLocalDislikes] = useState(initialDislikes || []);;
+    const [likes, setLikes] = useState(initialLikes || []);
+    const [dislikes, setDislikes] = useState(initialDislikes || []);
 
     const handleLike = async () => {
         try {
@@ -24,11 +24,13 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
                 setError('Please Login.');
                 return;
             }
-            await likePostAction(postId);
-            if (!likes.includes(user?._id)) {
+            if (likes.includes(user?._id)) {
+                setLikes((prevLikes) => prevLikes.filter((id) => id !== user?._id));
+            } else {
                 setLikes((prevLikes) => [...prevLikes, user?._id]);
-                setDislikes((prevDislikes) => prevDislikes.filter((id) => id !== user?._id)); // Remove from dislikes if it exists
+                setDislikes((prevDislikes) => prevDislikes.filter((id) => id !== user?._id)); // Remove from dislikes if exists
             }
+            await likePostAction(postId);
             setError('');
         } catch (error) {
             setError('Failed to like the post. Please try again.');
@@ -41,11 +43,13 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
                 setError('Please Login.');
                 return;
             }
-            await dislikePostAction(postId);
-            if (!dislikes.includes(user?._id)) {
+            if (dislikes.includes(user?._id)) {
+                setDislikes((prevDislikes) => prevDislikes.filter((id) => id !== user?._id));
+            } else {
                 setDislikes((prevDislikes) => [...prevDislikes, user?._id]);
-                setLikes((prevLikes) => prevLikes.filter((id) => id !== user?._id)); // Remove from likes if it exists
+                setLikes((prevLikes) => prevLikes.filter((id) => id !== user?._id)); // Remove from likes if exists
             }
+            await dislikePostAction(postId);
             setError('');
         } catch (error) {
             setError('Failed to dislike the post. Please try again.');
@@ -69,7 +73,7 @@ function PostInteraction({ autherId, likes: initialLikes, dislikes: initialDisli
         <>
             <div className='interactions'>
                 <div className="di-like">
-                    <button className={dislikes?.includes(user?._id) && 'activeAction'} onClick={handleLike}>
+                    <button className={likes?.includes(user?._id) && 'activeAction'} onClick={handleLike}>
                         <span>{likes?.length}</span>
                         <SlLike />
                     </button>
