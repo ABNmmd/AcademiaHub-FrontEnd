@@ -140,6 +140,7 @@
 
 .comments-container .body .comment-box .cont .inter .onerOptions > i {
     cursor: pointer;
+    color: var(--headlines);
 }
 
 .comments-container .body .comment-box .cont .inter .onerOptions ul {
