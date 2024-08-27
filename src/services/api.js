@@ -124,6 +124,30 @@ const deletePost = async (id) => {
     }
 }
 
+// API call to like a post
+const likePost = async (id) => {
+    try {
+        const response = await api.put(`/posts/${id}/like`);
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error liking the post ', error);
+        throw error;
+    }
+}
+
+// API call to like a post
+const dislikePost = async (id) => {
+    try {
+        const response = await api.put(`/posts/${id}/dislike`);
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error disliking the post ', error);
+        throw error;
+    }
+}
+
 //-------------
 
 // API call to creat a comment
@@ -169,6 +193,30 @@ const deleteComment = async (id) => {
     } catch (error) {
         console.error('Error deleting the comments ', error);
         throw error
+    }
+}
+
+// API call to like a comment
+const likeComment = async (id) => {
+    try {
+        const response = await api.put(`/comments/${id}/like`);
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error liking the comment ', error);
+        throw error;
+    }
+}
+
+// API call to like a comment
+const dislikeComment = async (id) => {
+    try {
+        const response = await api.put(`/comments/${id}/dislike`);
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error disliking the comment ', error);
+        throw error;
     }
 }
 
