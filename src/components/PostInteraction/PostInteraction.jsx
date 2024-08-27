@@ -17,7 +17,10 @@ function PostInteraction({ autherId, likes, dislikes }) {
 
     const handleLike = async () => {
         try {
-            if (!isAuth) return;
+            if (!isAuth) {
+                setError('Please Login.');
+                return;
+            }
             await likePostAction(postId);
             setError('');
         } catch (error) {
@@ -28,7 +31,7 @@ function PostInteraction({ autherId, likes, dislikes }) {
     const handleDislike = async () => {
         try {
             if (!isAuth) {
-                setError('Please Login and try again');
+                setError('Please Login.');
                 return;
             }
             await dislikePostAction(postId);
@@ -41,7 +44,7 @@ function PostInteraction({ autherId, likes, dislikes }) {
     const handlePostDelete = async () => {
         try {
             if (!isAuth) {
-                setError('Please Login and try again');
+                setError('Please Login.');
                 return;
             }
             await deleteExistingPost(postId);
@@ -81,7 +84,7 @@ function PostInteraction({ autherId, likes, dislikes }) {
                     }
                 </div>
             </div>
-            {error && <p className='error'>{error}this is error</p>}
+            {error && <p className='error'>{error}</p>}
         </>
     )
 }
