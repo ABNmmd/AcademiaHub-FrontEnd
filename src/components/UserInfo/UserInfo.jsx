@@ -52,7 +52,7 @@ function UserInfo({ author, setAuthor }) {
                         <input ref={emailRef} type="text" defaultValue={author?.email} />
                     </div>
                     <textarea ref={textareaRef} defaultValue={author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}></textarea>
-                    {error && <p>{error}This Is Error</p>}
+                    {error && <p>{error}</p>}
                     <div className='btns'>
                         <button onClick={handleProfileUpdate}>Update</button>
                         <button onClick={() => setEditMode(false)}>Cancel</button>
