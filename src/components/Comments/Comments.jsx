@@ -278,7 +278,7 @@ function Comments({ postId }) {
                                         :
                                         (
                                             <div className="cont">
-                                                <span>{com?.authorId?.username}</span><span className='time'>{moment(com?.createdAt).fromNow()}</span>
+                                                <span><a href={`/profile/${com?.authorId?._id}`}>{com?.authorId?.username}</a></span><span className='time'>{moment(com?.createdAt).fromNow()}</span>
                                                 <p>{com?.content}</p>
                                                 {delError && <p>{delError}</p>}
                                                 <div className="inter">
