@@ -15,12 +15,12 @@ function UserInfo({ author, setAuthor }) {
     const emailRef = useRef(null);
     
     const handleProfileUpdate = async () => {
-        const username = usernameRef.current.value;
-        const bio = textareaRef.current.value;
-        const email = emailRef.current.value;
-        // handling the profile pic
-
         try {
+            const username = usernameRef.current.value;
+            const bio = textareaRef.current.value;
+            const email = emailRef.current.value;
+            // handling the profile pic
+            
             setError(null);
             if (!isAuth) {
                 setError('Unautorized. Please login first');
