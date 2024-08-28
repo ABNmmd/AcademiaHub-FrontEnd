@@ -31,38 +31,40 @@ To run the project locally, ensure you have the following installed:
 - npm or yarn
 
 ## Project Structure
-src/
-  ├── index.css
-  ├── main.jsx
-  ├── assets/
-  ├── contexts/
-    ├── CommentContext.jsx
-    ├── PostsContext.jsx
-    ├── UserContext.jsx
-  ├── services/
-    ├── api.js
-  ├── components
-    ├── CategoriesFilter/
-    ├── Comments/
-    ├── DataBox/
-    ├── Footer/
-    ├── Header/
-    ├── Hero/
-    ├── Newsletter/
-    ├── PostInteraction/
-    ├── PostLayout/
-    ├── PostListing/
-    ├── RecPosts/
-    ├── Tags/
-    ├── UserInfo/
-  ├── pages/
-    ├── About/
-    ├── Categories/
-    ├── Home/
-    ├── Login/
-    ├── Posts/
-    ├── PostsEdit/
-    ├── Profile/
-    ├── Register/
-    ├── Search/
-    ├── Write/
+```
+    src/
+    ├── index.css
+    ├── main.jsx
+    ├── assets/
+    ├── contexts/
+    |    ├── CommentContext.jsx
+    |    ├── PostsContext.jsx
+    |    ├── UserContext.jsx
+    ├── services/
+    |    ├── api.js
+    ├── components
+    |    ├── CategoriesFilter/
+    |    ├── Comments/
+    |    ├── DataBox/
+    |    ├── Footer/
+    |    ├── Header/
+    |    ├── Hero/
+    |    ├── Newsletter/
+    |    ├── PostInteraction/
+    |    ├── PostLayout/
+    |    ├── PostListing/
+    |    ├── RecPosts/
+    |    ├── Tags/
+    |    ├── UserInfo/
+    ├── pages/
+    |    ├── About/
+    |    ├── Categories/
+    |    ├── Home/
+    |    ├── Login/
+    |    ├── Posts/
+    |    ├── PostsEdit/
+    |    ├── Profile/
+    |    ├── Register/
+    |    ├── Search/
+    |    ├── Write/
+```
