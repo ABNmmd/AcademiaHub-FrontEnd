@@ -6,6 +6,7 @@ import { CiEdit, CiUser, CiLogout } from "react-icons/ci";
 
 import './Header.css'
 import "react-toggle/style.css"
+import profile from '../../assets/download.png'
 
 function Header({ isDark, setIsDark }) {
   const { user, isAuth, logoutUser } = useContext(UserContext);
@@ -37,7 +38,7 @@ function Header({ isDark, setIsDark }) {
             </div>
             {isAuth ?
               (<div className='log-cont'>
-                <img src="https://media.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc" alt="" />
+                <img src={profile} alt="" />
                 <ul role="menu">
                   <li role="menuitem"><a href={`/profile/${user?._id}`}><CiUser />{user?.username || "Unknown User"}</a></li>
                   <li role="menuitem"><a href="/write"><CiEdit />Write</a></li>
