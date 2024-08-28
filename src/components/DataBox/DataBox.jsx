@@ -5,6 +5,7 @@ import moment from "moment";
 import Tags from '../Tags/Tags'
 
 import './DataBox.css'
+import profile from '../../assets/download.png'
 
 function DataBox({ data, h1Class }) {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ function DataBox({ data, h1Class }) {
             </div>
             <div className="pos-info">
                 <div className="author">
-                    <img src="https://media.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc" alt="" />
+                    <img src={profile} alt="" />
                     <span><a href={`/profile/${data?.authorId?._id}`}>{authorUsername}</a></span>
                 </div>
                 <p>{moment(data?.createdAt).fromNow()}</p>
