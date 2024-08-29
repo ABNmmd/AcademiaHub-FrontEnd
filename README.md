@@ -12,6 +12,9 @@
 
 **AcademiaHub** is a general blog application covering various topics such as Lifestyle, Technology, Travel, Food, Business, Personal Development, Hobbies, and Education. This repository contains the frontend of the project built with **React**.
 
+![Light Mode](./screenshots/AcademiaHub.png)
+![Light Mode](./screenshots/AcademiaHub10.png)
+
 ## Features
 
 - User-friendly interface for browsing posts across multiple categories.
