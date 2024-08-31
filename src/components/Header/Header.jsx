@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Toggle from "react-toggle";
 import { UserContext } from '../../contexts/UserContext';
-import { IoPerson, IoSearchSharp } from "react-icons/io5";
+import { IoPerson, IoSearchSharp, IoMenu, IoClose } from "react-icons/io5";
 import { CiEdit, CiUser, CiLogout } from "react-icons/ci";
 
 import './Header.css'
@@ -10,6 +10,7 @@ import profile from '../../assets/download.png'
 
 function Header({ isDark, setIsDark }) {
   const { user, isAuth, logoutUser } = useContext(UserContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -19,6 +20,10 @@ function Header({ isDark, setIsDark }) {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
       <div className="header-container">
@@ -26,7 +31,10 @@ function Header({ isDark, setIsDark }) {
           <h1>Academia<span>Hub</span></h1>
         </div>
         <div className="container">
-          <ul className='nav'>
+          <div className="menu-icon" onClick={toggleMenu}>
+            {isMenuOpen ? <IoClose /> : <IoMenu />}
+          </div>
+          <ul className={`nav ${isMenuOpen ? 'active' : ''}`}>
             <li><a href="/">Home</a></li>
             <li><a href="/categories">Categories</a></li>
             <li><a href="/about">About</a></li>
