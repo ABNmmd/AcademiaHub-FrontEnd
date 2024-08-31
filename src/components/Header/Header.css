@@ -45,7 +45,6 @@ header {
 .header-container .container .icons-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 2px;
 }
 
 .header-container .container .icons-container>div:not(:last-child) {
@@ -130,5 +129,17 @@ header {
     
     .header-container .container{
         flex: 0;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+
+    .header-container .container .icons-container>div:not(:last-child) {
+        margin-right: 6px;
+    }
+    
+    .header-container .container .icons-container {
+        margin-left: 8px;
     }
 }
