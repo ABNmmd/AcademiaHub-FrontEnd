@@ -113,3 +113,90 @@ header {
     cursor: pointer;
     object-fit: cover;
 }
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem 4rem;
+    }
+
+    .header-container .logo h1 {
+        font-size: 24px;
+    }
+
+    .header-container .container .nav a {
+        font-size: 14px;
+    }
+
+    .header-container .container .icons-container {
+        gap: 8px;
+    }
+
+    .header-container .container .icons-container > div {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-container .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-container .container .nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .header-container .container .nav a {
+        font-size: 14px;
+    }
+
+    .header-container .container .icons-container {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .header-container .container .icons-container .log-cont img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .header-container .logo h1 {
+        font-size: 20px;
+    }
+
+    .header-container .container .nav a {
+        font-size: 12px;
+    }
+
+    .header-container .container .icons-container {
+        font-size: 20px;
+    }
+
+    .header-container .container .icons-container .log-cont img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
