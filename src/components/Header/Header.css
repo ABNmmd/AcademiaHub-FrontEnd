@@ -143,9 +143,9 @@ header {
         flex: 0;
     }
 
-    .header-container .container .nav {
+    /* .header-container .container .nav {
         display: none;
-    }
+    } */
 }
 
 @media (max-width: 480px) {
