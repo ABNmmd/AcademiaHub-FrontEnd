@@ -90,7 +90,7 @@ header {
 }
 
 .header-container .container .icons-container .log-cont ul li:not(:last-child),
-.header-container .container .icons-container .log-cont ul li:not(:last-child){
+.header-container .container .icons-container .log-cont ul li:not(:last-child) {
     margin-bottom: 8px;
 }
 
@@ -100,8 +100,8 @@ header {
 }
 
 
-.header-container .container .icons-container .log-cont ul li button > svg,
-.header-container .container .icons-container .log-cont ul li a > svg{
+.header-container .container .icons-container .log-cont ul li button>svg,
+.header-container .container .icons-container .log-cont ul li a>svg {
     margin-right: 8px;
 }
 
@@ -117,7 +117,7 @@ header {
 
 
 
-.menu-icon{
+.menu-icon {
     font-size: 23px;
     color: var(--logo);
     cursor: pointer;
@@ -126,35 +126,35 @@ header {
 
 
 @media (max-width: 1100px) {
-    header{
+    header {
         padding: 1rem 8rem;
     }
 }
 
 
 @media (max-width: 920px) {
-    .header-container .container .nav{
+    .header-container .container .nav {
         display: none;
     }
-    
-    .header-container .container{
+
+    .header-container .container {
         flex: 0;
         flex-direction: row-reverse;
     }
 
-    .menu-icon{
+    .menu-icon {
         display: block;
     }
 
     .header-container .container .icons-container>div:not(:last-child) {
         margin-right: 6px;
     }
-    
+
     .header-container .container .icons-container {
         margin-right: 8px;
     }
 
-    .header-container .container .nav.active{
+    .header-container .container .nav.active {
         position: absolute;
         top: 90%;
         right: 0;
