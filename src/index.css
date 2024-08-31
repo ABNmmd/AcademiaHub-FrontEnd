@@ -81,15 +81,20 @@ main {
   flex-direction: column;
 }
 
-main section{
+main section {
   margin-bottom: 3rem;
   width: 100%;
 }
 
+@media (max-width: 1100px) {
+  main {
+    padding: 1.8rem 8rem 0;
+  }
+}
 
 /* form */
 
-.formSec{
+.formSec {
   width: fit-content;
 }
 
