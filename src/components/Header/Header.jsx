@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react'
 import Toggle from "react-toggle";
 import { UserContext } from '../../contexts/UserContext';
-import { IoPerson, IoSearchSharp, IoMenu, IoClose } from "react-icons/io5";
+import { IoPerson, IoSearchSharp, IoClose } from "react-icons/io5";
 import { CiEdit, CiUser, CiLogout } from "react-icons/ci";
+import { SlMenu } from "react-icons/sl";
 
 import './Header.css'
 import "react-toggle/style.css"
@@ -32,7 +33,7 @@ function Header({ isDark, setIsDark }) {
         </div>
         <div className="container">
           <div className="menu-icon" onClick={toggleMenu}>
-            {isMenuOpen ? <IoClose /> : <IoMenu />}
+            {isMenuOpen ? <IoClose /> : <SlMenu />}
           </div>
           <ul className={`nav ${isMenuOpen ? 'active' : ''}`}>
             <li><a href="/">Home</a></li>

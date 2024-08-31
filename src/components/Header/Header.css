@@ -113,13 +113,15 @@ header {
     object-fit: cover;
 }
 
+
+
+
 .menu-icon{
+    font-size: 28px;
+    color: var(--logo);
+    cursor: pointer;
     display: none;
 }
-
-
-
-
 
 
 @media (max-width: 1100px) {
@@ -129,6 +131,7 @@ header {
     
     .header-container .container{
         flex: 0;
+        flex-direction: row-reverse;
     }
 
     .menu-icon{
@@ -140,6 +143,6 @@ header {
     }
     
     .header-container .container .icons-container {
-        margin-left: 8px;
+        margin-right: 8px;
     }
 }
