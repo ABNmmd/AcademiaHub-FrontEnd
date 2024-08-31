@@ -117,14 +117,12 @@ header {
 
 /* Hide nav on mobile by default */
 .nav {
-    display: flex;
     transition: max-height 0.3s ease;
 }
 
 .nav.active {
     display: flex;
     flex-direction: column;
-    max-height: 200px; /* Adjust based on content */
 }
 
 .menu-icon {
@@ -140,25 +138,12 @@ header {
         padding: 1rem 8rem;
     }
 
-    .header-container .logo h1 {
-        font-size: 24px;
-    }
-
-    .header-container .container .nav a {
-        font-size: 14px;
-    }
-
-    .header-container .container .icons-container {
-        gap: 8px;
-    }
-
-    .header-container .container .icons-container > div {
-        font-size: 22px;
-    }
-
     .header-container .container .icons-container>div:not(:last-child){
-        margin-right: 0;
-        margin-left: 4px;
+        margin-right: 3px;
+    }
+    
+    .header-container .container .icons-container{
+        margin-left: 6px;
     }
 }
 
@@ -181,7 +166,7 @@ header {
 
     .header-container .container .nav.active {
         display: flex;
-        max-height: 300px;
+        max-height: 300px; /* Adjust as needed */
         overflow: hidden;
     }
 
@@ -202,6 +187,7 @@ header {
         width: 24px;
         height: 24px;
     }
+
 }
 
 @media (max-width: 480px) {
