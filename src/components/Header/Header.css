@@ -26,11 +26,11 @@ header {
     flex-grow: 1.5;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .header-container .container .nav {
     display: flex;
+    align-items: center;
 }
 
 .header-container .container .nav li:not(:last-child) {
