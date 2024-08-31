@@ -26,12 +26,11 @@ header {
     flex-grow: 1.5;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .header-container .container .nav {
     display: flex;
-    align-items: center;
 }
 
 .header-container .container .nav li:not(:last-child) {
@@ -115,85 +114,17 @@ header {
     object-fit: cover;
 }
 
-/* Hide nav on mobile by default */
-.nav {
-    transition: max-height 0.3s ease;
-}
-
-.nav.active {
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-icon {
+.menu-icon{
     display: none;
-    font-size: 28px;
-    cursor: pointer;
 }
 
 
-/* Responsive styles */
-@media (max-width: 1124px) {
-    header {
-        padding: 1rem 8rem;
-    }
 
-    .header-container .container .icons-container>div:not(:last-child){
-        margin-right: 3px;
-    }
-    
-    .header-container .container .icons-container{
-        margin-left: 6px;
-    }
-}
 
-@media (max-width: 900px) {
-    header {
-        padding: 1rem 4rem;
-    }
 
-    .header-container .container {
-        justify-content: space-between;
-        flex: 0;
-    }
 
-    .header-container .container .nav {
+@media (max-widht: 1100px) {
+    .nav{
         display: none;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
     }
-
-    .header-container .container .nav.active {
-        display: flex;
-        max-height: 300px; /* Adjust as needed */
-        overflow: hidden;
-    }
-
-    .header-container .container .nav a {
-        padding: 1rem 0;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .icons-container {
-        display: flex;
-        gap: 12px;
-    }
-
-    .header-container .container .icons-container > .log-cont img {
-        width: 24px;
-        height: 24px;
-    }
-
 }
-
-@media (max-width: 480px) {
-    
-}
-
-
-
-
