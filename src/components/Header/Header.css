@@ -1,5 +1,6 @@
 header {
     padding: 1rem 12rem;
+    position: relative;
 }
 
 .header-container {
@@ -117,7 +118,7 @@ header {
 
 
 .menu-icon{
-    font-size: 28px;
+    font-size: 23px;
     color: var(--logo);
     cursor: pointer;
     display: none;
@@ -144,5 +145,9 @@ header {
     
     .header-container .container .icons-container {
         margin-right: 8px;
+    }
+
+    .header-container .container .nav.active{
+        display: flex;
     }
 }
