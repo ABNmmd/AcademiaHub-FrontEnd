@@ -98,6 +98,12 @@ main section {
   }
 }
 
+@media (max-width: 330px) {
+  main {
+    padding: 1.8rem 1rem;
+  }
+}
+
 /* form */
 
 .formSec {

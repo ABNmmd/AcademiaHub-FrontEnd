@@ -165,3 +165,40 @@ header {
         z-index: 2;
     }
 }
+@media (max-width: 724px) {
+    header{
+        padding: 1rem 2rem;
+    }
+
+    .header-container .logo h1 {
+        font-size: 20px;
+    }
+
+    .header-container .container .icons-container>div {
+        font-size: 20px;
+    }
+
+    .header-container .react-toggle-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    .header-container .react-toggle-track {
+        width: 40px;
+        height: 20px;
+    }
+
+    .menu-icon {
+        font-size: 19px;
+    }
+
+    .header-container .container .nav a{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 330px) {
+    header{
+        padding: 1rem;
+    }
+}
