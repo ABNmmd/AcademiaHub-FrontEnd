@@ -73,13 +73,8 @@
 
 @media (max-width: 768px) {
     .Hero .data-box {
-        max-width: 582px;
-        position: absolute;
-        bottom: -3rem;
+        bottom: -5rem;
         left: 6%;
-        box-shadow: 0 4px 8px var(--shadow-color);
-        border: 1px solid var(--border);
-        padding: 40px;
-        border-radius: 8px;
+        padding: 30px;
     }
 }
