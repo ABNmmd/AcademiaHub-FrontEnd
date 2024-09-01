@@ -80,11 +80,13 @@
         padding: 15px;
     }
 
+    .blog-hero .data-box h1,
     .data-box h1 {
         font-size: 26px;
         margin-top: 12px;
     }
 
+    .blog-hero .data-box .pos-info,
     .Hero .data-box .pos-info {
         margin-top: 14px;
     }
@@ -104,6 +106,11 @@
 
     .data-box .h1-posts {
         font-size: 20px;
+    }
+
+    .blog-hero .data-box {
+        bottom: 14px;
+        left: 10px;
     }
 }
 
