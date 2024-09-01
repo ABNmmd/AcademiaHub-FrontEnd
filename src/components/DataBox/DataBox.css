@@ -101,6 +101,10 @@
     .data-box .pos-info p {
         font-size: 14px;
     }
+
+    .data-box .h1-posts {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 375px) {

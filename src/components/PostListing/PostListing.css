@@ -20,3 +20,12 @@
     height: 100%;
     border-radius: 6px;
 }
+
+
+@media (max-width: 425px) {
+    .post-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 20px;
+    }
+}
