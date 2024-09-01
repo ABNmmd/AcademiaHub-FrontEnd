@@ -92,13 +92,13 @@ main section {
   }
 }
 
-@media (max-width: 724px) {
+@media (max-width: 765px) {
   main {
     padding: 1.8rem 2rem 0;
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 460px) {
   main {
     padding: 1.8rem 1rem;
   }

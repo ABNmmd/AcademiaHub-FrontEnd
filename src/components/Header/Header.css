@@ -165,7 +165,7 @@ header {
         z-index: 2;
     }
 }
-@media (max-width: 724px) {
+@media (max-width: 765px) {
     header{
         padding: 1rem 2rem;
     }
@@ -197,7 +197,7 @@ header {
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 460px) {
     header{
         padding: 1rem;
     }
