@@ -6,3 +6,8 @@
     position: relative;
 }
 
+@media (max-width: 375px) {
+    .Hero{
+        padding-bottom: 6rem;
+    }
+}

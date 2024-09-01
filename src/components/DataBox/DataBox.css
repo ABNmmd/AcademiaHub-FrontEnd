@@ -77,8 +77,42 @@
 
 @media (max-width: 425px) {
     .Hero .data-box {
-        max-width: 400px;
-        bottom: -5rem;
         padding: 15px;
+    }
+
+    .data-box h1 {
+        font-size: 26px;
+        margin-top: 12px;
+    }
+
+    .Hero .data-box .pos-info {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .data-box h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .Hero .data-box .pos-info {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .Hero .data-box {
+        bottom: -80%;
+        left: 0;
+    }
+
+    .data-box h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .Hero .data-box .pos-info {
+        margin-top: 12px;
     }
 }
