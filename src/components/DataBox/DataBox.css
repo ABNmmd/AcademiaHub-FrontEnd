@@ -19,9 +19,6 @@
 
 .data-box {
     margin-top: 16px;
-}
-
-.data-box {
     background-color: var(--background);
 }
 
@@ -74,7 +71,14 @@
 @media (max-width: 768px) {
     .Hero .data-box {
         bottom: -5rem;
-        left: 6%;
         padding: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .Hero .data-box {
+        max-width: 400px;
+        bottom: -5rem;
+        padding: 15px;
     }
 }
