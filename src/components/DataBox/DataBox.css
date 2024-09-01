@@ -88,9 +88,27 @@
     .Hero .data-box .pos-info {
         margin-top: 14px;
     }
+
+    .data-box .pos-info .author img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .data-box .pos-info .author span {
+        font-size: 14px;
+    }
+    
+    .data-box .pos-info p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 375px) {
+    .Hero .data-box {
+        bottom: -50%;
+        border-radius: 6px;
+    }
+
     .data-box h1 {
         font-size: 24px;
         margin-top: 10px;
@@ -101,10 +119,9 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
     .Hero .data-box {
-        bottom: -80%;
-        left: 0;
+        bottom: -70%;
     }
 
     .data-box h1 {
