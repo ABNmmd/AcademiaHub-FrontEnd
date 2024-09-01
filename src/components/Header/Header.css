@@ -165,7 +165,7 @@ header {
         z-index: 2;
     }
 }
-@media (max-width: 765px) {
+@media (max-width: 768px) {
     header{
         padding: 1rem 2rem;
     }

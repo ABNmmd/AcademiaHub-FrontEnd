@@ -50,7 +50,7 @@ footer {
     }
 }
 
-@media (max-width: 765px) {
+@media (max-width: 768px) {
     footer {
         padding: .8rem 2rem;
     }
