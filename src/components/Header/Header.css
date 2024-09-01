@@ -194,6 +194,7 @@ header {
 
     .header-container .container .nav a{
         font-size: 12px;
+        font-weight: 500;
     }
 }
 
