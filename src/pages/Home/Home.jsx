@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { PostsContext } from '../../contexts/PostsContext';
-import { UserContext } from '../../contexts/UserContext';
 
 import Hero from '../../components/Hero/Hero';
 import PostLayout from '../../components/PostLayout/PostLayout';
@@ -11,7 +10,8 @@ import './Home.css'
 
 function Home() {
   const { posts } = useContext(PostsContext);
-  const { isAuth } = useContext(UserContext);
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
+
   // const p = [
   //   {
   //     authorId: "123",
@@ -65,9 +65,20 @@ function Home() {
   //   },
   // ];
 
+  useEffect(() => {
+    if (posts.length > 0) {
+      const intervalId = setInterval(() => {
+        setCurrentPostIndex(prevIndex => (prevIndex + 1) % posts.length);
+      }, 5000); // Change post every 5 seconds
+
+      // Clear interval on component unmount
+      return () => clearInterval(intervalId);
+    }
+  }, [posts]);
+
   return (
     <main>
-      <Hero p={posts[0]} />
+      {posts.length > 0 && <Hero p={posts[currentPostIndex]} />}
       <PostLayout p={posts} />
       <Newsletter />
     </main>
