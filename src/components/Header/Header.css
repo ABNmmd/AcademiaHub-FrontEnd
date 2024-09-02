@@ -184,6 +184,11 @@ header {
         font-size: 20px;
     }
 
+    .header-container .container .icons-container .log-cont img {
+        width: 21px;
+        height: 21px;
+    }
+
     .header-container .react-toggle-thumb {
         width: 18px;
         height: 18px;
