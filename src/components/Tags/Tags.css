@@ -1,9 +1,9 @@
-.tags{
+.tags {
     display: flex;
     gap: 5px;
 }
 
-.tags > li .a{
+.tags>li .a {
     background-color: var(--primary);
     color: #fff;
     padding: 5px 8px;
@@ -12,24 +12,32 @@
     font-weight: 400;
 }
 
-.categories-filter .tags > li .a,
-.post-container .tags > li .a{
+.categories-filter .tags>li .a,
+.post-container .tags>li .a {
     color: var(--primary);
     background-color: var(--tags-bg);
 }
 
-.categories-filter .tags > li .a{
+.categories-filter .tags>li .a {
     font-size: 16px;
     padding: 8px 16px;
     border-radius: 6px;
 }
 
 
-.categories-filter .active{
+.categories-filter .active {
     background-color: var(--primary) !important;
     color: #fff !important;
 }
 
-.categories-filter .tags{
-    
+.categories-filter .tags {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 460px) {
+    .tags>li .a {
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 4px 6px;
+    }
 }

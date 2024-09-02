@@ -11,11 +11,11 @@ function CategoriesFilter({ selectedTags, setSelectedTags, onTagClick }) {
         "Travel",
         "Food",
         "Business",
-        "Personal Development",
         "Hobbies",
-        "Education"
+        "Education",
+        "Personal Development",
     ];
-    
+
     return (
         <section className='categories-filter'>
             <button className={`reset-btn ${selectedTags.length == 0 ? 'active' : ''}`} onClick={() => setSelectedTags([])}>All</button>
