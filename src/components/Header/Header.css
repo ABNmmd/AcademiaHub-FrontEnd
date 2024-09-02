@@ -19,7 +19,7 @@ header {
     color: var(--logo);
 }
 
-.header-container .logo h1>span {
+.header-container .logo h1 span {
     font-weight: 700;
 }
 

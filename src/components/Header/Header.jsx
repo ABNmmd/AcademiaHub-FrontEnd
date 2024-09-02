@@ -29,7 +29,7 @@ function Header({ isDark, setIsDark }) {
     <header>
       <div className="header-container">
         <div className="logo">
-          <h1>Academia<span>Hub</span></h1>
+          <h1><a href="/">Academia<span>Hub</span></a></h1>
         </div>
         <div className="container">
           <div className="menu-icon" onClick={toggleMenu}>
