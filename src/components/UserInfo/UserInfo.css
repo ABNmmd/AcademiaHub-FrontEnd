@@ -127,23 +127,53 @@
     font-size: 14px;
 }
 
-.userInfo .info-edit .btns{
+.userInfo .info-edit .btns {
     text-align: start;
     margin-top: .5rem;
 }
 
-.userInfo .info-edit .btns button{
+.userInfo .info-edit .btns button {
     font-size: 14px;
     padding: 4px 8px;
 }
 
-.userInfo .info-edit .btns button:last-child{
+.userInfo .info-edit .btns button:last-child {
     color: var(--headlines);
 }
 
-.userInfo .info-edit .btns button:first-child{
+.userInfo .info-edit .btns button:first-child {
     background-color: var(--primary);
     color: #fff;
     border-radius: 4px;
     margin-right: .5rem;
+}
+
+
+@media (max-width: 425px) {
+    .userInfo {
+        padding: 2rem 1rem;
+    }
+
+    .userInfo .info-edit textarea {
+        min-width: 350px;
+    }
+
+    .userInfo .info-container p {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0 .5rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .userInfo .info-edit textarea {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .userInfo .info-edit textarea {
+        min-width: 250px;
+        min-height: 90px;
+    }
 }
