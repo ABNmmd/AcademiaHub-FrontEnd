@@ -69,9 +69,8 @@ function Home() {
     if (posts.length > 0) {
       const intervalId = setInterval(() => {
         setCurrentPostIndex(prevIndex => (prevIndex + 1) % posts.length);
-      }, 5000); // Change post every 5 seconds
+      }, 5000);
 
-      // Clear interval on component unmount
       return () => clearInterval(intervalId);
     }
   }, [posts]);

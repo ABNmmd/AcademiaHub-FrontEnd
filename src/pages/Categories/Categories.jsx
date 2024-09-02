@@ -90,6 +90,7 @@ function Blog() {
     };
 
     const [currentPosts, setCurrentPosts] = useState([]);
+    const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
 
     useEffect(() => {
@@ -105,13 +106,24 @@ function Blog() {
 
         // console.log('filteredPosts:', filteredPosts);
     }, [selectedTags, posts]);
-    
+
     useEffect(() => {
         const newPosts = filteredPosts.slice(0, currentPage * postsPerPage);
         setCurrentPosts(newPosts);
     }, [filteredPosts, currentPage]);
 
-    
+
+    useEffect(() => {
+        if (posts.length > 0) {
+            const intervalId = setInterval(() => {
+                setCurrentPostIndex(prevIndex => (prevIndex + 1) % posts.length);
+            }, 5000);
+
+            return () => clearInterval(intervalId);
+        }
+    }, [posts]);
+
+
 
     return (
         <main>
@@ -120,7 +132,7 @@ function Blog() {
                     <div className="bg-img">
                         <img src={bg} alt="" />
                     </div>
-                    <DataBox data={posts[0]} h1Class={null} />
+                    <DataBox data={posts[currentPostIndex]} h1Class={null} />
                 </div>
             </section>
             <CategoriesFilter selectedTags={selectedTags} setSelectedTags={setSelectedTags} onTagClick={handleTagClick} />
