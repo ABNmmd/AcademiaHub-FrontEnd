@@ -15,6 +15,7 @@ function CategoriesFilter({ selectedTags, setSelectedTags, onTagClick }) {
         "Hobbies",
         "Education"
     ];
+    
     return (
         <section className='categories-filter'>
             <button className={`reset-btn ${selectedTags.length == 0 ? 'active' : ''}`} onClick={() => setSelectedTags([])}>All</button>
