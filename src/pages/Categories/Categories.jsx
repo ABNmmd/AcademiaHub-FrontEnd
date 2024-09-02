@@ -118,7 +118,7 @@ function Blog() {
             <section className='blog-hero'>
                 <div className="blog-hero-container" data-theme="dark">
                     <div className="bg-img">
-                        <img src={posts[0]?.img || bg} alt="" />
+                        <img src={bg} alt="" />
                     </div>
                     <DataBox data={posts[0]} h1Class={null} />
                 </div>
