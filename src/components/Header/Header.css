@@ -115,6 +115,12 @@ header {
 }
 
 
+.header-container .react-toggle--focus .react-toggle-thumb {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
 
 
 .menu-icon {
@@ -186,6 +192,10 @@ header {
     .header-container .react-toggle-track {
         width: 40px;
         height: 20px;
+    }
+
+    .header-container .react-toggle--checked .react-toggle-thumb {
+        left: 21px;
     }
 
     .menu-icon {
