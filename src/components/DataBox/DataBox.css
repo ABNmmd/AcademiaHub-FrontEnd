@@ -156,4 +156,9 @@
     .Hero .data-box .pos-info {
         margin-top: 12px;
     }
+
+    .data-box .pos-info .author img {
+        width: 20px;
+        height: 20px;
+    }
 }
