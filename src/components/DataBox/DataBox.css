@@ -67,12 +67,10 @@
     color: var(--info);
 }
 
-.blog-hero .data-box .pos-info .author span ,
-.Hero .data-box .pos-info .author span {
+.blog-hero .data-box .pos-info .author span {
     color: #fff;
 }
-.blog-hero .data-box .pos-info p ,
-.Hero .data-box .pos-info p {
+.blog-hero .data-box .pos-info p {
     color: #fff;
 }
 
