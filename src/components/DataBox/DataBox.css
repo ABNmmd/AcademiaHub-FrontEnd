@@ -89,15 +89,22 @@
         padding: 15px;
     }
 
-    .blog-hero .data-box h1,
     .data-box h1 {
         font-size: 26px;
         margin-top: 12px;
     }
 
-    .blog-hero .data-box .pos-info,
+    .blog-hero .data-box h1{
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
     .Hero .data-box .pos-info {
         margin-top: 14px;
+    }
+    
+    .blog-hero .data-box .pos-info{
+        margin-top: 10px;
     }
 
     .data-box .pos-info .author img {
@@ -129,15 +136,22 @@
         border-radius: 6px;
     }
 
-    .blog-hero .data-box h1,
     .data-box h1 {
         font-size: 24px;
         margin-top: 10px;
     }
+    
+    .blog-hero .data-box h1{
+        font-size: 22px;
+        margin-top: 8px;
+    }
 
-    .blog-hero .data-box .pos-info,
     .Hero .data-box .pos-info {
         margin-top: 12px;
+    }
+
+    .blog-hero .data-box .pos-info{
+        margin-top: 8px;
     }
 }
 
@@ -146,15 +160,22 @@
         bottom: -70%;
     }
 
-    .blog-hero .data-box h1,
     .data-box h1 {
         font-size: 20px;
         margin-top: 10px;
     }
 
-    .blog-hero .data-box .pos-info,
+    .blog-hero .data-box h1{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
     .Hero .data-box .pos-info {
         margin-top: 12px;
+    }
+
+    .blog-hero .data-box .pos-info {
+        margin-top: 8px;
     }
 
     .data-box .pos-info .author img {
