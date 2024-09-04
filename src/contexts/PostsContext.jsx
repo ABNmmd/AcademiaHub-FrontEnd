@@ -11,7 +11,6 @@ const PostsProvider = ({ children }) => {
             try {
                 const postsData = await getPosts();
                 setPosts(postsData);
-                console.log(postsData);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
