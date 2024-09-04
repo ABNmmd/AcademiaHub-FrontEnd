@@ -47,7 +47,7 @@ function Header({ isDark, setIsDark }) {
             </div>
             {isAuth ?
               (<div className='log-cont'>
-                <img src={profile} alt="" />
+                <img src={user?.profilePicture?.imageUrl || profile} alt="" />
                 <ul role="menu">
                   <li role="menuitem"><a href={`/profile/${user?._id}`}><CiUser />{user?.username || "Unknown User"}</a></li>
                   <li role="menuitem"><a href="/write"><CiEdit />Write</a></li>

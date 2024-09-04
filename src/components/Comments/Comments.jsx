@@ -228,7 +228,7 @@ function Comments({ postId }) {
                 <div className='body'>
                     <div className="comment-edit-box">
                         <div className="user">
-                            <img src={prf} alt="" />
+                            <img src={user?.profilePicture?.imageUrl || prf} alt="" />
                         </div>
                         <div className="cont">
                             <textarea ref={textareaRef} type="text" placeholder='Add a comment' onChange={handleInputChange} onInput={handleResize} />
@@ -255,7 +255,7 @@ function Comments({ postId }) {
                             {currentComments.map((com, index) => (
                                 <div className="comment-box" key={index}>
                                     <div className="user">
-                                        <img src={prf} alt="" />
+                                        <img src={com?.authorId?.profilePicture?.imageUrl || prf} alt="" />
                                     </div>
                                     {editMode === com?._id ?
                                         (
