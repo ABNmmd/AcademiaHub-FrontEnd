@@ -95,6 +95,7 @@ const UserProvider = ({ children }) => {
         try {
             const updatedProfile = await updateProfile(newProfileData);
             if (updatedProfile.user) setUser(updatedProfile.user);
+            return updatedProfile.user;
         } catch (error) {
             console.error('Error updating profile', error);
         }

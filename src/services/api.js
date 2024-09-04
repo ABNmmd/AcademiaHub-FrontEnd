@@ -112,7 +112,7 @@ const updatePost = async (id, newPostData) => {
               'Content-Type': 'multipart/form-data',
             },
           });
-        // console.log(response.data);
+        console.log('after api call axios', response.data);
         return response.data;
     } catch (error) {
         console.error('Error updatting the post ', error);
@@ -250,7 +250,7 @@ const updateProfile = async (newProfileData) => {
               'Content-Type': 'multipart/form-data',
             },
           });
-        // console.log(response.data);
+        console.log('after api call for profile upd', response.data);
         return response.data;
     } catch (error) {
         console.error('Error updating the profile ', error);

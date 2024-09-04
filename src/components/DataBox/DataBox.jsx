@@ -23,7 +23,7 @@ function DataBox({ data, h1Class }) {
             </div>
             <div className="pos-info">
                 <div className="author">
-                    <img src={profile} alt="" />
+                    <img src={data?.author?.profilePicture?.imageUrl || profile} alt="" />
                     <span><a href={`/profile/${data?.authorId?._id}`}>{authorUsername}</a></span>
                 </div>
                 <p>{moment(data?.createdAt).fromNow()}</p>

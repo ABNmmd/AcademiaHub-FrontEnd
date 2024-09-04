@@ -19,26 +19,31 @@ function UserInfo({ author, setAuthor }) {
 
     const handleProfileUpdate = async () => {
         const formData = new FormData();
+        if (!usernameRef.current.value) {
+            setError('Messing username');
+            return;
+        }
         formData.append('username', usernameRef.current.value);
         formData.append('bio', textareaRef.current.value);
+        if (!emailRef.current.value) {
+            setError('Messing email');
+            return;
+        }
         formData.append('email', emailRef.current.value);
         formData.append('profilePicture', profilePicture);
         try {
-
             setError(null);
             if (!isAuth) {
                 setError('Unautorized. Please login first');
                 return
             }
 
-            if (!username || !email) {
-                setError('Invalid content. Please try again');
-                return
-            }
-            const updatedProfile = await updateAuthorProfile({ username, email, bio });
+            const updatedProfile = await updateAuthorProfile(formData);
+            console.log('API Response: ', updatedProfile);
             setAuthor(updatedProfile.user);
             setEditMode(false)
         } catch (error) {
+            console.log(error);
             setError('Failed to update profile. Please try again.');
         }
     }
@@ -48,10 +53,10 @@ function UserInfo({ author, setAuthor }) {
             {editMode
                 ? <div className="info-edit">
                     <div className='author'>
-                        <Dropzone onDrop={acceptedFiles => setProfilePicture(acceptedFiles)}>
+                        <Dropzone onDrop={acceptedFiles => setProfilePicture(acceptedFiles[0])}>
                             {({ getRootProps, getInputProps }) => (
                                 <button {...getRootProps()}>
-                                    <img src={bg} alt="" />
+                                    <img src={author?.profilePicture?.imageUrl || bg} alt="" />
                                     <input {...getInputProps()} />
                                     <IoIosCamera />
                                 </button>
@@ -75,7 +80,7 @@ function UserInfo({ author, setAuthor }) {
                         </button>
                     }
                     <div className='author'>
-                        <img src={bg} alt="" />
+                        <img src={author?.profilePicture?.imageUrl || bg} alt="" />
                         <h2>{author?.username}</h2>
                     </div>
                     <p>{author?.bio || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, id. Doloremque exercitationem ipsa explicabo ex hic vero excepturi rerum eveniet, ipsum, consequuntur maxime ullam odio quod architecto enim eius modi!'}</p>
