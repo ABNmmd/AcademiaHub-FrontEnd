@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from 'react'
+import Dropzone from 'react-dropzone'
 import { UserContext } from '../../contexts/UserContext';
 
 import './UserInfo.css'
@@ -10,17 +11,20 @@ function UserInfo({ author, setAuthor }) {
     const { user, isAuth, updateAuthorProfile } = useContext(UserContext);
     const [editMode, setEditMode] = useState(false);
     const [error, setError] = useState('');
+
     const textareaRef = useRef(null);
     const usernameRef = useRef(null);
     const emailRef = useRef(null);
-    
+    const [profilePicture, setProfilePicture] = useState(null);
+
     const handleProfileUpdate = async () => {
+        const formData = new FormData();
+        formData.append('username', usernameRef.current.value);
+        formData.append('bio', textareaRef.current.value);
+        formData.append('email', emailRef.current.value);
+        formData.append('profilePicture', profilePicture);
         try {
-            const username = usernameRef.current.value;
-            const bio = textareaRef.current.value;
-            const email = emailRef.current.value;
-            // handling the profile pic
-            
+
             setError(null);
             if (!isAuth) {
                 setError('Unautorized. Please login first');
@@ -44,10 +48,16 @@ function UserInfo({ author, setAuthor }) {
             {editMode
                 ? <div className="info-edit">
                     <div className='author'>
-                        <button>
-                            <img src={bg} alt="" />
-                            <IoIosCamera />
-                        </button>
+                        <Dropzone onDrop={acceptedFiles => setProfilePicture(acceptedFiles)}>
+                            {({ getRootProps, getInputProps }) => (
+                                <button {...getRootProps()}>
+                                    <img src={bg} alt="" />
+                                    <input {...getInputProps()} />
+                                    <IoIosCamera />
+                                </button>
+                            )}
+                        </Dropzone>
+
                         <input ref={usernameRef} type="text" defaultValue={author?.username} />
                         <input ref={emailRef} type="text" defaultValue={author?.email} />
                     </div>

@@ -13,6 +13,7 @@ function PostsEdit() {
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
+    const [image, setImage] = useState(null);
     const [error, setError] = useState('');
     const { getOnePost, updateOldPost } = useContext(PostsContext);
     const navigate = useNavigate();
@@ -94,7 +95,7 @@ function PostsEdit() {
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
-            <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles)}>
                 {({ getRootProps, getInputProps }) => (
                     <section>
                         <div className='dropzone' {...getRootProps()}>
