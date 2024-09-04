@@ -10,6 +10,7 @@ import 'react-quill/dist/quill.snow.css';
 import './Write.css'
 
 function Write() {
+    const [error, setError] = useState('');
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);

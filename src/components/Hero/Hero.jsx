@@ -15,7 +15,7 @@ function Hero({ p }) {
         <section className='Hero'>
             <div className="hero-container">
                 <div className="bg-img">
-                    <img src={bg} alt="" />
+                    <img src={p?.image?.imageUrl || bg} alt="" />
                 </div>
                 <DataBox data={p} h1Class={null} />
             </div>

@@ -130,7 +130,7 @@ function Blog() {
             <section className='blog-hero'>
                 <div className="blog-hero-container" data-theme="dark">
                     <div className="bg-img">
-                        <img src={bg} alt="" />
+                        <img src={posts[currentPostIndex]?.image?.imageUrl || bg} alt="" />
                     </div>
                     <DataBox data={posts[currentPostIndex]} h1Class={null} />
                 </div>

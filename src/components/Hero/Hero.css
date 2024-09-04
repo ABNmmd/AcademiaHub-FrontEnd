@@ -6,8 +6,21 @@
     position: relative;
 }
 
+.bg-img{
+    border-radius: 6px;
+}
+
+.bg-img img{
+    border-radius: 6px;
+    filter: brightness(0.8);
+}
+
 @media (max-width: 320px) {
     .Hero{
         padding-bottom: 4.5rem;
+    }
+
+    .bg-img img{
+        border-radius: 4px;
     }
 }
