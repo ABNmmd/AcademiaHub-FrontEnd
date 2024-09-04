@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
+import Dropzone from 'react-dropzone'
 
 import { PostsContext } from '../../contexts/PostsContext';
 
@@ -57,6 +58,16 @@ function Write() {
 
     return (
         <main>
+            <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+                {({ getRootProps, getInputProps }) => (
+                    <section>
+                        <div className='dropzone' {...getRootProps()}>
+                            <input {...getInputProps()} />
+                            <p>drop some image here, or click to select image</p>
+                        </div>
+                    </section>
+                )}
+            </Dropzone>
             <section className='write-content'>
                 <div className="title">
                     <h2><label htmlFor="title">Title</label></h2>
