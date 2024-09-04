@@ -9,8 +9,6 @@
 
 .dropzone-container {
     position: relative;
-    height: fit-content;
-    width: fit-content;
 }
 
 .dropzone-container .dropzone{
