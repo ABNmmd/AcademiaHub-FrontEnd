@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import Select from 'react-select'
+import Dropzone from 'react-dropzone'
+
 import { useNavigate, useParams } from 'react-router-dom';
 import { PostsContext } from '../../contexts/PostsContext';
 
@@ -54,20 +56,30 @@ function PostsEdit() {
 
     const handleUpdatePost = async (e) => {
         e.preventDefault();
+
+        const formData = new FormData();
+        if (!title) {
+            setError('Messing title');
+            return;
+        }
+        formData.append('title', title);
+        if (!content) {
+            setError('Messing content');
+            return;
+        }
+        formData.append('content', content);
+        if (!tags) {
+            setError('Messing tags');
+            return;
+        }
+        formData.append('tags', tags);
+        if (!image) {
+            setError('Messing image');
+            return;
+        }
+        formData.append('image', image);
         try {
-            if (!title) {
-                setError('Messing title');
-                return;
-            }
-            if (!content) {
-                setError('Messing content');
-                return;
-            }
-            if (!tags) {
-                setError('Messing tags');
-                return;
-            }
-            const updatedPost = await updateOldPost(postId ,{ title, content, tags });
+            const updatedPost = await updateOldPost(postId, formData);
             // console.log("updated post: ", updatedPost);
             navigate(`/posts/${updatedPost._id}`);
         } catch (error) {
@@ -82,6 +94,16 @@ function PostsEdit() {
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
+            <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+                {({ getRootProps, getInputProps }) => (
+                    <section>
+                        <div className='dropzone' {...getRootProps()}>
+                            <input {...getInputProps()} />
+                            <p>drop some image here, or click to select image</p>
+                        </div>
+                    </section>
+                )}
+            </Dropzone>
             <section className='write-content'>
                 <div className="title">
                     <h2><label htmlFor="title">Title</label></h2>

@@ -67,7 +67,11 @@ const getUser = async () => {
 // API call to create post
 const createPost = async (postData) => {
     try {
-        const response = await api.post('/posts/', postData);
+        const response = await api.post('/posts/', postData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
         // console.log("from api: ", response.data);
         return response.data;
     } catch (error) {
@@ -103,7 +107,11 @@ const getPostById = async (id) => {
 // API call to update a post
 const updatePost = async (id, newPostData) => {
     try {
-        const response = await api.put(`/posts/${id}`, newPostData);
+        const response = await api.put(`/posts/${id}`, newPostData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
         // console.log(response.data);
         return response.data;
     } catch (error) {
@@ -237,7 +245,11 @@ const getProfile = async (userId) => {
 // API call to update comment
 const updateProfile = async (newProfileData) => {
     try {
-        const response = await api.put('/user/', newProfileData);
+        const response = await api.put('/user/', newProfileData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
         // console.log(response.data);
         return response.data;
     } catch (error) {

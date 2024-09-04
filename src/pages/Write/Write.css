@@ -1,4 +1,5 @@
 section .dropzone {
+    cursor: pointer;
     width: 100%;
     border: 1px solid var(--border);
     padding: 4rem;

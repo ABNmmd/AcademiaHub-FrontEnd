@@ -13,6 +13,8 @@ function Write() {
     const [content, setContent] = useState('');
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
+    const [image, setImage] = useState(null);
+
     const navigate = useNavigate();
     const { createNewPost } = useContext(PostsContext);
 
@@ -30,8 +32,14 @@ function Write() {
 
     const handleCreatePost = async (e) => {
         e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('content', content);
+        formData.append('tags', tags);
+        formData.append('image', image);
         try {
-            const newPost = await createNewPost({ title, content, tags });
+            const newPost = await createNewPost(formData);
             console.log("Post created: ", newPost);
             navigate(`/posts/${newPost._id}`);
         } catch (error) {
@@ -58,7 +66,7 @@ function Write() {
 
     return (
         <main>
-            <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles)}>
                 {({ getRootProps, getInputProps }) => (
                     <section>
                         <div className='dropzone' {...getRootProps()}>
