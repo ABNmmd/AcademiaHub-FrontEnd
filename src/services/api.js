@@ -84,7 +84,7 @@ const createPost = async (postData) => {
 const getPosts = async () => {
     try {
         const response = await api.get('/posts/');
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error getting posts ', error);
