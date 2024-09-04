@@ -48,7 +48,7 @@ function Posts() {
                 <DataBox data={post} />
                 <PostInteraction autherId={post?.authorId} likes={post?.likes} dislikes={post?.dislikes} />
                 <div className="banner">
-                    <img src={bg} alt="" />
+                    <img src={post?.image?.imageUrl || bg} alt="" />
                 </div>
                 <article className='post-content'>
                     {parse(post.content || 'no content...')}

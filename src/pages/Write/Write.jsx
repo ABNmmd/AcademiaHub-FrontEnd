@@ -66,7 +66,7 @@ function Write() {
 
     return (
         <main>
-            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles)}>
+            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles[0])}>
                 {({ getRootProps, getInputProps }) => (
                     <section>
                         <div className='dropzone' {...getRootProps()}>

@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { PostsContext } from '../../contexts/PostsContext';
 
 import './PostsEdit.css'
- 
+
 function PostsEdit() {
     const { postId } = useParams();
     const [content, setContent] = useState('');
@@ -36,6 +36,7 @@ function PostsEdit() {
                 setTitle(postData.title);
                 setContent(postData.content || '');
                 setTags(postData.tags);
+                setImage(postData.image.imageUrl);
             } catch (error) {
                 console.log(`Error fitshing post with id: ${postId}`, error);
             }
@@ -95,9 +96,10 @@ function PostsEdit() {
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
-            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles)}>
+            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles[0])}>
                 {({ getRootProps, getInputProps }) => (
-                    <section>
+                    <section className='dropzone-container'>
+                        <img src={image} alt="" />
                         <div className='dropzone' {...getRootProps()}>
                             <input {...getInputProps()} />
                             <p>drop some image here, or click to select image</p>

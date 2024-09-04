@@ -13,7 +13,7 @@ function PostListing({ p }) {
                 p.map((post, index) => (
                     <div key={index} className="post-box">
                         <div className="image">
-                            <img src={bg} alt="" />
+                            <img src={post?.image?.imageUrl || bg} alt="" />
                         </div>
                         <DataBox data={post} h1Class={"h1-posts"} />
                     </div>
