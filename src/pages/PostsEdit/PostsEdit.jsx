@@ -76,7 +76,7 @@ function PostsEdit() {
             setError('Messing tags');
             return;
         }
-        formData.append('tags', tags);
+        formData.append('tags', JSON.stringify(tags));
         if (!image) {
             setError('Messing image');
             return;
@@ -106,6 +106,7 @@ function PostsEdit() {
     };
 
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
+    // console.log(tags);
     return (
         <main>
             <Dropzone onDrop={handleImageChange}>
