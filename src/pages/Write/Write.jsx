@@ -69,7 +69,8 @@ function Write() {
         <main>
             <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles[0])}>
                 {({ getRootProps, getInputProps }) => (
-                    <section>
+                    <section className={image && 'dropzone-container'}>
+                        {image && <img src={URL.createObjectURL(image)} alt="" />}
                         <div className='dropzone' {...getRootProps()}>
                             <input {...getInputProps()} />
                             <p>drop some image here, or click to select image</p>
