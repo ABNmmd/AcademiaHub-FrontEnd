@@ -56,7 +56,10 @@ function UserInfo({ author, setAuthor }) {
                         <Dropzone onDrop={acceptedFiles => setProfilePicture(acceptedFiles[0])}>
                             {({ getRootProps, getInputProps }) => (
                                 <button {...getRootProps()}>
-                                    <img src={author?.profilePicture?.imageUrl || bg} alt="" />
+                                    {!profilePicture
+                                    ?<img src={author?.profilePicture?.imageUrl || bg} alt="" />
+                                    :<img src={URL.createObjectURL(profilePicture)} alt="" />
+                                    }
                                     <input {...getInputProps()} />
                                     <IoIosCamera />
                                 </button>
