@@ -25,6 +25,7 @@
 - Like/Dislike functionality on blog posts.
 - **Comment system**: Users can add, edit, delete, and like/dislike comments on posts.
 - Dynamic tags for categorizing posts.
+- Uploading images for posts/profile
 
 ## Tech Stack
 
