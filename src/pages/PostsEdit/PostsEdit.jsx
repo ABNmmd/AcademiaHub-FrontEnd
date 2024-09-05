@@ -14,6 +14,7 @@ function PostsEdit() {
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState([]);
     const [image, setImage] = useState(null);
+    const [imagePreview, setImagePreview] = useState('');
     const [error, setError] = useState('');
     const { getOnePost, updateOldPost } = useContext(PostsContext);
     const navigate = useNavigate();
@@ -37,6 +38,7 @@ function PostsEdit() {
                 setContent(postData.content || '');
                 setTags(postData.tags);
                 setImage(postData.image.imageUrl);
+                setImagePreview(postData.image.imageUrl);
             } catch (error) {
                 console.log(`Error fitshing post with id: ${postId}`, error);
             }
@@ -93,13 +95,23 @@ function PostsEdit() {
         navigate(`/posts/${postId}`);
     }
 
+    const handleImageChange = (acceptedFiles) => {
+        const selectedImage = acceptedFiles[0];
+        setImage(selectedImage);
+
+        if (selectedImage) {
+            const previewUrl = URL.createObjectURL(selectedImage);
+            setImagePreview(previewUrl);
+        }
+    };
+
     const defTags = tags.map(tag => ({ value: tag, label: tag }));
     return (
         <main>
-            <Dropzone onDrop={acceptedFiles => setImage(acceptedFiles[0])}>
+            <Dropzone onDrop={handleImageChange}>
                 {({ getRootProps, getInputProps }) => (
                     <section className='dropzone-container'>
-                        <img src={image} alt="" />
+                        {imagePreview && <img src={imagePreview} alt="Preview" />}
                         <div className='dropzone' {...getRootProps()}>
                             <input {...getInputProps()} />
                             <p>drop some image here, or click to select image</p>
