@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-    baseURL: import.meta.env.REACT_APP_API_URL || 'https://node-blog-api-plum.vercel.app/api/',
+    baseURL: 'https://node-blog-api-plum.vercel.app/api/',
     withCredentials: true,
 });
 
