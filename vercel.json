@@ -5,8 +5,7 @@
         "dest": "/"
       },
       {
-        "src": "/login",
-        "dest": "/"
+        "src": "/login"
       },
       {
         "src": "/categories",
