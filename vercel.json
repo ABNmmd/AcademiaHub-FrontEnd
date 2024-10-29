@@ -1,8 +1,49 @@
 {
     "routes": [
-        {
-            "src": "/[^.]+",
-            "dest": "/"
-        }
+      {
+        "src": "/register",
+        "dest": "/"
+      },
+      {
+        "src": "/login",
+        "dest": "/"
+      },
+      {
+        "src": "/categories",
+        "dest": "/"
+      },
+      {
+        "src": "/categories/:tag",
+        "dest": "/"
+      },
+      {
+        "src": "/write",
+        "dest": "/"
+      },
+      {
+        "src": "/posts/:postId",
+        "dest": "/"
+      },
+      {
+        "src": "/posts/edit/:postId",
+        "dest": "/"
+      },
+      {
+        "src": "/profile/:userId",
+        "dest": "/"
+      },
+      {
+        "src": "/search",
+        "dest": "/"
+      },
+      {
+        "src": "/about",
+        "dest": "/"
+      },
+      {
+        "src": "/[^.]+",
+        "dest": "/"
+      }
     ]
-}
+  }
+  
